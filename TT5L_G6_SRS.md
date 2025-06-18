@@ -207,7 +207,7 @@ its operating context.
 <div align="center">
 
 <figure>
-  <img src="assets/Use Case Diagram.png"
+  <img src="assets/UpdatedClassDiagram.png"
        alt="Figure 2.0 – Use Case Diagram"
        style="max-width:100%;">
   <div><figcaption align="center"><strong>Figure 3.0</strong> Use Case Diagram.</figcaption></div>
@@ -217,16 +217,16 @@ its operating context.
 
 <div align="center">
 
-| ID    | Requirement Description                                                                                                 | Use Case(s)                                                        |
-|-------|-------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|
-| FR-01 | The system shall enable members to view and update their personal profile.                                              | Manage Profile                                                     |
-| FR-02 | The system shall integrate with the campus venue reservation system to check availability and submit booking requests.  | 1. Book Venue<br>2. Check Venue Availability                       |
-| FR-03 | The system shall track member RSVPs and provide attendee counts in real time.                                           | 1. View Event Attendance Count<br>2. RSVP Events                   |
-| FR-04 | The system shall send email and in-app/push alerts to relevant users when an event proposal, budget request, or venue booking is approved, rejected, or requires action. | Receive System Notifications |
-| FR-05 | The system shall allow club officers to add, remove, and update members and control their role in the club.             | 1. Manage Club Members<br>2. Add Members<br>3. Remove Members<br>4. Update Member Role |
-| FR-06 | The system shall allow club officers to create and plan events for all club members.                                    | Create Events                                                      |
-| FR-07 | The system shall allow club officers to seamlessly submit budget allocation requests to the university’s finance system.| 1. Submit Budget Allocation Request<br>2. Receive Budget Allocation Request |
-| FR-08 | The system shall allow club officers to track budget and spending.                                                      | View Budget                                                        |
+| ID     | Requirement Description                                                                                                 | Use Case ID(s)                | Use Case(s)                                                        |
+|--------|-------------------------------------------------------------------------------------------------------------------------|-------------------------------|--------------------------------------------------------------------|
+| FR‑01  | The system shall enable members to view and update their personal profile.                                              | UC001                         | Manage Profile                                                     |
+| FR‑02  | The system shall integrate with the campus venue reservation system to check availability and submit booking requests.  | UC002                         | 1. Book Venue<br>2. Check Venue Availability                       |
+| FR‑03  | The system shall track member RSVPs and provide attendee counts in real time.                                           | UC003                         | 1. View Event Attendance Count<br>2. RSVP Events                   |
+| FR‑04  | The system shall send email and in‑app/push alerts to relevant users when an event proposal, budget request, or venue booking is approved, rejected, or requires action. | –                             | Receive System Notifications                                       |
+| FR‑05  | The system shall allow club officers to add, remove, and update members and control their role in the club.             | UC004, UC005, UC006, UC007    | 1. Manage Club Members<br>2. Add Members<br>3. Remove Members<br>4. Update Member Role |
+| FR‑06  | The system shall allow club officers to create and plan events for all club members.                                    | UC008                         | Create Events                                                      |
+| FR‑07  | The system shall allow club officers to seamlessly submit budget allocation requests to the university’s finance system.| UC009                         | 1. Submit Budget Allocation Request<br>2. Receive Budget Allocation Request |
+| FR‑08  | The system shall allow club officers to track budget and spending.                                                      | –                             | View Budget                                                        |
 
 <p align="center"><em>Table 3.1 Functional requirements and their associated use cases</em></p>
 </div>
