@@ -1,4 +1,5 @@
 # Software Requirements Specification
+
 **Project:** Student Club Management System with Budget and Venue Integration
 
 **Version:** 1.0
@@ -8,6 +9,7 @@
 ---
 
 ## Table of Contents
+
 - [1 Introduction](#1-introduction)
   - [1.1 Purpose](#11-purpose)
   - [1.2 Scope](#12-scope)
@@ -80,31 +82,33 @@ officers today.
 ---
 
 <a id="11-purpose"></a>
+
 ### 1.1 Purpose
 
-*   **Product purpose —** SCMS exists *to streamline every aspect of club
-    management and operation* by eliminating redundant paperwork, shortening
-    approval cycles, and giving stakeholders a single dashboard for people, budgets,
-    and venues.
-*   **Document purpose —** This SRS provides one authoritative reference for
-    developers, testers, sponsors, and end-users, detailing the agreed functional
-    and non-functional requirements in compliance with
-    *ISO/IEC/IEEE 29148:2018* [\[1\]](#ref-iso)
+- **Product purpose —** SCMS exists _to streamline every aspect of club
+  management and operation_ by eliminating redundant paperwork, shortening
+  approval cycles, and giving stakeholders a single dashboard for people, budgets,
+  and venues.
+- **Document purpose —** This SRS provides one authoritative reference for
+  developers, testers, sponsors, and end-users, detailing the agreed functional
+  and non-functional requirements in compliance with
+  _ISO/IEC/IEEE 29148:2018_ [\[1\]](#ref-iso)
 
 ---
 
 <a id="12-scope"></a>
+
 ### 1.2 Scope
 
 <div align="center">
 
-| **Included capabilities** | **Explicit exclusions** |
-|:---------------------------------:|:-----------------------:|
-| Membership CRUD & role control    | Handling personal banking data (delegated to UFMS) |
-| Event proposal, RSVP & analytics  | Chat / instant messaging between members |
-| Venue availability lookup & booking via CSRD | Non-university venues |
-| Budget workflow & ledger synchronisation with UFMS | E-commerce ticket payments |
-| E-mail / push / in-app notifications | |
+|             **Included capabilities**              |              **Explicit exclusions**               |
+| :------------------------------------------------: | :------------------------------------------------: |
+|           Membership CRUD & role control           | Handling personal banking data (delegated to UFMS) |
+|          Event proposal, RSVP & analytics          |      Chat / instant messaging between members      |
+|    Venue availability lookup & booking via CSRD    |               Non-university venues                |
+| Budget workflow & ledger synchronisation with UFMS |             E-commerce ticket payments             |
+|        E-mail / push / in-app notifications        |                                                    |
 
 <p align="center"><em>Table 1.1 Project scope — included capabilities vs. explicit exclusions</em></p>
 </div>
@@ -112,6 +116,7 @@ officers today.
 ---
 
 <a id="13-product-overview"></a>
+
 ### 1.3 Product Overview
 
 SCMS is delivered as a lightweight SaaS module hosted on the university’s
@@ -120,6 +125,7 @@ exposes REST APIs to UFMS and CSRD. **Figure 1.1** illustrates SCMS in
 its operating context.
 
 <a id="131-product-perspective"></a>
+
 #### 1.3.1 Product Perspective — System Context Diagram
 
 <div align="center">
@@ -134,57 +140,61 @@ its operating context.
 </div>
 
 <a id="132-product-functions"></a>
+
 #### 1.3.2 Product Functions
 
 <div align="center">
 
-| ID | Function                               | Primary actor |
-|:--:|----------------------------------------|:-------------:|
-| F-01 | Maintain club membership & roles       | Club Officer |
-| F-02 | Create, submit & track event proposals | Club Officer |
-| F-03 | RSVP to events                         | Club Member  |
-| F-04 | Query & reserve campus venues          | Club Officer |
-| F-05 | Draft, submit & monitor club budgets   | Club Officer |
-| F-06 | Approve budgets & monitor spend        | UFMS         |
-| F-07 | Real-time alerts & reports             | All roles    |
+|  ID  | Function                               | Primary actor |
+| :--: | -------------------------------------- | :-----------: |
+| F-01 | Maintain club membership & roles       | Club Officer  |
+| F-02 | Create, submit & track event proposals | Club Officer  |
+| F-03 | RSVP to events                         |  Club Member  |
+| F-04 | Query & reserve campus venues          | Club Officer  |
+| F-05 | Draft, submit & monitor club budgets   | Club Officer  |
+| F-06 | Approve budgets & monitor spend        |     UFMS      |
+| F-07 | Real-time alerts & reports             |   All roles   |
 
 <p align="center"><em>Table 1.2 High-level product functions</em></p>
 </div>
 
 <a id="133-user-characteristics"></a>
+
 #### 1.3.3 User Characteristics
 
 <div align="center">
 
-| User group   | Size / skill               | Design-relevant traits      |
-|:------------:|:--------------------------:|:---------------------------:|
-| Club Members | ≈ 6,000; basic IT literacy | Mobile-first                |
-| Club Officers| ≈ 1,000; intermediate      | Need dashboards, bulk ops, approvals |
+|  User group   |        Size / skill        |        Design-relevant traits        |
+| :-----------: | :------------------------: | :----------------------------------: |
+| Club Members  | ≈ 6,000; basic IT literacy |             Mobile-first             |
+| Club Officers |   ≈ 1,000; intermediate    | Need dashboards, bulk ops, approvals |
 
 <p align="center"><em>Table 1.3 Primary user groups and crucial characteristics</em></p>
 </div>
 
 <a id="134-limitations"></a>
+
 #### 1.3.4 Limitations
 
-*   **Regulatory** – MMU data privacy policy enforced.
-*   **Operational** – Supports only university venues.
-*   **Security** – Role-based access control, full audit logging.
+- **Regulatory** – MMU data privacy policy enforced.
+- **Operational** – Supports only university venues.
+- **Security** – Role-based access control, full audit logging.
 
 ---
 
 <a id="14-definitions"></a>
+
 ### 1.4 Definitions
 
 <div align="center">
 
-| Term / Acronym | Definition |
-|:--------------:|:-----------|
-| **Club Officer** | Elected committee member (e.g., President, Secretary, Treasurer) authorised to manage club data, events, and budgets in SCMS. |
-| **Club Member** | Ordinary student member of a club; may maintain a personal profile and RSVP to approved events. |
-| **Event Proposal** | Formal request that specifies a club activity, expected costs, and required venue; subject to multi-level approval. |
-| **Budget Ledger Entry** | Financial transaction record automatically posted from SCMS to UFMS once a budget item is approved. |
-| **Venue Reservation ID** | Unique identifier returned by CSRD confirming a successful room or space booking. |
+|      Term / Acronym      | Definition                                                                                                                    |
+| :----------------------: | :---------------------------------------------------------------------------------------------------------------------------- |
+|     **Club Officer**     | Elected committee member (e.g., President, Secretary, Treasurer) authorised to manage club data, events, and budgets in SCMS. |
+|     **Club Member**      | Ordinary student member of a club; may maintain a personal profile and RSVP to approved events.                               |
+|    **Event Proposal**    | Formal request that specifies a club activity, expected costs, and required venue; subject to multi-level approval.           |
+| **Budget Ledger Entry**  | Financial transaction record automatically posted from SCMS to UFMS once a budget item is approved.                           |
+| **Venue Reservation ID** | Unique identifier returned by CSRD confirming a successful room or space booking.                                             |
 
 <p align="center"><em>Table 1.4 Key terms used in this SRS</em></p>
 </div>
@@ -192,16 +202,21 @@ its operating context.
 ---
 
 <a id="2-references"></a>
+
 ## 2 References
 
 <a id="ref-iso"></a>
-1.  ISO/IEC/IEEE International Standard - Systems and software engineering -- Life cycle processes -- Requirements engineering. (2018). *ISO/IEC/IEEE 29148:2018(E)*, 1–104. doi:10.1109/IEEESTD.2018.8559686
+
+1.  ISO/IEC/IEEE International Standard - Systems and software engineering -- Life cycle processes -- Requirements engineering. (2018). _ISO/IEC/IEEE 29148:2018(E)_, 1–104. doi:10.1109/IEEESTD.2018.8559686
 
 ---
 
 <a id="3-requirements"></a>
+
 ## 3 Requirements
+
 <a id="31-functions"></a>
+
 ### 3.1 Functions
 
 <div align="center">
@@ -217,41 +232,50 @@ its operating context.
 
 <div align="center">
 
-| ID     | Requirement Description                                                                                                 | Use Case ID(s)                | Use Case(s)                                                        |
-|--------|-------------------------------------------------------------------------------------------------------------------------|-------------------------------|--------------------------------------------------------------------|
-| FR‑01  | The system shall enable members to view and update their personal profile.                                              | UC001                         | Manage Profile                                                     |
-| FR‑02  | The system shall integrate with the campus venue reservation system to check availability and submit booking requests.  | UC002, UC012                         | 1. Book Venue<br>2. Check Venue Availability                       |
-| FR‑03  | The system shall track member RSVPs and provide attendee counts in real time.                                           | UC003, UC011                         | 1. View Event Attendance Count<br>2. RSVP Events                   |
-| FR‑04  | The system shall send email and in‑app/push alerts to relevant users when an event proposal, budget request, or venue booking is approved, rejected, or requires action. | UC014                             | Receive System Notifications                                       |
-| FR‑05  | The system shall allow club officers to add, remove, and update members and control their role in the club.             | UC004, UC005, UC006, UC007    | 1. Manage Club Members<br>2. Add Members<br>3. Remove Members<br>4. Update Member Role |
-| FR‑06  | The system shall allow club officers to create and plan events for all club members.                                    | UC008                         | Create Events                                                      |
-| FR‑07  | The system shall allow club officers to seamlessly submit budget allocation requests to the university’s finance system.| UC010,UC013                         | 1. Submit Budget Allocation Request<br>2. Receive Budget Allocation Request |
-| FR‑08  | The system shall allow club officers to track budget and spending.                                                      | UC009                            | View Budget                                                        |
+| ID      | Requirement Description                                                                                                                                                                   | Use Case ID(s) | Use Case(s)                                                                 |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- | --------------------------------------------------------------------------- |
+| FR‑01   | The system shall enable members to view and update their personal profile.                                                                                                                | UC001          | Manage Profile                                                              |
+| FR‑02 a | The system shall integrate with the campus venue reservation system to submit booking requests.                                                                                           | UC012          | Book Venue                                                                  |
+| FR‑02 b | The system shall integrate with the campus venue reservation system to check availability.                                                                                                | UC012          | Check Venue Availability                                                    |
+| FR‑03 a | The system shall provide attendee counts in real time.                                                                                                                                    | UC003, UC011   | View Event Attendance Count Events                                          |
+| FR‑03 b | The system shall track member RSVPs in real time.                                                                                                                                         | UC003, UC011   | RSVP Events                                                                 |
+| FR‑04 a | The system shall send email and in‑app/push alerts to relevant users when an event proposal, budget request, or venue booking is approved.                                                | UC014          | Receive System Notifications                                                |
+| FR‑04 b | The system shall send email and in‑app/push alerts to relevant users when an event proposal, budget request, or venue booking is rejected.                                                | UC014          | Receive System Notifications                                                |
+| FR‑04 c | The system shall send email and in‑app/push alerts to relevant users when an event proposal, budget request, or venue booking requires action.                                            | UC014          | Receive System Notifications                                                |
+| FR‑05 a | The system shall allow club officers to add new members in the club.                                                                                                                      | UC005          | Add Members                                                                 |
+| FR‑05 b | The system shall allow club officers to remove members in the club.                                                                                                                       | UC006          | Remove Members                                                              |
+| FR‑05 c | The system shall allow club officers to update members details in the club.                                                                                                               | UC007          | Update Member Role                                                          |
+| FR‑06   | The system shall allow club officers to create and plan events for all club members.                                                                                                      | UC008          | Create Events                                                               |
+| FR‑07   | The system shall allow club officers to submit budget allocation requests to the university’s finance system without approval capability. Approval decisions reside solely with the UFMS. | UC010,UC013    | 1. Submit Budget Allocation Request<br>2. Receive Budget Allocation Request |
+| FR‑08   | The system shall allow club officers to track budget and spending.                                                                                                                        | UC009          | View Budget                                                                 |
 
 <p align="center"><em>Table 3.1 Functional requirements and their associated use cases</em></p>
 </div>
 
 <a id="311-club-officer"></a>
+
 #### 3.1.1 Club Officer
 
-Manages club operations, including creating events, submitting budget requests, and maintaining member records.
+A club officer role in the system is to manages club operations, those include:
+<br>1. creating and managing events.<br> 2. submitting budget requests.<br> 3. track managed club budget and spendings.<br> 4. maintaining member records(adding,removing or updating their role).<br> 5.Track event attendance.
 
 <a id="3111-manage-profile"></a>
+
 ##### 3.1.1.1 Manage Profile
 
 <div align="center">
 
-| *Section*        	| *Content*                                                                                                                                                   	|
-|--------------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| Use Case ID        | UC001                                                                                                                                                         |
-| Name               	| Manage profile                                                                                                                                                	|
-| Author             	| Adeeb Darwisy                                                                                                                                                 	|
-| Source             	| The system shall enable members to view and update their personal profile [FR-01].                                                                            	|
-| Short  Description 	| The club member and club officer can personalize their own personal profile by editing their information like name, email, address, etc., within the system. 	|
-| Goals              	| Allow users to view and update their profile information like name, email, address, etc., in the system.                                                      	|
-| Actors             	| 1. Club Member<br>2. Club Officer                                                                                                                                	|
-| Pre-conditions     	| 1. The users (club member and club officer) must be logged into the system.<br>2. The users must have access rights to edit their own profile.                   	|
-| Post-conditions    	| 1. The user's updated profile information is successfully saved in the system.<br>2. The changes are reflected in the user's profile view.                       	|
+| _Section_         | _Content_                                                                                                                                    |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Use Case ID       | UC001                                                                                                                                        |
+| Name              | Manage profile                                                                                                                               |
+| Author            | Adeeb Darwisy                                                                                                                                |
+| Source            | The system shall enable members to view and update their personal profile [FR-01].                                                           |
+| Short Description | The club officer can personalize their own personal profile by editing their information like name, email, address, etc., within the system. |
+| Goals             | Allow users to view and update their profile information like name, email, address, etc., in the system.                                     |
+| Actors            | 1. Club Officer                                                                                                                              |
+| Pre-conditions    | 1. The users must be logged into the system.<br>2. The users must have access rights to edit their own profile.                              |
+| Post-conditions   | 1. The user's updated profile information is successfully saved in the system.<br>2. The changes are reflected in the user's profile view.   |
 
 <p align="center"><em>Table 3.2 Use Case Specification - Manage Profile</em></p>
 
@@ -265,21 +289,22 @@ Manages club operations, including creating events, submitting budget requests, 
 </div>
 
 <a id="3112-book-venue"></a>
+
 ##### 3.1.1.2 Book Venue
 
 <div align="center">
 
-| *Section*        	| *Content*                                                                                                                          	|
-|--------------------	|--------------------------------------------------------------------------------------------------------------------------------------	|
-| Use Case ID        | UC002                                                                                                                              |
-| Name               	| Book venue                                                                                                                           	|
-| Author             	| Adeeb Darwisy                                                                                                                        	|
-| Source             	| The system shall integrate with the campus venue reservation system to check availability and submit booking request [FR-02].        	|
-| Short  Description 	| The club officer can book venues and check venue availability through the campus space reservation database.                         	|
-| Goals              	| 1. Enable club officer to search for available venues.<br>2. Allow the club officer to submit booking requests.                      	|
-| Actors             	| 1. Club Officer<br>2. Campus Space Reservation Database                                                                                  |
-| Pre-conditions     	| 1. The club officer is logged into the system.<br>2. The club officer has permissions to check venue availability and book venues. 	|
-| Post-conditions    	| 1. Booking request is successfully recorded.<br>2. Confirmation or status is shown to the club officer.                                 	|
+| _Section_         | _Content_                                                                                                                          |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Use Case ID       | UC002                                                                                                                              |
+| Name              | Book venue                                                                                                                         |
+| Author            | Adeeb Darwisy                                                                                                                      |
+| Source            | The system shall integrate with the campus venue reservation system to check availability and submit booking request [FR-02].      |
+| Short Description | The club officer can book venues and check venue availability through the campus space reservation database.                       |
+| Goals             | 1. Enable club officer to search for available venues.<br>2. Allow the club officer to submit booking requests.                    |
+| Actors            | 1. Club Officer<br>2. Campus Space Reservation Database                                                                            |
+| Pre-conditions    | 1. The club officer is logged into the system.<br>2. The club officer has permissions to check venue availability and book venues. |
+| Post-conditions   | 1. Booking request is successfully recorded.<br>2. Confirmation or status is shown to the club officer.                            |
 
 <p align="center"><em>Table 3.3 Use Case Specification - Book Venue</em></p>
 
@@ -293,21 +318,22 @@ Manages club operations, including creating events, submitting budget requests, 
 </div>
 
 <a id="3113-view-event-attendance-count"></a>
+
 ##### 3.1.1.3 View Event Attendance Count
 
 <div align="center">
 
-| Section           | Content                                                                              |
-|-------------------|--------------------------------------------------------------------------------------|
-| Use Case ID       | UC003                                                                                |
-| Name              | View event attendance count                                                          |
-| Author            | Keshaav                                                                              |
-| Source            | The system shall track member RSVPs and provide attendee counts in real time [FR-03].|
-| Short Description | Allows the Club Officer to view the number of members who attended a specific event. |
-| Goals             | To monitor event participation for planning and reporting purposes.                  |
-| Actors            | Club Officer                                                                         |
+| Section           | Content                                                                                 |
+| ----------------- | --------------------------------------------------------------------------------------- |
+| Use Case ID       | UC003                                                                                   |
+| Name              | View event attendance count                                                             |
+| Author            | Keshaav                                                                                 |
+| Source            | The system shall track member RSVPs and provide attendee counts in real time [FR-03].   |
+| Short Description | Allows the Club Officer to view the number of members who attended a specific event.    |
+| Goals             | To monitor event participation for planning and reporting purposes.                     |
+| Actors            | Club Officer                                                                            |
 | Pre-conditions    | 1. The Club Officer is logged into the system.<br>2. Event records exist in the system. |
-| Post-conditions   | 1. Attendance count is displayed for the selected event.                             |
+| Post-conditions   | 1. Attendance count is displayed for the selected event.                                |
 
 <p align="center"><em>Table 3.4 Use Case Specification - View Event Attendance Count</em></p>
 
@@ -321,12 +347,13 @@ Manages club operations, including creating events, submitting budget requests, 
 </div>
 
 <a id="3114-manage-club-members"></a>
+
 ##### 3.1.1.4 Manage Club Members
 
 <div align="center">
 
 | **Section**       | **Content**                                                                                                         |
-|-------------------|---------------------------------------------------------------------------------------------------------------------|
+| ----------------- | ------------------------------------------------------------------------------------------------------------------- |
 | Use Case ID       | UC004                                                                                                               |
 | Name              | Manage club members                                                                                                 |
 | Author            | Abdullah Hawash                                                                                                     |
@@ -349,12 +376,13 @@ Manages club operations, including creating events, submitting budget requests, 
 </div>
 
 <a id="3115-add-members"></a>
+
 ##### 3.1.1.5 Add Members
 
 <div align="center">
 
 | **Section**       | **Content**                                                                                                         |
-|-------------------|---------------------------------------------------------------------------------------------------------------------|
+| ----------------- | ------------------------------------------------------------------------------------------------------------------- |
 | Use Case ID       | UC005                                                                                                               |
 | Name              | Add members                                                                                                         |
 | Author            | Abdullah Hawash                                                                                                     |
@@ -377,21 +405,22 @@ Manages club operations, including creating events, submitting budget requests, 
 </div>
 
 <a id="3116-remove-members"></a>
+
 ##### 3.1.1.6 Remove Members
 
 <div align="center">
 
-| **Section**       | **Content**                                                                                                                                                    |
-|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Use Case ID       | UC006                                                                                                                                                          |
-| Name              | Remove members                                                                                                                                                 |
-| Author            | Abdullah Hawash                                                                                                                                                |
-| Source            | The system shall allow club officers to add, remove, and update members and control their role in the club [FR-05].                                            |
-| Short Description | The club officer removes an existing member from the roster.                                                                                                   |
-| Goals             | Ensure former members no longer have access or voting rights while preserving historical data.                                                                 |
-| Actors            | Club Officer                                                                                                                                                   |
-| Pre-conditions    | 1. Officer is authenticated.<br>2. Member to be removed exists on the roster.                                                                                  |
-| Post-conditions   | 1. Member record is marked as inactive or removed (as per data retention policy DRR-04) in the system.<br>2. Removal action is logged for auditing.            |
+| **Section**       | **Content**                                                                                                                                         |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Use Case ID       | UC006                                                                                                                                               |
+| Name              | Remove members                                                                                                                                      |
+| Author            | Abdullah Hawash                                                                                                                                     |
+| Source            | The system shall allow club officers to add, remove, and update members and control their role in the club [FR-05].                                 |
+| Short Description | The club officer removes an existing member from the roster.                                                                                        |
+| Goals             | Ensure former members no longer have access or voting rights while preserving historical data.                                                      |
+| Actors            | Club Officer                                                                                                                                        |
+| Pre-conditions    | 1. Officer is authenticated.<br>2. Member to be removed exists on the roster.                                                                       |
+| Post-conditions   | 1. Member record is marked as inactive or removed (as per data retention policy DRR-04) in the system.<br>2. Removal action is logged for auditing. |
 
 <p align="center"><em>Table 3.7 Use Case Specification - Remove Members</em></p>
 
@@ -405,21 +434,22 @@ Manages club operations, including creating events, submitting budget requests, 
 </div>
 
 <a id="3117-update-member-role"></a>
+
 ##### 3.1.1.7 Update Member Role
 
 <div align="center">
 
-| **Section**       | **Content**                                                                                                                                            |
-|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Use Case ID       | UC007                                                                                                                                                  |
-| Name              | Update member role                                                                                                                                     |
-| Author            | Abdullah Hawash                                                                                                                                        |
-| Source            | The system shall allow club officers to add, remove, and update members and control their role in the club [FR-05].                                     |
-| Short Description | The club officer changes the role or permission level of an existing member.                                                                           |
-| Goals             | Reflect accurate role assignments in line with club hierarchy and responsibilities.                                                                    |
-| Actors            | Club Officer                                                                                                                                           |
-| Pre-conditions    | 1. Officer is authenticated.<br>2. Target member exists on the roster.<br>3. Desired role is valid.                                                    |
-| Post-conditions   | 1. Member’s role is updated in the system.<br>2.  Member is notified of the role change.                                                               |
+| **Section**       | **Content**                                                                                                         |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Use Case ID       | UC007                                                                                                               |
+| Name              | Update member role                                                                                                  |
+| Author            | Abdullah Hawash                                                                                                     |
+| Source            | The system shall allow club officers to add, remove, and update members and control their role in the club [FR-05]. |
+| Short Description | The club officer changes the role or permission level of an existing member.                                        |
+| Goals             | Reflect accurate role assignments in line with club hierarchy and responsibilities.                                 |
+| Actors            | Club Officer                                                                                                        |
+| Pre-conditions    | 1. Officer is authenticated.<br>2. Target member exists on the roster.<br>3. Desired role is valid.                 |
+| Post-conditions   | 1. Member’s role is updated in the system.<br>2. Member is notified of the role change.                             |
 
 <p align="center"><em>Table 3.8 Use Case Specification - Update Member Role</em></p>
 
@@ -433,12 +463,13 @@ Manages club operations, including creating events, submitting budget requests, 
 </div>
 
 <a id="3118-create-events"></a>
+
 ##### 3.1.1.8 Create Events
 
 <div align="center">
 
 | Section           | Content                                                                                                                      |
-|-------------------|------------------------------------------------------------------------------------------------------------------------------|
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | Use Case ID       | UC008                                                                                                                        |
 | Name              | Create events                                                                                                                |
 | Author            | Keshaav                                                                                                                      |
@@ -446,8 +477,8 @@ Manages club operations, including creating events, submitting budget requests, 
 | Short Description | Enables a Club Officer to create and schedule a new event, including details such as title, date, description, and location. |
 | Goals             | To allow clubs to plan and organize events efficiently.                                                                      |
 | Actors            | Club Officer                                                                                                                 |
-| Pre-conditions    | 1. The Club Officer is logged into the system.<br>2. Event form inputs are available.                                           |
-| Post-conditions   | 1. New event is added and stored in the system.<br>2. Event is visible to Club Officer and club members.                        |
+| Pre-conditions    | 1. The Club Officer is logged into the system.<br>2. Event form inputs are available.                                        |
+| Post-conditions   | 1. New event is added and stored in the system.<br>2. Event is visible to Club Officer and club members.                     |
 
 <p align="center"><em>Table 3.9 Use Case Specification - Create Events</em></p>
 
@@ -461,21 +492,22 @@ Manages club operations, including creating events, submitting budget requests, 
 </div>
 
 <a id="3119-view-budget"></a>
+
 ##### 3.1.1.9 View Budget
 
 <div align="center">
 
-| Section           | Content                                                                                      |
-|-------------------|----------------------------------------------------------------------------------------------|
-| Use Case ID       | UC009                                                                                        |
-| Name              | View budget                                                                                  |
-| Author            | Keshaav                                                                                      |
-| Source            | The system shall allow club officers to track budget and spending [FR-08].                   |
-| Short Description | Lets a Club Officer check the club's current budget allocation and spending status.          |
-| Goals             | To allow club officers to track financial resources and manage fund utilization.             |
-| Actors            | Club Officer                                                                                 |
+| Section           | Content                                                                                          |
+| ----------------- | ------------------------------------------------------------------------------------------------ |
+| Use Case ID       | UC009                                                                                            |
+| Name              | View budget                                                                                      |
+| Author            | Keshaav                                                                                          |
+| Source            | The system shall allow club officers to track budget and spending [FR-08].                       |
+| Short Description | Lets a Club Officer check the club's current budget allocation and spending status.              |
+| Goals             | To allow club officers to track financial resources and manage fund utilization.                 |
+| Actors            | Club Officer                                                                                     |
 | Pre-conditions    | 1. The Club Officer is logged into the system.<br>2. Budget records are available in the system. |
-| Post-conditions   | 1. Budget overview is displayed.                                                             |
+| Post-conditions   | 1. Budget overview is displayed.                                                                 |
 
 <p align="center"><em>Table 3.10 Use Case Specification - View Budget</em></p>
 
@@ -489,21 +521,22 @@ Manages club operations, including creating events, submitting budget requests, 
 </div>
 
 <a id="31110-submit-budget-allocation-request"></a>
+
 ##### 3.1.1.10 Submit Budget Allocation Request
 
 <div align="center">
 
-| **Section**       | **Content**                                                                                                                                                  |
-|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Use Case ID       | UC010                                                                                                                                                        |
-| Name              | Submit budget allocation request                                                                                                                             |
-| Author            | Harris Majeed                                                                                                                                                |
-| Source            | The system shall allow club officers to seamlessly submit budget allocation requests to the university’s finance system [FR-07].                              |
-| Short Description | The club officer enters the purpose of the budget, the amount they would like to request with optional supporting documents, and submits the budget request. |
-| Goals             | Allows the club officer to request for budget to conduct club activities.                                                                                    |
-| Actors            | Club Officer                                                                                                                                                 |
-| Pre-conditions    | 1. The club officer must be authenticated.                                                                                                                   |
-| Post-conditions   | 1. The budget allocation request is sent to the university's financial management system for approval.                                                       |
+| **Section**       | **Content**                                                                                                                                                        |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Use Case ID       | UC010                                                                                                                                                              |
+| Name              | Submit budget allocation request                                                                                                                                   |
+| Author            | Harris Majeed                                                                                                                                                      |
+| Source            | The system shall allow club officers to seamlessly submit budget allocation requests to the university’s finance system [FR-07].                                   |
+| Short Description | The club officer submits the request for UFMS to review, the amount they would like to request with optional supporting documents, and submits the budget request. |
+| Goals             | Allows the club officer to request for budget to conduct club activities.                                                                                          |
+| Actors            | Club Officer                                                                                                                                                       |
+| Pre-conditions    | 1. The club officer must be authenticated.                                                                                                                         |
+| Post-conditions   | 1. The budget allocation request is sent to the university's financial management system for approval.                                                             |
 
 <p align="center"><em>Table 3.11 Use Case Specification - Submit Budget Allocation Request</em></p>
 
@@ -517,26 +550,55 @@ Manages club operations, including creating events, submitting budget requests, 
 </div>
 
 <a id="312-club-member"></a>
+
 #### 3.1.2 Club Member
 
 Participates in club activities, can RSVP to events, and view personal and club-related information.
 
-<a id="3121-rsvp-events"></a>
-##### 3.1.2.1 RSVP Events
+##### 3.1.2.1 Manage Profile
 
 <div align="center">
 
-| *Section*        	| *Content*                                                                                                                                            	|
-|--------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| Use Case ID        | UC011                                                                                                                                                  |
-| Name               	| RSVP events                                                                                                                                            	|
-| Author             	| Adeeb Darwisy                                                                                                                                          	|
-| Source             	| The system shall track member RSVPs and provide attendee counts in real time [FR-03].                                                                  	|
-| Short  Description 	| Allows club member to submit RSVP response for events to the system and provide attendance counts.                                                     	|
-| Goals              	| Allow club member to RSVP for events and provide accurate attendance tracking.                                                                         	|
-| Actors             	| Club Member                                                                                                                                            	|
-| Pre-conditions     	| 1. The club member is logged into the system.<br>2. The event must be created and available for RSVP.                                                     	|
-| Post-conditions    	| 1. The RSVP request is saved in the system.<br>2. The event's attendance count is updated.<br>3. The club member receives a confirmation of successful RSVP. 	|
+| _Section_         | _Content_                                                                                                                                   |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Use Case ID       | UC001                                                                                                                                       |
+| Name              | Manage profile                                                                                                                              |
+| Author            | Adeeb Darwisy                                                                                                                               |
+| Source            | The system shall enable members to view and update their personal profile [FR-01].                                                          |
+| Short Description | The club member can personalize their own personal profile by editing their information like name, email, address, etc., within the system. |
+| Goals             | Allow users to view and update their profile information like name, email, address, etc., in the system.                                    |
+| Actors            | 1. Club Member                                                                                                                              |
+| Pre-conditions    | 1. The users must be logged into the system.<br>2. The users must have access rights to edit their own profile.                             |
+| Post-conditions   | 1. The user's updated profile information is successfully saved in the system.<br>2. The changes are reflected in the user's profile view.  |
+
+<p align="center"><em>Table 3.2 Use Case Specification - Manage Profile</em></p>
+
+<figure>
+  <img src="assets/SRE - Assignment Class Diagram - Manage Profile.png"
+       alt="Figure 2.1 – Activity Diagram - Manage Profile"
+       style="max-width:100%;">
+  <div><figcaption align="center"><strong>Figure 3.1</strong> Activity Diagram - Manage Profile.</figcaption></div>
+</figure>
+
+</div>
+
+<a id="3121-rsvp-events"></a>
+
+##### 3.1.2.2 RSVP Events
+
+<div align="center">
+
+| _Section_         | _Content_                                                                                                                                                    |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Use Case ID       | UC011                                                                                                                                                        |
+| Name              | RSVP events                                                                                                                                                  |
+| Author            | Adeeb Darwisy                                                                                                                                                |
+| Source            | The system shall track member RSVPs and provide attendee counts in real time [FR-03].                                                                        |
+| Short Description | Allows club member to submit RSVP response for events to the system and provide attendance counts.                                                           |
+| Goals             | Allow club member to RSVP for events and provide accurate attendance tracking.                                                                               |
+| Actors            | Club Member                                                                                                                                                  |
+| Pre-conditions    | 1. The club member is logged into the system.<br>2. The event must be created and available for RSVP.                                                        |
+| Post-conditions   | 1. The RSVP request is saved in the system.<br>2. The event's attendance count is updated.<br>3. The club member receives a confirmation of successful RSVP. |
 
 <p align="center"><em>Table 3.12 Use Case Specification - RSVP Events</em></p>
 
@@ -550,26 +612,28 @@ Participates in club activities, can RSVP to events, and view personal and club-
 </div>
 
 <a id="313-campus-space-reservation-database"></a>
+
 #### 3.1.3 Campus Space Reservation Database
 
 An external system that stores and manages data on available campus venues and their booking statuses.
 
 <a id="3131-check-venue-availability"></a>
+
 ##### 3.1.3.1 Check Venue Availability
 
 <div align="center">
 
-| *Section*        	| *Content*                                                                                                                                                    	|
-|--------------------	|----------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| Use Case ID        | UC012                                                                                                                                                          |
-| Name               	| Check venue availability                                                                                                                                       	|
-| Author             	| Adeeb Darwisy                                                                                                                                                  	|
-| Source             	| The system shall integrate with the campus venue reservation system to check availability and submit booking request [FR-02].                                  	|
-| Short  Description 	| The campus space reservation database will provide venue availability to club officers and store information regarding venue reservations.                   	|
-| Goals              	| 1. Provide real-time venue availability information.<br>2. Support the booking process by storing and retrieving reservation data.                                	|
-| Actors             	| Campus Space Reservation Database                                                                                                                              	|
-| Pre-conditions     	| 1. The system is connected to the campus space reservation database.<br>2. Club officer initiates a venue availability check.                                     	|
-| Post-conditions    	| 1. Venue availability status is returned to the club officer.<br>2. Reservations are recorded in the database.<br>3. Availability status is updated in the database. 	|
+| _Section_         | _Content_                                                                                                                                                            |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Use Case ID       | UC012                                                                                                                                                                |
+| Name              | Check venue availability                                                                                                                                             |
+| Author            | Adeeb Darwisy                                                                                                                                                        |
+| Source            | The system shall integrate with the campus venue reservation system to check availability and submit booking request [FR-02].                                        |
+| Short Description | The campus space reservation database will provide venue availability to club officers and store information regarding venue reservations.                           |
+| Goals             | 1. Provide real-time venue availability information.<br>2. Support the booking process by storing and retrieving reservation data.                                   |
+| Actors            | club officer                                                                                                                                                         |
+| Pre-conditions    | 1. The system is connected to the campus space reservation database.<br>2. Club officer initiates a venue availability check.                                        |
+| Post-conditions   | 1. Venue availability status is returned to the club officer.<br>2. Reservations are recorded in the database.<br>3. Availability status is updated in the database. |
 
 <p align="center"><em>Table 3.13 Use Case Specification - Check Venue Availability</em></p>
 
@@ -583,26 +647,28 @@ An external system that stores and manages data on available campus venues and t
 </div>
 
 <a id="314-university-financial-management-system"></a>
+
 #### 3.1.4 University Financial Management System
 
 An external financial system that handles budget allocation, fund approval, and financial tracking for university-related activities.
 
 <a id="3141-receive-budget-allocation-request"></a>
+
 ##### 3.1.4.1 Receive Budget Allocation Request
 
 <div align="center">
 
-| **Section**       | **Content**                                                                                                                               |
-|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| Use Case ID       | UC013                                                                                                                                     |
-| Name              | Receive budget allocation request                                                                                                         |
-| Author            | Harris Majeed                                                                                                                             |
-| Source            | The system shall allow club officers to seamlessly submit budget allocation requests to the university’s finance system [FR-07].          |
-| Short Description | The university's financial management system approves/denies a budget allocation request, and club officers are notified of the decision. |
-| Goals             | Allows club officers to be aware of budget approval decisions made by the finance department.                                             |
-| Actors            | University Financial Management System                                                                                                    |
-| Pre-conditions    | 1. A budget allocation request had been made.<br>2. The university financial management system has made a decision.                       |
-| Post-conditions   | 1. Club Officers are notified of the decision.<br>2. If approved, the club ledger is updated.<br>3. If denied, a denial reason is logged. |
+| **Section**       | **Content**                                                                                                                                                       |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Use Case ID       | UC013                                                                                                                                                             |
+| Name              | Receive budget allocation request                                                                                                                                 |
+| Author            | Harris Majeed                                                                                                                                                     |
+| Source            | The system shall allow club officers to submit budget allocations via authenticated API connection to the university finance system requests [FR-07]. |
+| Short Description | The university's financial management system approves/denies a budget allocation request, and club officers are notified of the decision.                         |
+| Goals             | Allows club officers to be aware of budget approval decisions made by the finance department.                                                                     |
+| Actors            | University Financial Management System                                                                                                                            |
+| Pre-conditions    | 1. A budget allocation request had been made.<br>2. The university financial management system has made a decision.                                               |
+| Post-conditions   | 1. Club Officers are notified of the decision.<br>2. If approved, the club ledger is updated.<br>3. If denied, a denial reason is logged.                         |
 
 <p align="center"><em>Table 3.14 Use Case Specification - Receive Budget Allocation Request</em></p>
 
@@ -616,14 +682,15 @@ An external financial system that handles budget allocation, fund approval, and 
 </div>
 
 <a id="32-performance-requirements"></a>
+
 ### 3.2 Performance Requirements
 
 <div align="center">
 
-| Performance Requirements ID | Description                                                                                         | Priority | Author         |
-|----------------|-----------------------------------------------------------------------------------------------------|----------|----------------|
-| PR-01          | The system shall support concurrent usage of up to 500 users without a noticeable performance degradation. | High     | Adeeb Darwisy  |
-| PR-02          | The system shall respond to user login requests within 2 seconds under normal operating conditions.     | High     | Adeeb Darwisy  |
+| Performance Requirements ID | Description                                                                                                | Priority | Author        |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------- | -------- | ------------- |
+| PR-01                       | The system shall support concurrent usage of up to 500 users without a noticeable performance degradation. | High     | Adeeb Darwisy |
+| PR-02                       | The system shall respond to user login requests within 2 seconds under normal operating conditions.        | High     | Adeeb Darwisy |
 
 <p align="center"><em>Table 3.15 Performance requirements</em></p>
 </div>
@@ -631,14 +698,15 @@ An external financial system that handles budget allocation, fund approval, and 
 ---
 
 <a id="33-usability-requirements"></a>
+
 ### 3.3 Usability Requirements
 
 <div align="center">
 
-| Usability Requirements ID | Description                                                                                                                                       | Priority | Author         |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------------|
-| UR-01                     | The system shall allow users to complete the most common actions (e.g., submitting a venue booking request, submitting a budget request) within 3 navigation steps. | High     | Adeeb Darwisy  |
-| UR-02                     | The interface shall support localization for English and Malay languages.                                                                         | High     | Adeeb Darwisy  |
+| Usability Requirements ID | Description                                                                                                                                                         | Priority | Author        |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------- |
+| UR-01                     | The system shall allow users to complete the most common actions (e.g., submitting a venue booking request, submitting a budget request) within 3 navigation steps. | High     | Adeeb Darwisy |
+| UR-02                     | The interface shall support localization for English and Malay languages.                                                                                           | High     | Adeeb Darwisy |
 
 <p align="center"><em>Table 3.16 Usability requirements</em></p>
 </div>
@@ -646,29 +714,30 @@ An external financial system that handles budget allocation, fund approval, and 
 ---
 
 <a id="34-interface-requirements"></a>
+
 ### 3.4 Interface Requirements
 
 <div align="center">
 
-| Interface Requirements ID | Description                                                                                                 | Priority | Author         |
-|---------------------------|-------------------------------------------------------------------------------------------------------------|----------|----------------|
-| INT-01                    | The system shall integrate with the University Financial Management System to submit and retrieve budget proposal data. | High     | Harris Majeed  |
-| INT-02                    | The system shall integrate with the University Financial Management System to automatically reflect approved budgets in financial records. | High     | Harris Majeed  |
-| INT-03                    | The system shall be integrated with the Campus Space Reservation Database to check venue availability.     | High     | Harris Majeed  |
-| INT-04                    | The system shall be integrated with the Campus Space Reservation Database to submit and track booking requests. | High     | Harris Majeed  |
-| INT-05                    | The web interface shall include a dashboard for club officers with budget and event summaries.              | High     | Harris Majeed  |
-| INT-06                    | The web interface shall include a calendar interface for managing events and bookings.                      | High     | Harris Majeed  |
-| INT-07                    | The web interface shall include a notification panel for alerts (push/email).                               | High     | Keshaav        |
-| INT-08                    | User interface elements shall include a top navigation bar.                                                 | Medium   | Keshaav        |
-| INT-09                    | User interface elements shall include contextual side menus.                                                | Medium   | Keshaav        |
-| INT-10                    | User interface elements shall include modals for form submissions.                                          | Medium   | Keshaav        |
-| INT-11                    | The system shall run on standard cloud or virtual servers.                                                  | High     | Keshaav        |
-| INT-12                    | No specialized hardware interfaces are required for the system.                                             | Low      | Keshaav        |
-| INT-13                    | The system shall use RESTful APIs to communicate with external financial and reservation systems.           | High     | Adeeb Darwisy  |
-| INT-14                    | The system shall use OAuth2 for integration with the university’s SSO system.                               | High     | Adeeb Darwisy  |
-| INT-15                    | All communication between client and server shall use HTTPS protocol.                                       | High     | Adeeb Darwisy  |
-| INT-16                    | Notification services shall utilize SMTP for email.                                                         | High     | Adeeb Darwisy  |
-| INT-17                    | Notification services shall utilize Firebase Cloud Messaging (FCM) for push notifications.                  | High     | Adeeb Darwisy  |
+| Interface Requirements ID | Description                                                                                                                                | Priority | Author        |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ------------- |
+| INT-01                    | The system shall integrate with the University Financial Management System to submit and retrieve budget proposal data.                    | High     | Harris Majeed |
+| INT-02                    | The system shall integrate with the University Financial Management System to automatically reflect approved budgets in financial records. | High     | Harris Majeed |
+| INT-03                    | The system shall be integrated with the Campus Space Reservation Database to check venue availability.                                     | High     | Harris Majeed |
+| INT-04                    | The system shall be integrated with the Campus Space Reservation Database to submit and track booking requests.                            | High     | Harris Majeed |
+| INT-05                    | The web interface shall include a dashboard for club officers with budget and event summaries.                                             | High     | Harris Majeed |
+| INT-06                    | The web interface shall include a calendar interface for managing events and bookings.                                                     | High     | Harris Majeed |
+| INT-07                    | The web interface shall include a notification panel for alerts (push/email).                                                              | High     | Keshaav       |
+| INT-08                    | User interface elements shall include a top navigation bar.                                                                                | Medium   | Keshaav       |
+| INT-09                    | User interface elements shall include contextual side menus.                                                                               | Medium   | Keshaav       |
+| INT-10                    | User interface elements shall include modals for form submissions.                                                                         | Medium   | Keshaav       |
+| INT-11                    | The system shall run on standard cloud or virtual servers.                                                                                 | High     | Keshaav       |
+| INT-12                    | No specialized hardware interfaces are required for the system.                                                                            | Low      | Keshaav       |
+| INT-13                    | The system shall use RESTful APIs to communicate with external financial and reservation systems.                                          | High     | Adeeb Darwisy |
+| INT-14                    | The system shall use OAuth2 for integration with the university’s SSO system.                                                              | High     | Adeeb Darwisy |
+| INT-15                    | All communication between client and server shall use HTTPS protocol.                                                                      | High     | Adeeb Darwisy |
+| INT-16                    | Notification services shall utilize SMTP for email.                                                                                        | High     | Adeeb Darwisy |
+| INT-17                    | Notification services shall utilize Firebase Cloud Messaging (FCM) for push notifications.                                                 | High     | Adeeb Darwisy |
 
 <p align="center"><em>Table 3.17 Interface requirements</em></p>
 </div>
@@ -676,7 +745,9 @@ An external financial system that handles budget allocation, fund approval, and 
 ---
 
 <a id="35-logical-database-requirements"></a>
+
 ### 3.5 Logical Database Requirements
+
 <div align="center">
 
 <figure>
@@ -690,123 +761,130 @@ An external financial system that handles budget allocation, fund approval, and 
 
 <div align="center">
 
-| **Database Requirement ID** | **Description**                                                                                                     | **Priority** | **Author**        |
-|-----------------------------|---------------------------------------------------------------------------------------------------------------------|--------------|-------------------|
-| DBR-01                      | The system shall use a relational database (e.g., PostgreSQL, MySQL, or SQL Server) for structured data storage.   | High         | Adeeb Darwisy     |
-| DBR-02                      | The database shall support a minimum of 500 concurrent users and 10,000+ records for members and events.            | High         | Adeeb Darwisy     |
+| **Database Requirement ID** | **Description**                                                                                                  | **Priority** | **Author**    |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------ | ------------- |
+| DBR-01                      | The system shall use a relational database (e.g., PostgreSQL, MySQL, or SQL Server) for structured data storage. | High         | Adeeb Darwisy |
+| DBR-02                      | The database shall support a minimum of 500 concurrent users and 10,000+ records for members and events.         | High         | Adeeb Darwisy |
 
 <p align="center"><em>Table 3.18 Requirements for database</em></p>
 </div>
 
 <a id="351-types-of-information-used-by-various-functions"></a>
+
 ##### 3.5.1 Types of Information Used by Various Functions
 
 <div align="center">
 
-| **Functional Area**        | **Key Data Entities**                                                  |
-|----------------------------|------------------------------------------------------------------------|
-| Membership management      | `Club`, `ClubMember`, `Membership`                                     |
-| Event planning             | `Event`, `Venue`, `VenueBooking`, `RSVP`                               |
-| Budget tracking            | `Budget`, `BudgetAllocationRequest`                                    |
-| Venue booking              | `Venue`, `VenueBooking`, `CampusSpaceReservationService`               |
-| Authentication             | `UniversityUser`                                                       |
+| **Functional Area**   | **Key Data Entities**                                    |
+| --------------------- | -------------------------------------------------------- |
+| Membership management | `Club`, `ClubMember`, `Membership`                       |
+| Event planning        | `Event`, `Venue`, `VenueBooking`, `RSVP`                 |
+| Budget tracking       | `Budget`, `BudgetAllocationRequest`                      |
+| Venue booking         | `Venue`, `VenueBooking`, `CampusSpaceReservationService` |
+| Authentication        | `UniversityUser`                                         |
 
 <p align="center"><em>Table 3.19 Types of information used by various functions</em></p>
 </div>
 
 <a id="352-frequency-of-use"></a>
+
 ##### 3.5.2 Frequency of Use
 
 <div align="center">
 
-| **Entity**                 | **Access Frequency** | **Justification**                                             |
-|---------------------------|----------------------|----------------------------------------------------------------|
-| `UniversityUser`          | High                 | Required for every login                                      |
-| `Club`                    | High                 | Viewed and updated often by officers                          |
-| `Event`                   | High                 | Created, updated, RSVP’d frequently                           |
-| `Budget`                  | Medium               | Updated per request cycles                                    |
-| `VenueBooking`            | High                 | Accessed during event planning                                |
-| `BudgetAllocationRequest` | Medium               | Accessed per budget cycle submission                          |
-| `RSVP`                    | High                 | Accessed during each event participation                      |
-| `Membership`              | Moderate             | Updated during membership changes                             |
+| **Entity**                | **Access Frequency** | **Justification**                        |
+| ------------------------- | -------------------- | ---------------------------------------- |
+| `UniversityUser`          | High                 | Required for every login                 |
+| `Club`                    | High                 | Viewed and updated often by officers     |
+| `Event`                   | High                 | Created, updated, RSVP’d frequently      |
+| `Budget`                  | Medium               | Updated per request cycles               |
+| `VenueBooking`            | High                 | Accessed during event planning           |
+| `BudgetAllocationRequest` | Medium               | Accessed per budget cycle submission     |
+| `RSVP`                    | High                 | Accessed during each event participation |
+| `Membership`              | Moderate             | Updated during membership changes        |
 
 <p align="center"><em>Table 3.20 Frequency of use</em></p>
 </div>
 
 <a id="353-accessing-capabilities"></a>
+
 ##### 3.5.3 Accessing Capabilities
 
 <div align="center">
 
-| **Role**                             | **Permissions**                                                        |
-|-------------------------------------|--------------------------------------------------------------------------------|
-| `ClubMember`                        | View/edit profile, RSVP to events, view event info                            |
-| `ClubOfficer`                       | Create/edit events, manage members, view and submit budget requests, view event attendance, view and book venues       |
-| `UniversityUser`                    | Base class – login/logout                                                     |
-| `CampusSpaceReservationService`     | Reserve/check venue availability                                              |
-| `UniversityFinancialManagementSystem` | Receive budget allocation requests                                           |
+| **Role**                              | **Permissions**                                                                                                  |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `ClubMember`                          | View/edit profile, RSVP to events, view event info                                                               |
+| `ClubOfficer`                         | Create/edit events, manage members, view and submit budget requests, view event attendance, view and book venues |
+| `UniversityUser`                      | Base class – login/logout                                                                                        |
+| `CampusSpaceReservationService`       | Reserve/check venue availability                                                                                 |
+| `UniversityFinancialManagementSystem` | Receive budget allocation requests                                                                               |
 
 <p align="center"><em>Table 3.21 Accessing capabilities</em></p>
 </div>
 
 <a id="354-data-entities-and-their-relationships"></a>
+
 ##### 3.5.4 Data Entities and Their Relationships
 
 <div align="center">
 
-| **Entity**         | **Relationships**                                                                                                                                     |
-|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `UniversityUser`   | Superclass of `ClubMember` and `ClubOfficer`.                                                                                                         |
-| `Club`             | - Has multiple `ClubMembers` via `Membership`. <br> - Managed by one or more `ClubOfficers`. <br> - Organizes multiple `Events`. <br> - Owns one or more `Budgets`. |
-| `Event`            | - Hosted by a `Club`. <br> - Occurs at one `Venue` via `VenueBooking`. <br> - Has many `RSVP`s from `ClubMembers`.                                    |
-| `VenueBooking`     | - Associated with one `Venue`. <br> - Checked/reserved through `CampusSpaceReservationService`.                                                       |
-| `Budget`           | - Includes one or more `BudgetAllocationRequest`. <br> - Interacts with `UniversityFinancialManagementSystem`.                                       |
+| **Entity**       | **Relationships**                                                                                                                                                   |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `UniversityUser` | Superclass of `ClubMember` and `ClubOfficer`.                                                                                                                       |
+| `Club`           | - Has multiple `ClubMembers` via `Membership`. <br> - Managed by one or more `ClubOfficers`. <br> - Organizes multiple `Events`. <br> - Owns one or more `Budgets`. |
+| `Event`          | - Hosted by a `Club`. <br> - Occurs at one `Venue` via `VenueBooking`. <br> - Has many `RSVP`s from `ClubMembers`.                                                  |
+| `VenueBooking`   | - Associated with one `Venue`. <br> - Checked/reserved through `CampusSpaceReservationService`.                                                                     |
+| `Budget`         | - Includes one or more `BudgetAllocationRequest`. <br> - Interacts with `UniversityFinancialManagementSystem`.                                                      |
 
 <p align="center"><em>Table 3.22 Data entities and relationships</em></p>
 </div>
 
 <a id="355-integrity-constraints"></a>
+
 ##### 3.5.5 Integrity Constraints
 
 <div align="center">
 
-| **Integrity Constraint Type** | **Description**                                                                                          |
-|-------------------------------|----------------------------------------------------------------------------------------------------------|
-| Unique Identifiers            | All primary entities (`userID`, `eventID`, `clubID`, etc.) must be globally unique.                     |
-| Foreign Key Constraints       | Enforced between relationships (e.g., `Budget.clubID` to `Club.clubID`).                                  |
+| **Integrity Constraint Type** | **Description**                                                                                                                                        |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Unique Identifiers            | All primary entities (`userID`, `eventID`, `clubID`, etc.) must be globally unique.                                                                    |
+| Foreign Key Constraints       | Enforced between relationships (e.g., `Budget.clubID` to `Club.clubID`).                                                                               |
 | Time Validations              | - `Event.startDateTime < Event.endDateTime`. <br> - `VenueBooking.startTime < VenueBooking.endTime`. <br> - `RSVP.rsvpDateTime < Event.startDateTime`. |
-| Booking Conflict Prevention   | `VenueBooking` must prevent overlapping bookings for the same venue at the same time.                    |
-| Data Validation               | - `BudgetAllocationRequest.amountRequested > 0`. <br> - `Venue.capacity > 0`.                                                     |
-| Active Club Restriction       | Only clubs where `Club.isActive = true` can organize events and request budgets.                             |
+| Booking Conflict Prevention   | `VenueBooking` must prevent overlapping bookings for the same venue at the same time.                                                                  |
+| Data Validation               | - `BudgetAllocationRequest.amountRequested > 0`. <br> - `Venue.capacity > 0`.                                                                          |
+| Active Club Restriction       | Only clubs where `Club.isActive = true` can organize events and request budgets.                                                                       |
 
 <p align="center"><em>Table 3.23 Integrity constraints</em></p>
 </div>
 
 <a id="356-database-security"></a>
+
 ##### 3.5.6 Database Security
 
 <div align="center">
 
-| **Security Area**             | **Description**                                                                                                     |
-|------------------------------|---------------------------------------------------------------------------------------------------------------------|
-| Authentication               | Handled through `UniversityUser` credentials (e.g., `passwordHash`).                                                |
-| Role-based Access Control    | - Only `ClubOfficers` can manage budgets/events. <br> - Only `ClubMembers` can RSVP or access member-only features.   |
-| Data Sensitivity             | - Financial and personal data must be encrypted in storage and transit. <br> - Secure APIs should be used when interfacing with external systems (`UFMS`, `CSRD`). |
+| **Security Area**         | **Description**                                                                                                                                                    |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Authentication            | Handled through `UniversityUser` credentials (e.g., `passwordHash`).                                                                                               |
+| Role-based Access Control | - Only `ClubOfficers` can manage budgets/events. <br> - Only `ClubMembers` can RSVP or access member-only features.                                                |
+| Data Sensitivity          | - Financial and personal data must be encrypted in storage and transit. <br> - Secure APIs should be used when interfacing with external systems (`UFMS`, `CSRD`). |
 
 <p align="center"><em>Table 3.24 Database Security</em></p>
 </div>
 
 <a id="357-data-retention-requirements"></a>
+
 ##### 3.5.7 Data Retention Requirements
 
 <div align="center">
 
-| Requirements ID | Description                                                                                             | Priority | Author        |
-|-----------------|---------------------------------------------------------------------------------------------------------|----------|---------------|
-| DRR-01          | Event and RSVP records shall be stored for at least one academic year for reporting and auditing purposes. | High     | Harris Majeed |
-| DRR-02          | Budget and allocation request data shall be retained for financial auditing purposes for at least 3 years. | High     | Harris Majeed |
-| DRR-03          | User credentials and activity logs shall follow university IT and privacy retention policies.            | High     | Harris Majeed |
-| DRR-04          | Deleted or former clubs and members shall have their data anonymized or archived to maintain referential integrity and historical records, in line with university policy.   | High     | Harris Majeed |
+| Requirements ID | Description                                                                                                                                                                | Priority | Author        |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------- |
+| DRR-01          | Event and RSVP records shall be stored for at least one academic year for reporting and auditing purposes.                                                                 | High     | Harris Majeed |
+| DRR-02          | Budget and allocation request data shall be retained for financial auditing purposes for at least 3 years.                                                                 | High     | Harris Majeed |
+| DRR-03          | User credentials and activity logs shall follow university IT and privacy retention policies.                                                                              | High     | Harris Majeed |
+| DRR-04          | Deleted or former clubs and members shall have their data anonymized or archived to maintain referential integrity and historical records, in line with university policy. | High     | Harris Majeed |
 
 <p align="center"><em>Table 3.25 Data retention requirements</em></p>
 </div>
@@ -814,15 +892,16 @@ An external financial system that handles budget allocation, fund approval, and 
 ---
 
 <a id="36-design-constraints"></a>
+
 ### 3.6 Design Constraints
 
 <div align="center">
 
-| Requirements ID | Description                                                                                         | Priority | Author        |
-|-----------------|-----------------------------------------------------------------------------------------------------|----------|---------------|
-| DC-01           | The system shall comply with the university’s data privacy and security policies.                   | High     | Harris Majeed |
-| DC-02           | The system shall use the university’s existing SSO for authentication.                              | High     | Harris Majeed |
-| DC-03           | The user interface shall follow the university’s branding guidelines.                               | High     | Harris Majeed |
+| Requirements ID | Description                                                                                                            | Priority | Author        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------- | -------- | ------------- |
+| DC-01           | The system shall comply with the university’s data privacy and security policies.                                      | High     | Harris Majeed |
+| DC-02           | The system shall use the university’s existing SSO for authentication.                                                 | High     | Harris Majeed |
+| DC-03           | The user interface shall follow the university’s branding guidelines.                                                  | High     | Harris Majeed |
 | DC-04           | The system shall avoid direct handling of sensitive financial records, interfacing only through secure APIs with UFMS. | High     | Harris Majeed |
 
 <p align="center"><em>Table 3.26 Design constraints</em></p>
@@ -831,6 +910,7 @@ An external financial system that handles budget allocation, fund approval, and 
 ---
 
 <a id="37-software-system-attributes"></a>
+
 ### 3.7 Software System Attributes
 
 This section specifies the non-functional quality attributes expected from the system.
@@ -841,9 +921,9 @@ The reliability requirements for the system are as follows:
 
 <div align="center">
 
-| Requirements ID | Description                                                                                         | Priority | Author         |
-|-----------------|-----------------------------------------------------------------------------------------------------|----------|----------------|
-| REL-01          | The system shall recover from failure events (e.g., database disconnection) within 1 minute.          | High     | Adeeb Darwisy  |
+| Requirements ID | Description                                                                                  | Priority | Author        |
+| --------------- | -------------------------------------------------------------------------------------------- | -------- | ------------- |
+| REL-01          | The system shall recover from failure events (e.g., database disconnection) within 1 minute. | High     | Adeeb Darwisy |
 
 <p align="center"><em>Table 3.27 Reliability attributes</em></p>
 </div>
@@ -854,9 +934,9 @@ The availability requirements for the system are as follows:
 
 <div align="center">
 
-| Requirements ID | Description                                                                                          | Priority | Author         |
-|-----------------|------------------------------------------------------------------------------------------------------|----------|----------------|
-| AVAIL-01        | The system shall be available 99.9% of the time during university working hours (Monday–Friday, 8:00 AM–6:00 PM). | High     | Harris Majeed  |
+| Requirements ID | Description                                                                                                       | Priority | Author        |
+| --------------- | ----------------------------------------------------------------------------------------------------------------- | -------- | ------------- |
+| AVAIL-01        | The system shall be available 99.9% of the time during university working hours (Monday–Friday, 8:00 AM–6:00 PM). | High     | Harris Majeed |
 
 <p align="center"><em>Table 3.28 Availability attributes</em></p>
 </div>
@@ -867,8 +947,8 @@ The security requirements for the system are as follows:
 
 <div align="center">
 
-| Requirements ID | Description                                                                                                     | Priority | Author          |
-|-----------------|-----------------------------------------------------------------------------------------------------------------|----------|-----------------|
+| Requirements ID | Description                                                                                                                                  | Priority | Author          |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------- | --------------- |
 | SEC-01          | All personal and financial data must be encrypted at all times (in transit and at rest). Role-based access control (RBAC) shall be enforced. | High     | Abdullah Hawash |
 
 <p align="center"><em>Table 3.29 Security attributes</em></p>
@@ -880,9 +960,9 @@ The maintainability requirements for the system are as follows:
 
 <div align="center">
 
-| Requirements ID | Description                                                                                                         | Priority | Author   |
-|-----------------|---------------------------------------------------------------------------------------------------------------------|----------|----------|
-| MAIN-01         | The system shall be modular, with clear separation of business logic, user interface, and database layers.         | High     | Keshaav  |
+| Requirements ID | Description                                                                                                | Priority | Author  |
+| --------------- | ---------------------------------------------------------------------------------------------------------- | -------- | ------- |
+| MAIN-01         | The system shall be modular, with clear separation of business logic, user interface, and database layers. | High     | Keshaav |
 
 <p align="center"><em>Table 3.30 Maintainability attributes</em></p>
 </div>
@@ -893,9 +973,9 @@ The portability requirements for the system are as follows:
 
 <div align="center">
 
-| Requirements ID | Description                                                                                                 | Priority | Author         |
-|-----------------|-------------------------------------------------------------------------------------------------------------|----------|----------------|
-| PORT-01         | The system shall be deployable on both Linux and Windows servers using containerization technologies (e.g., Docker). | High     | Adeeb Darwisy  |
+| Requirements ID | Description                                                                                                          | Priority | Author        |
+| --------------- | -------------------------------------------------------------------------------------------------------------------- | -------- | ------------- |
+| PORT-01         | The system shall be deployable on both Linux and Windows servers using containerization technologies (e.g., Docker). | High     | Adeeb Darwisy |
 
 <p align="center"><em>Table 3.31 Portability attributes</em></p>
 </div>
@@ -903,72 +983,83 @@ The portability requirements for the system are as follows:
 ---
 
 <a id="38-supporting-information"></a>
+
 ### 3.8 Supporting Information
 
--   **Input/Output formats:**
-    -   Budget reports exported as `.pdf` or `.xlsx`.
-    -   Member records imported/exported as `.csv` or `.xlsx`.
+- **Input/Output formats:**
 
--   **Elicitation evidence:**
-    -   Workshop notes, interview transcripts, and Kano questionnaire responses are documented in Task 4.
+  - Budget reports exported as `.pdf` or `.xlsx`.
+  - Member records imported/exported as `.csv` or `.xlsx`.
 
--   **Elicitation method summary:**
-    -   Multi-source elicitation: observation, interviews, workshops, and Kano survey.
+- **Elicitation evidence:**
 
--   **Problem context:**
-    -   Club officers and members face difficulty managing events, budgets, and bookings due to decentralized and manual processes.
+  - Workshop notes, interview transcripts, and Kano questionnaire responses are documented in Task 4.
 
--   **Packaging:**
-    -   System deployment shall include Docker containers and installation scripts for university IT integration.
+- **Elicitation method summary:**
+
+  - Multi-source elicitation: observation, interviews, workshops, and Kano survey.
+
+- **Problem context:**
+
+  - Club officers and members face difficulty managing events, budgets, and bookings due to decentralized and manual processes.
+
+- **Packaging:**
+  - System deployment shall include Docker containers and installation scripts for university IT integration.
 
 ---
 
 <a id="4-verification"></a>
+
 ## 4 Verification
 
 This section outlines the approaches and methods planned to qualify the system. Verification activities will ensure that the system meets the specified functional, performance, usability, interface, and other non-functional requirements detailed in Section 3.
 
 <a id="41-verification-approach"></a>
+
 ### 4.1 Verification Approach
 
 The verification of the SCMS will be a multi-faceted process involving various testing types, roles, and environments, executed throughout the development lifecycle.
 
-*   **How (Methods):**
-    *   **Unit Testing:** Individual software modules and components will be tested by developers to ensure they function correctly in isolation.
-    *   **Integration Testing:** Interfaces and interactions between SCMS modules (e.g., event management, budget module) and external systems (UFMS, CSRD, University SSO) will be tested to verify correct data exchange and workflow.
-    *   **System Testing:** The complete and integrated SCMS will be tested against the overall requirements specified in this SRS to ensure all parts work together as a cohesive system.
-    *   **Functional Testing:** All functional requirements (Section 3.1) will be tested through use case-based scenarios to confirm that the system performs its intended functions accurately.
-    *   **Performance Testing:** The system will be tested against performance requirements (Section 3.2) including load testing for concurrent users and response time measurements.
-    *   **Usability Testing:** Representative end-users (Club Officers, Club Members) will participate in testing to evaluate the system's ease of use, intuitiveness, and overall user experience against usability requirements (Section 3.3).
-    *   **Security Testing:** The system will undergo security testing to identify vulnerabilities, ensure data protection (encryption, access controls as per Sections 3.5.6, 3.7.3, SEC-01), and verify compliance with security policies.
-    *   **User Acceptance Testing (UAT):** Key stakeholders and end-users will conduct UAT to validate that the system meets their business needs and is acceptable for deployment.
-    *   **Regression Testing:** After any code changes, bug fixes, or enhancements, regression testing will be performed to ensure that existing functionalities are not adversely affected.
-    *   **Documentation Review:** User manuals, system documentation, and API documentation will be reviewed for accuracy, completeness, and clarity.
+- **How (Methods):**
 
-*   **Who (Responsible Parties):**
-    *   **Development Team:** Primarily responsible for conducting unit testing and participating in integration testing.
-    *   **Quality Assurance (QA) Team:** Responsible for developing test plans, designing test cases, and executing integration testing, system testing, functional testing, performance testing, security testing, and regression testing. The QA team will also facilitate UAT.
-    *   **Product Owner/Project Manager:** Responsible for overseeing the verification process, reviewing test results, and approving test phases.
-    *   **End-Users (Club Officers, Club Members):** Will participate in usability testing and UAT to provide feedback and confirm system suitability.
-    *   **University IT/Security Team:** May be involved in security testing, compliance checks, and integration testing with university systems.
+  - **Unit Testing:** Individual software modules and components will be tested by developers to ensure they function correctly in isolation.
+  - **Integration Testing:** Interfaces and interactions between SCMS modules (e.g., event management, budget module) and external systems (UFMS, CSRD, University SSO) will be tested to verify correct data exchange and workflow.
+  - **System Testing:** The complete and integrated SCMS will be tested against the overall requirements specified in this SRS to ensure all parts work together as a cohesive system.
+  - **Functional Testing:** All functional requirements (Section 3.1) will be tested through use case-based scenarios to confirm that the system performs its intended functions accurately.
+  - **Performance Testing:** The system will be tested against performance requirements (Section 3.2) including load testing for concurrent users and response time measurements.
+  - **Usability Testing:** Representative end-users (Club Officers, Club Members) will participate in testing to evaluate the system's ease of use, intuitiveness, and overall user experience against usability requirements (Section 3.3).
+  - **Security Testing:** The system will undergo security testing to identify vulnerabilities, ensure data protection (encryption, access controls as per Sections 3.5.6, 3.7.3, SEC-01), and verify compliance with security policies.
+  - **User Acceptance Testing (UAT):** Key stakeholders and end-users will conduct UAT to validate that the system meets their business needs and is acceptable for deployment.
+  - **Regression Testing:** After any code changes, bug fixes, or enhancements, regression testing will be performed to ensure that existing functionalities are not adversely affected.
+  - **Documentation Review:** User manuals, system documentation, and API documentation will be reviewed for accuracy, completeness, and clarity.
 
-*   **When (Timing):**
-    *   **Unit Testing:** Continuously throughout the development phase, executed after the completion of each unit/module.
-    *   **Integration Testing:** Incrementally as modules are developed and integrated, particularly after major feature sets are complete.
-    *   **Functional Testing:** Iteratively throughout the development lifecycle.
-    *   **System Testing:** After all modules are integrated and integration testing is completed, before UAT.
-    *   **Performance Testing:** At key milestones, such as before major releases or UAT, to ensure the system can handle expected loads.
-    *   **Usability Testing:** Conducted with prototypes during design phases and with functional versions of the system before UAT.
-    *   **Security Testing:** Conducted periodically during development and comprehensively before major releases.
-    *   **User Acceptance Testing (UAT):** Conducted as a final step before the system is deployed to production, after successful system testing.
-    *   **Regression Testing:** Performed after every modification to the codebase (e.g., bug fixes, new features).
+- **Who (Responsible Parties):**
 
-*   **Where (Locations/Environments):**
-    *   **Development Environment:** Used by developers for unit testing and initial debugging.
-    *   **Staging/QA Testing Environment:** A dedicated environment that closely mirrors the production environment. This will be used for integration, system, functional, performance, security, and UAT testing.
-    *   **Production Environment:** Post-deployment monitoring and limited verification will occur in the live environment to ensure stability and performance.
+  - **Development Team:** Primarily responsible for conducting unit testing and participating in integration testing.
+  - **Quality Assurance (QA) Team:** Responsible for developing test plans, designing test cases, and executing integration testing, system testing, functional testing, performance testing, security testing, and regression testing. The QA team will also facilitate UAT.
+  - **Product Owner/Project Manager:** Responsible for overseeing the verification process, reviewing test results, and approving test phases.
+  - **End-Users (Club Officers, Club Members):** Will participate in usability testing and UAT to provide feedback and confirm system suitability.
+  - **University IT/Security Team:** May be involved in security testing, compliance checks, and integration testing with university systems.
+
+- **When (Timing):**
+
+  - **Unit Testing:** Continuously throughout the development phase, executed after the completion of each unit/module.
+  - **Integration Testing:** Incrementally as modules are developed and integrated, particularly after major feature sets are complete.
+  - **Functional Testing:** Iteratively throughout the development lifecycle.
+  - **System Testing:** After all modules are integrated and integration testing is completed, before UAT.
+  - **Performance Testing:** At key milestones, such as before major releases or UAT, to ensure the system can handle expected loads.
+  - **Usability Testing:** Conducted with prototypes during design phases and with functional versions of the system before UAT.
+  - **Security Testing:** Conducted periodically during development and comprehensively before major releases.
+  - **User Acceptance Testing (UAT):** Conducted as a final step before the system is deployed to production, after successful system testing.
+  - **Regression Testing:** Performed after every modification to the codebase (e.g., bug fixes, new features).
+
+- **Where (Locations/Environments):**
+  - **Development Environment:** Used by developers for unit testing and initial debugging.
+  - **Staging/QA Testing Environment:** A dedicated environment that closely mirrors the production environment. This will be used for integration, system, functional, performance, security, and UAT testing.
+  - **Production Environment:** Post-deployment monitoring and limited verification will occur in the live environment to ensure stability and performance.
 
 <a id="42-verification-criteria"></a>
+
 ### 4.2 Verification Criteria
 
 The following table outlines the specific criteria against which the SCMS will be verified. These criteria are aligned with the requirements detailed in Section 3.
@@ -1237,8 +1328,11 @@ The following table outlines the specific criteria against which the SCMS will b
 ---
 
 <a id="5-appendices"></a>
+
 ## 5 Appendices
+
 <a id="51-assumptions-and-dependencies"></a>
+
 ### 5.1 Assumptions and Dependencies
 
 This section lists the key assumptions made during the requirements definition and the external dependencies that can affect the requirements of the SCMS.
@@ -1248,81 +1342,94 @@ This section lists the key assumptions made during the requirements definition a
 The SCMS relies on several external systems, policies, and services. The stability, availability, and consistent operation of these dependencies are crucial for the SCMS to meet its specified requirements.
 
 1.  **D1: University Financial Management System (UFMS)**
-    *   **Description:** The SCMS depends on the UFMS for processing budget allocation requests (FR-07, UC010, UC013) and synchronizing budget-related data (INT-01, INT-02). This includes the UFMS being continuously available, performing adequately, and providing a stable, documented RESTful API (INT-13).
-    *   **Impact if Changed/Unavailable:** If the UFMS is unavailable, experiences significant performance degradation, or its API changes without coordination, club officers will be unable to submit budget requests or view accurate, real-time budget information through SCMS. This would directly affect requirements FR-07, FR-08, INT-01, and INT-02.
+
+    - **Description:** The SCMS depends on the UFMS for processing budget allocation requests (FR-07, UC010, UC013) and synchronizing budget-related data (INT-01, INT-02). This includes the UFMS being continuously available, performing adequately, and providing a stable, documented RESTful API (INT-13).
+    - **Impact if Changed/Unavailable:** If the UFMS is unavailable, experiences significant performance degradation, or its API changes without coordination, club officers will be unable to submit budget requests or view accurate, real-time budget information through SCMS. This would directly affect requirements FR-07, FR-08, INT-01, and INT-02.
 
 2.  **D2: Campus Space Reservation Database (CSRD)**
-    *   **Description:** The SCMS relies on the CSRD to check venue availability and submit booking requests (FR-02, UC002, UC012, INT-03, INT-04). This dependency assumes CSRD's continuous availability, adequate performance, and the provision of a stable, documented RESTful API (INT-13).
-    *   **Impact if Changed/Unavailable:** Unavailability, performance issues, or uncoordinated API changes in CSRD would prevent club officers from booking venues or checking their availability, directly impacting event creation (FR-06) and venue booking functionalities (FR-02, INT-03, INT-04).
+
+    - **Description:** The SCMS relies on the CSRD to check venue availability and submit booking requests (FR-02, UC002, UC012, INT-03, INT-04). This dependency assumes CSRD's continuous availability, adequate performance, and the provision of a stable, documented RESTful API (INT-13).
+    - **Impact if Changed/Unavailable:** Unavailability, performance issues, or uncoordinated API changes in CSRD would prevent club officers from booking venues or checking their availability, directly impacting event creation (FR-06) and venue booking functionalities (FR-02, INT-03, INT-04).
 
 3.  **D3: University Single Sign-On (SSO) System**
-    *   **Description:** All user authentication for the SCMS is dependent on the university's existing SSO system, as required by DC-02, utilizing OAuth2 (INT-14).
-    *   **Impact if Changed/Unavailable:** If the SSO system is unavailable, its OAuth2 interface malfunctions, or it fails to provide necessary user attributes for role determination, users (Club Officers, Club Members) will be unable to log in and access any SCMS functionalities (e.g., FR-01, FR-03, FR-05, etc.).
+
+    - **Description:** All user authentication for the SCMS is dependent on the university's existing SSO system, as required by DC-02, utilizing OAuth2 (INT-14).
+    - **Impact if Changed/Unavailable:** If the SSO system is unavailable, its OAuth2 interface malfunctions, or it fails to provide necessary user attributes for role determination, users (Club Officers, Club Members) will be unable to log in and access any SCMS functionalities (e.g., FR-01, FR-03, FR-05, etc.).
 
 4.  **D4: University IT Infrastructure (Private Cloud, Network)**
-    *   **Description:** The SCMS is hosted on the university’s private cloud (1.3) and requires reliable network connectivity, including support for HTTPS (INT-15). This infrastructure must support the chosen database technology (DBR-01) and containerization technologies (e.g., Docker, as per PORT-01).
-    *   **Impact if Changed/Unavailable:** Instability, insufficient resources (CPU, memory, storage) in the cloud environment, or network outages can lead to SCMS unavailability, data loss, or failure to meet performance (PR-01, PR-02) and availability (AVAIL-01) requirements.
+
+    - **Description:** The SCMS is hosted on the university’s private cloud (1.3) and requires reliable network connectivity, including support for HTTPS (INT-15). This infrastructure must support the chosen database technology (DBR-01) and containerization technologies (e.g., Docker, as per PORT-01).
+    - **Impact if Changed/Unavailable:** Instability, insufficient resources (CPU, memory, storage) in the cloud environment, or network outages can lead to SCMS unavailability, data loss, or failure to meet performance (PR-01, PR-02) and availability (AVAIL-01) requirements.
 
 5.  **D5: External Notification Services (SMTP, FCM)**
-    *   **Description:** The system's ability to send email notifications (INT-16) and push notifications (INT-17, part of F-07 in Table 1.2, and FR-04) depend on an available and correctly configured SMTP server and the Firebase Cloud Messaging (FCM) service respectively.
-    *   **Impact if Changed/Unavailable:** Failure, misconfiguration, or policy changes in these external notification services would prevent users from receiving important system alerts, event updates, and budget status notifications, diminishing the system's utility and failing FR-04.
+
+    - **Description:** The system's ability to send email notifications (INT-16) and push notifications (INT-17, part of F-07 in Table 1.2, and FR-04) depend on an available and correctly configured SMTP server and the Firebase Cloud Messaging (FCM) service respectively.
+    - **Impact if Changed/Unavailable:** Failure, misconfiguration, or policy changes in these external notification services would prevent users from receiving important system alerts, event updates, and budget status notifications, diminishing the system's utility and failing FR-04.
 
 6.  **D6: University Policies and Guidelines**
-    *   **Description:** The SCMS must adhere to the university’s data privacy and security policies (DC-01) and its branding guidelines (DC-03).
-    *   **Impact if Changed/Unavailable:** These policies and guidelines must be clearly defined, accessible, and remain relatively stable. Significant or frequent changes could necessitate considerable rework of SCMS features, security implementations, or user interface design, impacting development timelines and effort.
+    - **Description:** The SCMS must adhere to the university’s data privacy and security policies (DC-01) and its branding guidelines (DC-03).
+    - **Impact if Changed/Unavailable:** These policies and guidelines must be clearly defined, accessible, and remain relatively stable. Significant or frequent changes could necessitate considerable rework of SCMS features, security implementations, or user interface design, impacting development timelines and effort.
 
 **Assumptions:**
 
 The following assumptions were made during the development of this SRS. If any of these assumptions prove to be false, the requirements or feasibility of the SCMS may be affected.
 
 1.  **A1: User Technical Proficiency and Access**
-    *   **Description:** It is assumed that Club Members possess basic IT literacy and Club Officers possess intermediate IT literacy (1.3.3). Users are assumed to have regular access to compatible devices (desktops, laptops, mobile devices) with modern web browsers and stable internet connectivity to use the web-based SCMS. It is also assumed users have software to open exported files (e.g., .pdf, .xlsx, .csv as per 3.8).
-    *   **Impact if False:** If users lack the assumed technical skills or access to suitable technology, the system's usability (Section 3.3) may be perceived as poor, training needs will increase, and overall system adoption could be low.
+
+    - **Description:** It is assumed that Club Members possess basic IT literacy and Club Officers possess intermediate IT literacy (1.3.3). Users are assumed to have regular access to compatible devices (desktops, laptops, mobile devices) with modern web browsers and stable internet connectivity to use the web-based SCMS. It is also assumed users have software to open exported files (e.g., .pdf, .xlsx, .csv as per 3.8).
+    - **Impact if False:** If users lack the assumed technical skills or access to suitable technology, the system's usability (Section 3.3) may be perceived as poor, training needs will increase, and overall system adoption could be low.
 
 2.  **A2: Accuracy, Timeliness, and Stability of Data from External Systems**
-    *   **Description:** The SCMS assumes that data provided by integrated external systems (UFMS for financial data, CSRD for venue information, SSO for user data) is accurate, up-to-date, complete, and provided in a timely manner. It also assumes their APIs (INT-13) will remain stable or that changes will be communicated with sufficient notice.
-    *   **Impact if False:** Inaccurate, delayed, or inconsistently formatted data from these systems could lead to incorrect information being displayed or processed within SCMS (e.g., incorrect budget views FR-08, erroneous venue availability FR-02), potentially causing significant operational issues for clubs. Unannounced API changes would break integrations.
+
+    - **Description:** The SCMS assumes that data provided by integrated external systems (UFMS for financial data, CSRD for venue information, SSO for user data) is accurate, up-to-date, complete, and provided in a timely manner. It also assumes their APIs (INT-13) will remain stable or that changes will be communicated with sufficient notice.
+    - **Impact if False:** Inaccurate, delayed, or inconsistently formatted data from these systems could lead to incorrect information being displayed or processed within SCMS (e.g., incorrect budget views FR-08, erroneous venue availability FR-02), potentially causing significant operational issues for clubs. Unannounced API changes would break integrations.
 
 3.  **A3: Comprehensive Coverage of University Venues by CSRD**
-    *   **Description:** It is assumed that all university venues relevant to student club activities are managed within, and are bookable through, the CSRD, aligning with the system's scope to support only university venues (1.2, 1.3.4).
-    *   **Impact if False:** If clubs require booking of university-managed venues not listed or inaccurately represented in CSRD, the venue booking functionality (FR-02) will be incomplete and may not meet user needs.
+
+    - **Description:** It is assumed that all university venues relevant to student club activities are managed within, and are bookable through, the CSRD, aligning with the system's scope to support only university venues (1.2, 1.3.4).
+    - **Impact if False:** If clubs require booking of university-managed venues not listed or inaccurately represented in CSRD, the venue booking functionality (FR-02) will be incomplete and may not meet user needs.
 
 4.  **A4: Adequacy of Defined User Roles and Permissions**
-    *   **Description:** The defined user roles (Club Member, Club Officer as per 1.4) and their associated access capabilities (3.5.3) are assumed to be sufficient and appropriate for all standard club management operations within the SCMS scope.
-    *   **Impact if False:** If the actual operational needs require more granular roles, different permission sets, or complex approval workflows not detailed, then requirements related to user management (FR-05), security (3.5.6, SEC-01), and various functionalities may need significant revision.
+
+    - **Description:** The defined user roles (Club Member, Club Officer as per 1.4) and their associated access capabilities (3.5.3) are assumed to be sufficient and appropriate for all standard club management operations within the SCMS scope.
+    - **Impact if False:** If the actual operational needs require more granular roles, different permission sets, or complex approval workflows not detailed, then requirements related to user management (FR-05), security (3.5.6, SEC-01), and various functionalities may need significant revision.
 
 5.  **A5: User Adoption and Engagement**
-    *   **Description:** It is assumed that club officers and members will find the SCMS to be a valuable tool that streamlines their activities and will therefore willingly adopt and consistently use the system.
-    *   **Impact if False:** Low user adoption, regardless of system quality, would render the SCMS ineffective in achieving its stated purpose (1.1) of streamlining club management.
+
+    - **Description:** It is assumed that club officers and members will find the SCMS to be a valuable tool that streamlines their activities and will therefore willingly adopt and consistently use the system.
+    - **Impact if False:** Low user adoption, regardless of system quality, would render the SCMS ineffective in achieving its stated purpose (1.1) of streamlining club management.
 
 6.  **A6: Stability of University's Club Management Processes**
-    *   **Description:** It is assumed that the university's fundamental definitions, policies, and processes related to student club recognition, event management, and budget administration will remain relatively stable throughout the SCMS lifecycle.
-    *   **Impact if False:** Significant changes in these underlying university processes could necessitate substantial modifications to SCMS data models (3.5), workflows, and functional requirements.
+
+    - **Description:** It is assumed that the university's fundamental definitions, policies, and processes related to student club recognition, event management, and budget administration will remain relatively stable throughout the SCMS lifecycle.
+    - **Impact if False:** Significant changes in these underlying university processes could necessitate substantial modifications to SCMS data models (3.5), workflows, and functional requirements.
 
 7.  **A7: Availability and Accuracy of User Contact Information for Notifications**
-    *   **Description:** For email (INT-16) and push notifications (INT-17, FR-04) to be effective, it is assumed that accurate and current email addresses for users are available (e.g., via SSO or user profiles) and that users will grant necessary permissions for push notifications.
-    *   **Impact if False:** If contact information is outdated, inaccurate, or permissions are not granted, the notification features will fail to deliver timely information to users, reducing system effectiveness and failing FR-04.
+
+    - **Description:** For email (INT-16) and push notifications (INT-17, FR-04) to be effective, it is assumed that accurate and current email addresses for users are available (e.g., via SSO or user profiles) and that users will grant necessary permissions for push notifications.
+    - **Impact if False:** If contact information is outdated, inaccurate, or permissions are not granted, the notification features will fail to deliver timely information to users, reducing system effectiveness and failing FR-04.
 
 8.  **A8: Sufficiency of Localization Support**
-    *   **Description:** It is assumed that providing localization for English and Malay (UR-02) will adequately meet the language needs of the entire SCMS user base at Multimedia University.
-    *   **Impact if False:** If a significant portion of the user base requires support for additional languages, the usability requirements (3.3) and development effort would need to be reassessed.
-<a id="52-acronyms-and-abbreviations"></a>
+    _ **Description:** It is assumed that providing localization for English and Malay (UR-02) will adequately meet the language needs of the entire SCMS user base at Multimedia University.
+    _ **Impact if False:** If a significant portion of the user base requires support for additional languages, the usability requirements (3.3) and development effort would need to be reassessed.
+    <a id="52-acronyms-and-abbreviations"></a>
+
 ### 5.2 Acronyms and Abbreviations
 
 <div align="center">
 
-| Acronym| Definition |
-|:--------------:|:-----------|
-| **SCMS** | *Student Club Management System* — the software product described in this SRS. |
-| **UFMS** | *University Financial Management System* — MMU’s finance solution that processes budget allocations and ledger entries. |
-| **CSRD** | *Campus Space Reservation Database* — central database that stores venue schedules and booking records. |
-| **RSVP** | *Répondez s’il vous plaît* — confirmation from a member indicating event attendance. |
-| **CRUD** | *Create, Read, Update, Delete* — basic data-management operations supported by SCMS modules. |
-| **SSO** | *Single Sign-On* — authentication mechanism allowing users to access multiple university systems with one set of credentials. |
-| **API**  | *Application Programming Interface* — a set of rules and protocols for building and interacting with software applications. |
-| **FCM**  | *Firebase Cloud Messaging* — a cross-platform messaging solution for sending notifications. |
-| **SMTP** | *Simple Mail Transfer Protocol* — an internet standard for electronic mail (email) transmission. |
-| **SaaS** | *Software as a Service* — a software licensing and delivery model. |
+| Acronym  | Definition                                                                                                                    |
+| :------: | :---------------------------------------------------------------------------------------------------------------------------- |
+| **SCMS** | _Student Club Management System_ — the software product described in this SRS.                                                |
+| **UFMS** | _University Financial Management System_ — MMU’s finance solution that processes budget allocations and ledger entries.       |
+| **CSRD** | _Campus Space Reservation Database_ — central database that stores venue schedules and booking records.                       |
+| **RSVP** | _Répondez s’il vous plaît_ — confirmation from a member indicating event attendance.                                          |
+| **CRUD** | _Create, Read, Update, Delete_ — basic data-management operations supported by SCMS modules.                                  |
+| **SSO**  | _Single Sign-On_ — authentication mechanism allowing users to access multiple university systems with one set of credentials. |
+| **API**  | _Application Programming Interface_ — a set of rules and protocols for building and interacting with software applications.   |
+| **FCM**  | _Firebase Cloud Messaging_ — a cross-platform messaging solution for sending notifications.                                   |
+| **SMTP** | _Simple Mail Transfer Protocol_ — an internet standard for electronic mail (email) transmission.                              |
+| **SaaS** | _Software as a Service_ — a software licensing and delivery model.                                                            |
 
 <p align="center"><em>Table 5.1 Acronyms and abbreviations used in this SRS</em></p>
 </div>
