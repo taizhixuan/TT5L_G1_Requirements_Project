@@ -726,7 +726,7 @@ An external financial system that handles budget allocation, fund approval, and 
 
 | Usability Requirements ID | Description                                                                                                                                                         | Priority | Author        |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------- |
-| UR-01                     | The system shall allow users to complete the most common actions (e.g., submitting a venue booking request, submitting a budget request) within 3 navigation steps. | High     | Adeeb Darwisy |
+| UR-01 | Users shall complete any of the three primary tasks (Submit RSVP, Book Venue, View Dashboard) with **≤ 3 navigation actions** (click / tap / key-press) from the landing page, and **≥ 90 % of test participants shall succeed on first attempt** in usability testing. | High | Adeeb Darwisy |
 | UR-02 | The interface shall provide localisation for **English and Malay** with **≥ 95 % of user-visible strings translated** and a **user-selectable language toggle** in profile settings; untranslated fallback strings must not exceed 5 % per release. | High | Adeeb Darwisy |
 
 
@@ -755,7 +755,7 @@ An external financial system that handles budget allocation, fund approval, and 
 | INT-10                    | User interface elements shall include modals for form submissions.                                                                         | Medium   | Keshaav       |
 | INT-11                    | The system shall run on standard cloud or virtual servers.                                                                                 | High     | Keshaav       |
 | INT-12                    | No specialized hardware interfaces are required for the system.                                                                            | Low      | Keshaav       |
-| INT-13                    | The system shall use RESTful APIs to communicate with external financial and reservation systems.                                          | High     | Adeeb Darwisy |
+| INT-13 | All public APIs shall follow REST style **versioned under `/api/v1/`**, use `Content-Type: application/json`, and embed HAL `_links` to enable HATEOAS; breaking changes require new major version. | High | Abdullah Hawash |
 | INT-14                    | The system shall use OAuth2 for integration with the university’s SSO system.                                                              | High     | Adeeb Darwisy |
 | INT-15                    | All communication between client and server shall use HTTPS protocol.                                                                      | High     | Adeeb Darwisy |
 | INT-16                    | Notification services shall utilize SMTP for email.                                                                                        | High     | Adeeb Darwisy |
@@ -786,7 +786,8 @@ An external financial system that handles budget allocation, fund approval, and 
 | **Database Requirement ID** | **Description**                                                                                                  | **Priority** | **Author**    |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------ | ------------- |
 | DBR-01                      | The system shall use a relational database (e.g., PostgreSQL, MySQL, or SQL Server) for structured data storage. | High         | Adeeb Darwisy |
-| DBR-02                      | The database shall support a minimum of 500 concurrent users and 10,000+ records for members and events.         | High         | Adeeb Darwisy |
+| DBR-02 | The system shall sustain **≥ 50 mixed read/write transactions per second** at **P95 latency ≤ 300 ms** while supporting **500 concurrent authenticated users** during peak hours. | High | Harris Majeed |
+
 
 <p align="center"><em>Table 3.18 Requirements for database</em></p>
 </div>
@@ -995,7 +996,7 @@ The portability requirements for the system are as follows:
 
 | Requirements ID | Description | **Metric / Unit** | **Rationale / Source** | Priority | Author |
 |-----------------|-------------|-------------------|------------------------|----------|--------|
-| **PORT-01** | The system shall be deployable on Linux (Ubuntu 22.04 LTS) and Windows Server 2022 using containerisation. | Docker 20.10 image + Kubernetes manifest passes CI on both OS targets | DevOps Deployment Guide v2.0 | High | Adeeb Darwisy |
+| **PORT-01** |  The system shall run in containers built with **Docker 20.10+** and deploy via **Kubernetes ≥ 1.29** (Helm charts provided), validated on **Ubuntu 22.04 LTS** and **Windows Server 2022** nodes. | Docker 20.10 image + Kubernetes manifest passes CI on both OS targets | DevOps Deployment Guide v2.0 | High | Adeeb Darwisy |
 
 <p align="center"><em>Table 3.31 Portability attributes</em></p>
 </div>

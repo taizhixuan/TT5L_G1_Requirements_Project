@@ -41,3 +41,9 @@
 | Change ID | File / Area | Description of Change | Author | Reason |
 |-----------|-------------|-----------------------|--------|--------|
 | CH-09 | SRS.md (§ 3.7 Tables 3.28–3.30) | • **AVAIL-01** now guarantees ≥ 99.5 % uptime **24 × 7** with < 2 h/mo scheduled maintenance announced ≥ 48 h in advance.<br>• Split **SEC-01** into: (a) TLS 1.3 + AES-256 encryption, (b) RBAC with four roles & SoD, (c) audit log retention ≥ 1 yr & quarterly OWASP-Top-10 pen-test pass rate 100 %.<br>• **MAIN-01** now requires ≥ 80 % unit-test coverage, < 6 coupling index, ≤ 15 average cyclomatic complexity, and 100 % public REST API documented in OpenAPI 3.0. | Zhi Xuan | Close content defects AVAIL-01, SEC-01, MAIN-01 (Session S002) |
+
+## 20-06-2025 — Usability, Data, Interface & Portability Fixes (CH-10)
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-10 | SRS.md (Tables 3.16, 3.18, 3.24, 3.31) | • **UR-01** now unambiguous: max 3 user interactions (click, tap, key-press) to complete top-3 tasks and ≥ 90 % users succeed on first attempt in moderated tests.<br>• **DBR-02** aligned with PR-01: 500 concurrent users **and** ≥ 50 tx/s mixed R/W at P95 latency ≤ 300 ms.<br>• **INT-13**: API URI `/api/v1/…`, `Content-Type: application/json`, responses include HAL `_links` for discoverability; backward compatibility guaranteed for minor updates.<br>• **PORT-01**: clarified target OS (Ubuntu 22.04 LTS, Windows Server 2022), Docker 20.10+, Kubernetes ≥ 1.29 deployment, Helm charts provided. | Zhi Xuan | Close S002 defects UR-01, DBR-02, INT-13, PORT-01 |
