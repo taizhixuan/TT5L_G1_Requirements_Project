@@ -1046,10 +1046,9 @@ The portability requirements for the system are as follows:
 | PORT-01 | Only lists Linux/Windows; no minimum OS versions or container runtime spec; ignores orchestration needs | Zhi Xuan | Specify tested OS/LTS versions and Kubernetes/Docker-Compose descriptors. | S002 | 1 |
 | **UC012** | Actor misassignment: Campus Space Reservation Database listed as primary actor instead of Club Officer | Hazim | Replace with the club officer as a primary actor and have the venue reservation system as a secondary actor | S003 | 4 |
 | **FR-07** | Vague term "seamlessly submit"; its subjective and lack verifiability | Hazim | Specify: "Submit via authenticated API connection to university finance system" | S003 | 3 |
-| **FR-04** | No UC table provided for Notifications (FR-04 listed but no UC011) | Si Ting | Create UC011 -- Receive Notifications for testability and traceability | S004 | 4 |
-| Use Case Tables | All use cases lack Alternative/Exception Flows (e.g. UC002, UC006) | Si Ting | Add these flows to critical UCs to define system behavior in error cases | S004 | 3 |
-| DRR-04 | Ambiguous term "anonymized or archived" lacks technical definition | Si Ting | Specify method: pseudonymization, nulling, deletion flag, etc. | S004 | 3 |
-
+| **FR-04** | No corresponding use case defined for notification flow | Si Ting | Add UC011 – Receive Notifications to restore traceability | S004 | 4 |
+| Use Case Tables | All use cases lack Alternative/Exception Flows (e.g. UC002, UC006) | Si Ting | Add alt/exception flows to UC002, UC006, UC007, UC009 | S004 | 3 |
+| DRR-04 | Vague term “anonymized or archived” lacks technical clarity | Si Ting | Define method (e.g., SHA256 pseudonymisation, flag deletion, retention policy rules) | S004 | 3 |
 ### B. Documentation Defect
 
 | Page No or Section | Validation and Defect Description | Detected By | Comment / Suggested Fix | Session ID | Severity (1--5) |
