@@ -35,3 +35,9 @@
 | Change ID | File / Area | Description of Change | Author | Reason |
 |-----------|-------------|-----------------------|--------|--------|
 | CH-08 | SRS.md (§ 3.3 Usability – Table 3.16) | Updated UR-02 to specify ≥ 95 % bilingual coverage, a UI language toggle in user settings, and a hard cap of 5 % untranslated fallback strings per release. | Zhi Xuan | Resolve Content Defect UR-02 (Session S002) |
+
+## 20-06-2025 — Availability, Security & Maintainability Refactor (CH-09)
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-09 | SRS.md (§ 3.7 Tables 3.28–3.30) | • **AVAIL-01** now guarantees ≥ 99.5 % uptime **24 × 7** with < 2 h/mo scheduled maintenance announced ≥ 48 h in advance.<br>• Split **SEC-01** into: (a) TLS 1.3 + AES-256 encryption, (b) RBAC with four roles & SoD, (c) audit log retention ≥ 1 yr & quarterly OWASP-Top-10 pen-test pass rate 100 %.<br>• **MAIN-01** now requires ≥ 80 % unit-test coverage, < 6 coupling index, ≤ 15 average cyclomatic complexity, and 100 % public REST API documented in OpenAPI 3.0. | Zhi Xuan | Close content defects AVAIL-01, SEC-01, MAIN-01 (Session S002) |

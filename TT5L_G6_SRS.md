@@ -955,7 +955,8 @@ The availability requirements for the system are as follows:
 
 | Requirements ID | Description | **Metric / Unit** | **Rationale / Source** | Priority | Author |
 |-----------------|-------------|-------------------|------------------------|----------|--------|
-| **AVAIL-01** | The system shall be available for end-users at least 99.5 % of the time, 24 × 7 (measured monthly). | ≥ 99.5 % uptime | Student-club peak usage extends beyond office hours | High | Harris Majeed |
+| **AVAIL-01** | The system shall achieve **≥ 99.5 % uptime 24 × 7**, excluding **≤ 2 h scheduled maintenance per month** announced ≥ 48 h in advance; fail-over to DR cluster must occur within 60 s of outage detection. | ≥ 99.5 % uptime / < 2 h downtime | Student-club events run evenings & weekends; aligns with IT Ops SLA | High | Harris Majeed |
+
 
 <p align="center"><em>Table 3.28 Availability attributes</em></p>
 </div>
@@ -965,9 +966,12 @@ The security requirements for the system are as follows:
 
 <div align="center">
 
-| Requirements ID | Description | **Metric / Unit** | **Rationale / Source** | Priority | Author |
-|-----------------|-------------|-------------------|------------------------|----------|--------|
-| **SEC-01** | All personal and financial data must be encrypted at all times; RBAC shall be enforced. | TLS 1.3 + AES-256 in transit; AES-256 at rest; quarterly OWASP Top-10 penetration test pass | Uni Security Std. SEC-18-2024 | High | Abdullah Hawash |
+| Requirements ID | Description | Metric / Unit | Rationale / Source | Priority | Author |
+|-----------------|-------------|---------------|--------------------|----------|--------|
+| **SEC-01a** | All data in transit shall be encrypted with **TLS 1.3** using **AES-256-GCM** ciphers; data at rest shall use **AES-256**. | 100 % TLS 1.3 coverage; AES-256 key length | Uni Security Std. SEC-18-2024 | High | Abdullah Hawash |
+| **SEC-01b** | The system shall enforce **RBAC** with four roles (Admin, Club Officer, Club Member, Guest) and **Segregation of Duties** (SoD) between budget approval and disbursement. | Role matrix approved; SoD rule violations = 0 | ISO/IEC 27034 | High | Abdullah Hawash |
+| **SEC-01c** | The system shall keep **immutable audit logs** for all privileged actions, retained **≥ 1 year**, and pass a **quarterly OWASP Top-10 penetration test with 0 critical / high findings**. | 12 months retention; 0 crit/high findings | University CISO policy § 7 | High | Abdullah Hawash |
+
 
 <p align="center"><em>Table 3.29 Security attributes</em></p>
 </div>
@@ -979,7 +983,7 @@ The maintainability requirements for the system are as follows:
 
 | Requirements ID | Description | **Metric / Unit** | **Rationale / Source** | Priority | Author |
 |-----------------|-------------|-------------------|------------------------|----------|--------|
-| **MAIN-01** | The system shall be modular, with clear separation of business logic, UI, and persistence layers. | ≥ 80 % unit-test coverage; component coupling score < 6 (Cutting index) | ISO/IEC 25010 maintainability sub-characteristics | High | Keshaav |
+| **MAIN-01** | The system shall be modular with clear separation of layers. | ≥ 80 % unit-test coverage; coupling index < 6; average cyclomatic complexity ≤ 15; **100 % public REST API documented in OpenAPI 3.0** and validated by CI. | ISO/IEC 25010 maintainability metrics | High | Keshaav |
 
 <p align="center"><em>Table 3.30 Maintainability attributes</em></p>
 </div>
