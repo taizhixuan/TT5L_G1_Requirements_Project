@@ -23,3 +23,10 @@
 | Change ID | File / Area | Description of Change | Author | Reason |
 |-----------|-------------|-----------------------|--------|--------|
 | CH-06 | SRS.md (Table 3.1) | *FR-02* split corrected: **FR-02a Check Venue Availability** (UC012) & **FR-02b Submit Venue Booking Request** (UC002).<br>*FR-03* split corrected: **FR-03a Submit RSVP** (UC011) & **FR-03b View Attendance Count** (UC003).<br>*FR-04* now decomposed by **channels** — **FR-04a Email Notifications**, **FR-04b Push Notifications**, **FR-04c In-app Notifications**; each covers approval / rejection / action-required across all three workflows. | Zhi Xuan | Close Content Defects FR-02, FR-03, FR-04 (Session S002) |
+
+## 20-06-2025 — Performance SLA Refinement (CH-07)
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-07 | SRS.md (§ 3.2 Performance Requirements) | • Replaced ambiguous wording in PR-01 with measurable concurrency + response-time SLA (500 users, P95 ≤ 2 s). <br>• Replaced PR-02 “respond within 2 s” with tighter, clearly-scoped login SLA (P95 ≤ 1 s, worst-case ≤ 1.5 s). | Zhi Xuan | Close Content Defects PR-01 & PR-02 (Session S002) |
+

@@ -709,8 +709,9 @@ An external financial system that handles budget allocation, fund approval, and 
 
 | Performance Requirements ID | Description                                                                                                | Priority | Author        |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------- | -------- | ------------- |
-| PR-01                       | The system shall support concurrent usage of up to 500 users without a noticeable performance degradation. | High     | Adeeb Darwisy |
-| PR-02                       | The system shall respond to user login requests within 2 seconds under normal operating conditions.        | High     | Adeeb Darwisy |
+| PR-01 | The system shall sustain **500 concurrent authenticated users** executing a representative mix of actions (70 % read / 30 % write) while maintaining **≤ 2 s page-level P95 response time** for venue search, venue-booking submit, RSVP POST, budget dashboard load, and profile edit. | High | Adeeb Darwisy |
+| PR-02 | Under normal load (< 100 concurrent users) the system shall complete a **full login round-trip** (SSO redirect → dashboard fully rendered) in **≤ 1 s P95 and ≤ 1.5 s worst-case**. | High | Adeeb Darwisy |
+
 
 <p align="center"><em>Table 3.15 Performance requirements</em></p>
 </div>
