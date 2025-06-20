@@ -912,70 +912,64 @@ An external financial system that handles budget allocation, fund approval, and 
 <a id="37-software-system-attributes"></a>
 
 ### 3.7 Software System Attributes
-
 This section specifies the non-functional quality attributes expected from the system.
 
 #### 3.7.1 Reliability
-
 The reliability requirements for the system are as follows:
 
 <div align="center">
 
-| Requirements ID | Description                                                                                  | Priority | Author        |
-| --------------- | -------------------------------------------------------------------------------------------- | -------- | ------------- |
-| REL-01          | The system shall recover from failure events (e.g., database disconnection) within 1 minute. | High     | Adeeb Darwisy |
+| Requirements ID | Description | **Metric / Unit** | **Rationale / Source** | Priority | Author |
+|-----------------|-------------|-------------------|------------------------|----------|--------|
+| **REL-01** | The system shall recover from failure events (e.g., database disconnection). | ≤ 60 s MTTR (Mean Time to Recover) | University IT DR Policy § 4.3 | High | Adeeb Darwisy |
 
 <p align="center"><em>Table 3.27 Reliability attributes</em></p>
 </div>
 
 #### 3.7.2 Availability
-
 The availability requirements for the system are as follows:
 
 <div align="center">
 
-| Requirements ID | Description                                                                                                       | Priority | Author        |
-| --------------- | ----------------------------------------------------------------------------------------------------------------- | -------- | ------------- |
-| AVAIL-01        | The system shall be available 99.9% of the time during university working hours (Monday–Friday, 8:00 AM–6:00 PM). | High     | Harris Majeed |
+| Requirements ID | Description | **Metric / Unit** | **Rationale / Source** | Priority | Author |
+|-----------------|-------------|-------------------|------------------------|----------|--------|
+| **AVAIL-01** | The system shall be available for end-users at least 99.5 % of the time, 24 × 7 (measured monthly). | ≥ 99.5 % uptime | Student-club peak usage extends beyond office hours | High | Harris Majeed |
 
 <p align="center"><em>Table 3.28 Availability attributes</em></p>
 </div>
 
 #### 3.7.3 Security
-
 The security requirements for the system are as follows:
 
 <div align="center">
 
-| Requirements ID | Description                                                                                                                                  | Priority | Author          |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------- | --------------- |
-| SEC-01          | All personal and financial data must be encrypted at all times (in transit and at rest). Role-based access control (RBAC) shall be enforced. | High     | Abdullah Hawash |
+| Requirements ID | Description | **Metric / Unit** | **Rationale / Source** | Priority | Author |
+|-----------------|-------------|-------------------|------------------------|----------|--------|
+| **SEC-01** | All personal and financial data must be encrypted at all times; RBAC shall be enforced. | TLS 1.3 + AES-256 in transit; AES-256 at rest; quarterly OWASP Top-10 penetration test pass | Uni Security Std. SEC-18-2024 | High | Abdullah Hawash |
 
 <p align="center"><em>Table 3.29 Security attributes</em></p>
 </div>
 
 #### 3.7.4 Maintainability
-
 The maintainability requirements for the system are as follows:
 
 <div align="center">
 
-| Requirements ID | Description                                                                                                | Priority | Author  |
-| --------------- | ---------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| MAIN-01         | The system shall be modular, with clear separation of business logic, user interface, and database layers. | High     | Keshaav |
+| Requirements ID | Description | **Metric / Unit** | **Rationale / Source** | Priority | Author |
+|-----------------|-------------|-------------------|------------------------|----------|--------|
+| **MAIN-01** | The system shall be modular, with clear separation of business logic, UI, and persistence layers. | ≥ 80 % unit-test coverage; component coupling score < 6 (Cutting index) | ISO/IEC 25010 maintainability sub-characteristics | High | Keshaav |
 
 <p align="center"><em>Table 3.30 Maintainability attributes</em></p>
 </div>
 
 #### 3.7.5 Portability
-
 The portability requirements for the system are as follows:
 
 <div align="center">
 
-| Requirements ID | Description                                                                                                          | Priority | Author        |
-| --------------- | -------------------------------------------------------------------------------------------------------------------- | -------- | ------------- |
-| PORT-01         | The system shall be deployable on both Linux and Windows servers using containerization technologies (e.g., Docker). | High     | Adeeb Darwisy |
+| Requirements ID | Description | **Metric / Unit** | **Rationale / Source** | Priority | Author |
+|-----------------|-------------|-------------------|------------------------|----------|--------|
+| **PORT-01** | The system shall be deployable on Linux (Ubuntu 22.04 LTS) and Windows Server 2022 using containerisation. | Docker 20.10 image + Kubernetes manifest passes CI on both OS targets | DevOps Deployment Guide v2.0 | High | Adeeb Darwisy |
 
 <p align="center"><em>Table 3.31 Portability attributes</em></p>
 </div>
