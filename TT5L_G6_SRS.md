@@ -1012,7 +1012,7 @@ The portability requirements for the system are as follows:
 | Session ID | Date and Time | Technique | Section Reviewed | Participant & Role | No. of Defect |
 |------------|---------------|-----------|------------------|-------------------|---------------|
 | S001 | 13 Jun 2025<br>10:00 PM | Inspection | Section 3.1 | Hazim<br>(Reviewer, Recoder) | 12 |
-| S002 | 15 Jun 2025<br>2:00 PM - 5:00 PM | Inspection | Section 3.2 → 3.7<br>(Non-functional & Interfaces),<br>Figures & Tables | Zhi Xuan<br>(Reviewer, Recorder) | 17 |
+| S002 | 15 Jun 2025<br>2:00 PM - 5:00 PM | Inspection | Section 1.4, Section 2, Section 3.2 → 3.7<br>(Non-functional & Interfaces),<br>Figures & Tables | Zhi Xuan<br>(Reviewer, Recorder) | 17 |
 | S003 | 18 Jun 2025<br>11:30 PM | Inspection | Section 3.1<br>(second Review of the use-case tables) | Hazim<br>(Reviewer, Recorder) | 3 |
 | S004 | 20 Jun 2025<br>8:00am | Inspection | Section 1.4 (Glossary), 2 (References),<br>3.5.5--3.5.7 (Retention & Recovery) | Si Ting<br>(Reviewer, Recorder) | 6 |
 
