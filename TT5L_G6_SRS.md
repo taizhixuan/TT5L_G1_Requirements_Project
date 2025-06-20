@@ -1046,9 +1046,9 @@ The portability requirements for the system are as follows:
 | PORT-01 | Only lists Linux/Windows; no minimum OS versions or container runtime spec; ignores orchestration needs | Zhi Xuan | Specify tested OS/LTS versions and Kubernetes/Docker-Compose descriptors. | S002 | 1 |
 | **UC012** | Actor misassignment: Campus Space Reservation Database listed as primary actor instead of Club Officer | Hazim | Replace with the club officer as a primary actor and have the venue reservation system as a secondary actor | S003 | 4 |
 | **FR-07** | Vague term "seamlessly submit"; its subjective and lack verifiability | Hazim | Specify: "Submit via authenticated API connection to university finance system" | S003 | 3 |
-| **FR-04** | No UC table provided for Notifications (FR-04 listed but no UC011) | Si Ting | Create UC011 -- Receive Notifications for testability and traceability | S004 | 4 |
-| Use Case Tables | All use cases lack Alternative/Exception Flows (e.g. UC002, UC006) | Si Ting | Add these flows to critical UCs to define system behavior in error cases | S004 | 3 |
-| DRR-04 | Ambiguous term "anonymized or archived" lacks technical definition | Si Ting | Specify method: pseudonymization, nulling, deletion flag, etc. | S004 | 3 |
+| **FR-04** | No corresponding use case defined for notification flow | Si Ting | Add UC011 – Receive Notifications to restore traceability | S004 | 4 |
+| Use Case Tables | All use cases lack Alternative/Exception Flows (e.g. UC002, UC006) | Si Ting | Add alt/exception flows to UC002, UC006, UC007, UC009 | S004 | 3 |
+| DRR-04 | Vague term “anonymized or archived” lacks technical clarity | Si Ting | Define method (e.g., SHA256 pseudonymisation, flag deletion, retention policy rules) | S004 | 3 |
 
 ### B. Documentation Defect
 
@@ -1060,8 +1060,8 @@ The portability requirements for the system are as follows:
 | 3.7 Attribute Tables -- all NFR tables 31 → 35 | No Rationale/Source column (ISO 29148 §9.4.4) | Zhi Xuan | Add short rationale or policy reference for each NFR. | S002 | 2 |
 | 2 References | Entry is not fully APA 7: no corporate authors, title not italicised/sentence-case, DOI in wrong format<br><br>Reference list contains only ISO 29148; the SRS cites OAuth 2.0 (RFC 6749), WCAG 2.1, Docker docs, Firebase CM, University IT policies, yet none are listed | Zhi Xuan | Replace with full APA-7 reference.<br><br>Expand bibliography; follow APA 7, alphabetical order; include persistent URLs/DOIs. | S002 | 1<br><br>2 |
 | 1.4 Definitions -- Table 37 Acronyms/Abbrev. | Frequently-used acronyms missing: RBAC, OAuth 2.0, REST, TLS/HTTPS, WCAG, KPI, Docker appear in Sections 3 & 4 but are absent from glossary | Zhi Xuan | Add missing entries and regenerate alphabetical acronym list. | S002 | 2 |
-| Section 5.2 | Glossary missing critical acronyms: TLS, OAuth2, RBAC, KPI, Docker | Si Ting | Add definitions and reorder alphabetically | S004 | 2 |
-| Section 2 | No versioning metadata (Version No., Date, Author) | Si Ting | Add version history table to header or footer | S004 | 2 |
+| Section 5.2 |Glossary missing: TLS, OAuth2, KPI, RBAC, REST, Docker, etc. | Si Ting |Add missing acronyms and regenerate glossary in alphabetical order | S004 | 2 |
+| Section 2 | 	No version table or changelog metadata | Si Ting |Add document version number, author, and last updated date | S004 | 2 |
 
 ### C. Agreement Defect
 
@@ -1070,7 +1070,7 @@ The portability requirements for the system are as follows:
 | **FR01** | "Manage Profile" use case appears only under Club Officer, but stakeholders expect *all* members (including non-officers) to update profiles. | Role coverage error: Club Member vs. Club Officer | Hazim | S001 | 3 |
 | UR-02 | ICT Services mandate BM & EN localisation; UR-02 lacks measurable coverage/toggle criteria | Incomplete NFR | Zhi Xuan | S002 | 2 |
 | AVAIL-01 | Clubs host events evenings & weekends, but availability target guarantees 99.9 % uptime only Mon-Fri 08:00--18:00 | Availability window misaligned with real usage | Zhi Xuan | S002 | 2 |
-| DRR-04 | Vague archival vs anonymization policy may not align with privacy law | University policy vs SRS wording | Si Ting | S004 | 3 |
+| DRR-04 | No clarification on how anonymization or archival is enforced | Missing alignment with privacy policy | Si Ting | S004 | 3 |
 
 ## 3.8.3 Conflict Analysis
 
@@ -1081,9 +1081,9 @@ The portability requirements for the system are as follows:
 | C-03 | Value | AVAIL-01 limited uptime (08:00--18:00 Mon-Fri) vs. clubs' evening/weekend events. | Requirement excluded peak usage; ops SLA mis-aligned. | Zhi Xuan, Si Ting, Nelly | S002 |
 | C-04 | Data | PR-01 vague "without noticeable degradation." | Cannot derive performance test scripts without concrete SLA. | Zhi Xuan, Si Ting, Nelly | S002 |
 | C-05 | Data | SEC-01 lumped encryption & RBAC with no metrics. | Security auditors require cipher strength, SoD, log-retention metrics. | Zhi Xuan, Si Ting, Nelly | S002 |
-| C-06 | | FR-04 lacks UC011 | Traceability broken -- functional requirement exists but no modeled use case | | |
-| C-07 | | FR-07 wording implies budget approval authority within the system. | Contradicts TeamVision: "merely integrates... no approval authority" | | S003 |
-| C-08 | | DRR-04 vague anonymization/archive | May violate compliance; retention unclear | | S004 |
+| C-06 |Documentation  | FR-04 lacks UC011 | Traceability broken -- functional requirement exists but no modeled use case | |S004 |
+| C-07 |Agreement  | FR-07 wording implies budget approval authority within the system. | Contradicts TeamVision: "merely integrates... no approval authority" | | S004 |
+| C-08 | Agreement | DRR-04 vague anonymization/archive | May violate compliance; retention unclear | | S004 |
 
 ## 3.8.4 Conflict Analysis and Resolution
 
@@ -1094,9 +1094,9 @@ The portability requirements for the system are as follows:
 | C-03 | Creative Solution | Extended AVAIL-01 to ≥ 99.5 % uptime 24 × 7, ≤ 2 h planned maintenance/mo (CH-09) | Y | Ops SLA signed; DR fail-over drill passed 25-Jun | Aligns requirement with evening/weekend club activity patterns |
 | C-04 | Negotiation | Re-wrote PR-01 and added PR-02 login SLA (CH-07) | Y | JMeter load-test script updated; P95 targets met in CI | Concrete SLAs allow QA and DevOps to automate performance gates |
 | C-05 | Negotiation | Decomposed SEC-01 into SEC-01a Encryption, SEC-01b RBAC, SEC-01c Audit & Pen-test (CH-09) | Y | Security design review 27-Jun: 0 critical findings | Meets CISO policy; metrics trackable in quarterly security audit |
-| C-06 | | Add UC011 -- Receive Notifications to match FR-04 | | | |
-| C-07 | | Requirement refinement + Scope validation | Y | Added constraint: "Submit requests *without* approval capability" | Aligns with ContextObjects justification, as mentioned in the final scope "merely integrates... no approval authority" |
-| C-08 | | Redefine DRR-04 with method: SHA256 hashing, nulling, or timed retention | | | |
+| C-06 |Inspection | Add UC011 -- Receive Notifications to match FR-04 |Y |UC011 created to model notification logic | Fixes traceability issue; FR-04 now links to a use case and is testable|
+| C-07 |Inspection | Reword FR-07 to clarify system only reflects external budget approval status | Y | FR-07 updated in SRS	 |Aligns with TeamVision scope; avoids misleading system capability |
+| C-08 |Pending Review|Rewrite DRR-04 with defined anonymization method and retention lifecycle	 | N | |Requires legal/policy review to finalize acceptable anonymization process |
 
 ### 3.8.4.1 Evidence of Conflict Resolution (Screenshots)
 
