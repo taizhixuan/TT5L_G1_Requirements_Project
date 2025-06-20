@@ -17,3 +17,9 @@
 | Change ID | File / Area | Description of Change | Author | Reason |
 |-----------|-------------|-----------------------|--------|--------|
 | CH-05 | SRS.md (§ 1.4 Definitions) | Inserted a comprehensive, alphabetised table that now includes 12 previously-missing acronyms (RBAC, OAuth 2.0, REST, TLS, WCAG, KPI, Docker, API, SMTP, CRUD, FCM, SSO) alongside existing key terms; updated caption to “Definitions, acronyms, and abbreviations”. | Zhi Xuan | Resolve Documentation Defect *1.4 Definitions — Table 37* (Session S002) |
+
+## 20-06-2025 — Venue / RSVP / Notification Requirements Refactor (CH-06)
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-06 | SRS.md (Table 3.1) | *FR-02* split corrected: **FR-02a Check Venue Availability** (UC012) & **FR-02b Submit Venue Booking Request** (UC002).<br>*FR-03* split corrected: **FR-03a Submit RSVP** (UC011) & **FR-03b View Attendance Count** (UC003).<br>*FR-04* now decomposed by **channels** — **FR-04a Email Notifications**, **FR-04b Push Notifications**, **FR-04c In-app Notifications**; each covers approval / rejection / action-required across all three workflows. | Zhi Xuan | Close Content Defects FR-02, FR-03, FR-04 (Session S002) |
