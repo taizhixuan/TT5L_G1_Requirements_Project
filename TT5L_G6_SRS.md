@@ -727,7 +727,8 @@ An external financial system that handles budget allocation, fund approval, and 
 | Usability Requirements ID | Description                                                                                                                                                         | Priority | Author        |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------- |
 | UR-01                     | The system shall allow users to complete the most common actions (e.g., submitting a venue booking request, submitting a budget request) within 3 navigation steps. | High     | Adeeb Darwisy |
-| UR-02                     | The interface shall support localization for English and Malay languages.                                                                                           | High     | Adeeb Darwisy |
+| UR-02 | The interface shall provide localisation for **English and Malay** with **≥ 95 % of user-visible strings translated** and a **user-selectable language toggle** in profile settings; untranslated fallback strings must not exceed 5 % per release. | High | Adeeb Darwisy |
+
 
 <p align="center"><em>Table 3.16 Usability requirements</em></p>
 </div>

@@ -30,3 +30,8 @@
 |-----------|-------------|-----------------------|--------|--------|
 | CH-07 | SRS.md (§ 3.2 Performance Requirements) | • Replaced ambiguous wording in PR-01 with measurable concurrency + response-time SLA (500 users, P95 ≤ 2 s). <br>• Replaced PR-02 “respond within 2 s” with tighter, clearly-scoped login SLA (P95 ≤ 1 s, worst-case ≤ 1.5 s). | Zhi Xuan | Close Content Defects PR-01 & PR-02 (Session S002) |
 
+## 20-06-2025 — Localisation Requirement Quantified (CH-08)
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-08 | SRS.md (§ 3.3 Usability – Table 3.16) | Updated UR-02 to specify ≥ 95 % bilingual coverage, a UI language toggle in user settings, and a hard cap of 5 % untranslated fallback strings per release. | Zhi Xuan | Resolve Content Defect UR-02 (Session S002) |
