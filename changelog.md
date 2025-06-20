@@ -53,3 +53,9 @@
 | Change ID | File / Area | Description of Change | Author | Reason |
 |-----------|-------------|-----------------------|--------|--------|
 | CH-11 | SRS.md (§ 3.8 C Agreement Defects & Conflict Analysis) | • Added “Resolved in CH-08” note to UR-02 row and “Resolved in CH-09” note to AVAIL-01 row.<br>• Removed severity for resolved items.<br>• Updated Conflict C-04 status to **Resolved (Y)** in § 3.8.4. | Zhi Xuan | Document closure of outstanding Agreement defects after implementing quantifiable localisation and 24 × 7 availability. |
+
+## 20-06-2025 — Conflict-Resolution Evidence Added (CH-12)
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-12 | `Conflict_Resolution_Proofs/` folder + SRS.md (§ 3.8) | • Added five PNG screenshots (**C-01.png … C-05.png**) that capture the Teams negotiations for each conflict.<br>• Embedded references to those images in the Conflict Analysis / Resolution tables and labelled them IMG-001 → IMG-005.<br>• Merged the standalone “Supporting Information” Word doc into **TT5L_G6_SRS.md** so all validation artefacts live in a single source. | Zhi Xuan | Provide instructor-requested proof of conflict-resolution technique and keep SRS self-contained. |

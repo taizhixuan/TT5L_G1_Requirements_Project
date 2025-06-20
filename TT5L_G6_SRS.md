@@ -1115,6 +1115,7 @@ The portability requirements for the system are as follows:
 | CH-09 | § 3.7 Attribute Tables (Table 3.28 Availability, 3.29 Security, 3.30 Maintainability) | - Refined AVAIL-01 to 24 × 7 target with planned-maintenance clause.<br>- Decomposed SEC-01 into SEC-01a Encryption, SEC-01b RBAC, SEC-01c Audit & Compliance (metric-based).<br>- Re-wrote MAIN-01 with additional quantitative criteria (OpenAPI coverage, cyclomatic-complexity ceiling). | Zhi Xuan | 20-6-2025 | S002 |
 | CH-10 | § 3.3 Usability (Table 3.16), § 3.4 Interface (Table 3.18), § 3.5 Data (Table 3.24), § 3.7 Portability (Table 3.31) | - Quantified UR-01 (≤ 3 navigation actions, ≥ 90 % first-try success).<br>- Added throughput & latency metrics to DBR-02; removed duplicated concurrency from PR-01.<br>- Re-wrote INT-13 with API versioning (URI *v1*), application/json, HAL links.<br>- Enhanced PORT-01 with explicit OS/LTS versions, Docker 20.10+, Kubernetes 1.29 manifests. | Zhi Xuan | 20-6-2025 | S002 |
 | CH-11 | § 3.8 Supporting Information -- Agreement Table & Conflict Resolution | Marked UR-02 and AVAIL-01 mismatches as resolved (fixed in CH-08 & CH-09) | Zhi Xuan | 20-6-2025 | S002 |
+| CH-12 | Conflict-Resolution proofs & § 3.8 merge | Added C-01.png – C-05.png to `/Conflict_Resolution_Proofs`; inserted image refs and full Supporting-Information section into SRS.md | Zhi Xuan | 30-6-2025 | S002 |
 
 ## 3.8.6 Requirements Traceability Matrix
 
