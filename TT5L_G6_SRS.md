@@ -1074,29 +1074,29 @@ The portability requirements for the system are as follows:
 
 ## 3.8.3 Conflict Analysis
 
-| Conflict ID | Conflict Type | Conflict Description | Conflict Analysis | Stakeholders Involved | Session ID |
-|-------------|---------------|---------------------|-------------------|---------------------|------------|
-| C-01 | Data | FR-04 bundled all notification channels (e-mail, push, in-app) in a single requirement. | QA could not design channel-specific test cases; Dev team needed separate release toggles. | Zhi Xuan, Si Ting, Nelly | S002 |
-| C-02 | Interest | FR-03 coupled RSVP submission with live attendance analytics. | Staged deployment impossible; analytics service on separate sprint. | Zhi Xuan, Si Ting, Nelly | S002 |
-| C-03 | Value | AVAIL-01 limited uptime (08:00--18:00 Mon-Fri) vs. clubs' evening/weekend events. | Requirement excluded peak usage; ops SLA mis-aligned. | Zhi Xuan, Si Ting, Nelly | S002 |
-| C-04 | Data | PR-01 vague "without noticeable degradation." | Cannot derive performance test scripts without concrete SLA. | Zhi Xuan, Si Ting, Nelly | S002 |
-| C-05 | Data | SEC-01 lumped encryption & RBAC with no metrics. | Security auditors require cipher strength, SoD, log-retention metrics. | Zhi Xuan, Si Ting, Nelly | S002 |
-| C-06 | | FR-04 lacks UC011 | Traceability broken -- functional requirement exists but no modeled use case | | |
-| C-07 | | FR-07 wording implies budget approval authority within the system. | Contradicts TeamVision: "merely integrates... no approval authority" | | S003 |
-| C-08 | | DRR-04 vague anonymization/archive | May violate compliance; retention unclear | | S004 |
+| Conflict ID | Conflict Description | Conflict Analysis | Stakeholders Involved | Session ID |
+|-------------|---------------------|-------------------|---------------------|------------|
+| C-01 | FR-04 bundled all notification channels (e-mail, push, in-app) in a single requirement. | QA could not design channel-specific test cases; Dev team needed separate release toggles. | Zhi Xuan, Si Ting, Nelly | S002 |
+| C-02 | FR-03 coupled RSVP submission with live attendance analytics. | Staged deployment impossible; analytics service on separate sprint. | Zhi Xuan, Si Ting, Nelly | S002 |
+| C-03 | AVAIL-01 limited uptime (08:00--18:00 Mon-Fri) vs. clubs' evening/weekend events. | Requirement excluded peak usage; ops SLA mis-aligned. | Zhi Xuan, Si Ting, Nelly | S002 |
+| C-04 | PR-01 vague "without noticeable degradation." | Cannot derive performance test scripts without concrete SLA. | Zhi Xuan, Si Ting, Nelly | S002 |
+| C-05 | SEC-01 lumped encryption & RBAC with no metrics. | Security auditors require cipher strength, SoD, log-retention metrics. | Zhi Xuan, Si Ting, Nelly | S002 |
+| C-06 | FR-04 lacks UC011 | Traceability broken -- functional requirement exists but no modeled use case | | |
+| C-07 | FR-07 wording implies budget approval authority within the system. | Contradicts TeamVision: "merely integrates... no approval authority" | | S003 |
+| C-08 | DRR-04 vague anonymization/archive | May violate compliance; retention unclear | | S004 |
 
 ## 3.8.4 Conflict Analysis and Resolution
 
-| Conflict ID | Technique | Conflict Resolution Strategy | Resolved (Y/N) | Outcome (If Resolved) | Justification |
-|-------------|-----------|----------------------------|----------------|---------------------|---------------|
-| C-01 | Negotiation | Split FR-04 into FR-04a Email, FR-04b Push, FR-04c In-app (CH-06) | Y | Requirements & UC014 updated, channel tests unblocked | Enables channel-specific regression testing and incremental release toggles |
-| C-02 | Negotiation | Separated FR-03 into RSVP (FR-03a) and Live Analytics (FR-03b) (CH-06) | Y | RSVP shipped Sprint 5; analytics shipped Sprint 6 | Decouples deployment; reduces risk while analytics pipeline matures |
-| C-03 | Creative Solution | Extended AVAIL-01 to ≥ 99.5 % uptime 24 × 7, ≤ 2 h planned maintenance/mo (CH-09) | Y | Ops SLA signed; DR fail-over drill passed 25-Jun | Aligns requirement with evening/weekend club activity patterns |
-| C-04 | Negotiation | Re-wrote PR-01 and added PR-02 login SLA (CH-07) | Y | JMeter load-test script updated; P95 targets met in CI | Concrete SLAs allow QA and DevOps to automate performance gates |
-| C-05 | Negotiation | Decomposed SEC-01 into SEC-01a Encryption, SEC-01b RBAC, SEC-01c Audit & Pen-test (CH-09) | Y | Security design review 27-Jun: 0 critical findings | Meets CISO policy; metrics trackable in quarterly security audit |
-| C-06 | | Add UC011 -- Receive Notifications to match FR-04 | | | |
-| C-07 | | Requirement refinement + Scope validation | Y | Added constraint: "Submit requests *without* approval capability" | Aligns with ContextObjects justification, as mentioned in the final scope "merely integrates... no approval authority" |
-| C-08 | | Redefine DRR-04 with method: SHA256 hashing, nulling, or timed retention | | | |
+| Conflict ID | Conflict Resolution Strategy | Resolved (Y/N) | Outcome (If Resolved) | Justification |
+|-------------|----------------------------|----------------|---------------------|---------------|
+| C-01 | Split FR-04 into FR-04a Email, FR-04b Push, FR-04c In-app (CH-06) | Y | Requirements & UC014 updated, channel tests unblocked | Enables channel-specific regression testing and incremental release toggles |
+| C-02 | Separated FR-03 into RSVP (FR-03a) and Live Analytics (FR-03b) (CH-06) | Y | RSVP shipped Sprint 5; analytics shipped Sprint 6 | Decouples deployment; reduces risk while analytics pipeline matures |
+| C-03 | Extended AVAIL-01 to ≥ 99.5 % uptime 24 × 7, ≤ 2 h planned maintenance/mo (CH-09) | Y | Ops SLA signed; DR fail-over drill passed 25-Jun | Aligns requirement with evening/weekend club activity patterns |
+| C-04 | Re-wrote PR-01 and added PR-02 login SLA (CH-07) | Y | JMeter load-test script updated; P95 targets met in CI | Concrete SLAs allow QA and DevOps to automate performance gates |
+| C-05 | Decomposed SEC-01 into SEC-01a Encryption, SEC-01b RBAC, SEC-01c Audit & Pen-test (CH-09) | Y | Security design review 27-Jun: 0 critical findings | Meets CISO policy; metrics trackable in quarterly security audit |
+| C-06 | Add UC011 -- Receive Notifications to match FR-04 | | | |
+| C-07 | Requirement refinement + Scope validation | Y | Added constraint: "Submit requests *without* approval capability" | Aligns with ContextObjects justification, as mentioned in the final scope "merely integrates... no approval authority" |
+| C-08 | Redefine DRR-04 with method: SHA256 hashing, nulling, or timed retention | | | |
 
 ### 3.8.4.1 Evidence of Conflict Resolution (Screenshots)
 
@@ -1108,7 +1108,7 @@ The following annotated WhatsApp chat screenshots substantiate the techniques we
 **Figure 3.16 — C-02 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
 <img src="Conflict_Resolution_Proofs/C-02.png" alt="WhatsApp chat resolving C-02 — split RSVP & analytics" style="max-width:100%;">
 
-**Figure 3.17 — C-03 Creative-solution (Zhi Xuan, Si Ting, Nelly)**  
+**Figure 3.17 — C-03 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
 <img src="Conflict_Resolution_Proofs/C-03.png" alt="WhatsApp chat resolving C-03 — 24×7 availability compromise" style="max-width:100%;">
 
 **Figure 3.18 — C-04 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
