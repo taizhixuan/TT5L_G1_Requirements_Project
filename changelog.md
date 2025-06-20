@@ -11,3 +11,9 @@
 | Change ID | File / Area | Description of Change | Author | Reason |
 |-----------|-------------|-----------------------|--------|--------|
 | CH-04 | SRS.md (§ 2 References) | • Replaced ISO 29148 entry with full APA-7 format (corporate authors, italicised title, correct DOI).<br>• Added missing sources: OAuth 2.0 RFC 6749, WCAG 2.1 guideline, Docker Desktop manual v4.30, Firebase Cloud Messaging docs, MMU IT security & retention policy.<br>• Numbered list remains in alphabetical order by first author / organisation. | Zhi Xuan | Close Documentation Defects DOC-REF-01 & DOC-REF-02 (Session S002) |
+
+## 20-06-2025 — Glossary & Acronyms Update (CH-05)
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-05 | SRS.md (§ 1.4 Definitions) | Inserted a comprehensive, alphabetised table that now includes 12 previously-missing acronyms (RBAC, OAuth 2.0, REST, TLS, WCAG, KPI, Docker, API, SMTP, CRUD, FCM, SSO) alongside existing key terms; updated caption to “Definitions, acronyms, and abbreviations”. | Zhi Xuan | Resolve Documentation Defect *1.4 Definitions — Table 37* (Session S002) |

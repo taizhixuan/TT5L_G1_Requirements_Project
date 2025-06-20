@@ -188,16 +188,32 @@ its operating context.
 
 <div align="center">
 
-|      Term / Acronym      | Definition                                                                                                                    |
-| :----------------------: | :---------------------------------------------------------------------------------------------------------------------------- |
-|     **Club Officer**     | Elected committee member (e.g., President, Secretary, Treasurer) authorised to manage club data, events, and budgets in SCMS. |
-|     **Club Member**      | Ordinary student member of a club; may maintain a personal profile and RSVP to approved events.                               |
-|    **Event Proposal**    | Formal request that specifies a club activity, expected costs, and required venue; subject to multi-level approval.           |
-| **Budget Ledger Entry**  | Financial transaction record automatically posted from SCMS to UFMS once a budget item is approved.                           |
-| **Venue Reservation ID** | Unique identifier returned by CSRD confirming a successful room or space booking.                                             |
+| Term / Acronym | Definition |
+| :-------------: | :--------- |
+| **API** | *Application Programming Interface* — a set of rules and protocols for building and interacting with software applications. |
+| **Budget Ledger Entry** | Financial transaction record automatically posted from SCMS to UFMS once a budget item is approved. |
+| **Club Member** | Ordinary student member of a club; may maintain a personal profile and RSVP to approved events. |
+| **Club Officer** | Elected committee member (e.g., President, Secretary, Treasurer) authorised to manage club data, events, and budgets in SCMS. |
+| **CRUD** | *Create, Read, Update, Delete* — basic data-management operations supported by SCMS modules. |
+| **Docker** | Containerisation platform used to package and deploy SCMS services. |
+| **Event Proposal** | Formal request that specifies a club activity, expected costs, and required venue; subject to multi-level approval. |
+| **FCM** | *Firebase Cloud Messaging* — cross-platform messaging solution for sending notifications. |
+| **KPI** | *Key Performance Indicator* — a quantifiable measure used to evaluate the success of an activity. |
+| **OAuth 2.0** | Open standard for delegated authorisation used by the university SSO. |
+| **RBAC** | *Role-Based Access Control* — permission model that restricts actions based on user role. |
+| **REST** | *Representational State Transfer* — architectural style for stateless web APIs. |
+| **RSVP** | *Répondez s’il vous plaît* — confirmation from a member indicating event attendance. |
+| **SCMS** | *Student Club Management System* — the software product described in this SRS. |
+| **SMTP** | *Simple Mail Transfer Protocol* — internet standard for e-mail transmission. |
+| **SSO** | *Single Sign-On* — authentication mechanism allowing users to access multiple university systems with one set of credentials. |
+| **TLS** | *Transport Layer Security* — cryptographic protocol providing secure communication over a network. |
+| **UFMS** | *University Financial Management System* — MMU’s finance solution that processes budget allocations and ledger entries. |
+| **Venue Reservation ID** | Unique identifier returned by CSRD confirming a successful room or space booking. |
+| **WCAG** | *Web Content Accessibility Guidelines* — W3C standard for web accessibility. |
 
-<p align="center"><em>Table 1.4 Key terms used in this SRS</em></p>
+<p align="center"><em>Table 1.4 Definitions, acronyms, and abbreviations used in this SRS</em></p>
 </div>
+
 
 ---
 
