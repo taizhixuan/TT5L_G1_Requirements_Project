@@ -1100,22 +1100,22 @@ The portability requirements for the system are as follows:
 
 ### 3.8.4.1 Evidence of Conflict Resolution (Screenshots)
 
-The following annotated Microsoft Teams chat screenshots substantiate the techniques we used to resolve Conflicts C-01 → C-05 (§ 3.8.3).
+The following annotated WhatsApp chat screenshots substantiate the techniques we used to resolve Conflicts C-01 → C-05 (§ 3.8.3).
 
 **Figure 3.15 — C-01 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
-<img src="Conflict_Resolution_Proofs/C-01.png" alt="Teams chat resolving C-01 — split notification channels" style="max-width:100%;">
+<img src="Conflict_Resolution_Proofs/C-01.png" alt="WhatsApp chat resolving C-01 — split notification channels" style="max-width:100%;">
 
 **Figure 3.16 — C-02 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
-<img src="Conflict_Resolution_Proofs/C-02.png" alt="Teams chat resolving C-02 — split RSVP & analytics" style="max-width:100%;">
+<img src="Conflict_Resolution_Proofs/C-02.png" alt="WhatsApp chat resolving C-02 — split RSVP & analytics" style="max-width:100%;">
 
 **Figure 3.17 — C-03 Creative-solution (Zhi Xuan, Si Ting, Nelly)**  
-<img src="Conflict_Resolution_Proofs/C-03.png" alt="Teams chat resolving C-03 — 24×7 availability compromise" style="max-width:100%;">
+<img src="Conflict_Resolution_Proofs/C-03.png" alt="WhatsApp chat resolving C-03 — 24×7 availability compromise" style="max-width:100%;">
 
 **Figure 3.18 — C-04 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
-<img src="Conflict_Resolution_Proofs/C-04.png" alt="Teams chat resolving C-04 — concrete performance SLA" style="max-width:100%;">
+<img src="Conflict_Resolution_Proofs/C-04.png" alt="WhatsApp chat resolving C-04 — concrete performance SLA" style="max-width:100%;">
 
 **Figure 3.19 — C-05 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
-<img src="Conflict_Resolution_Proofs/C-05.png" alt="Teams chat resolving C-05 — security requirement decomposition" style="max-width:100%;">
+<img src="Conflict_Resolution_Proofs/C-05.png" alt="WhatsApp chat resolving C-05 — security requirement decomposition" style="max-width:100%;">
 
 ---
 
