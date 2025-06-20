@@ -205,9 +205,13 @@ its operating context.
 
 ## 2 References
 
-<a id="ref-iso"></a>
+1. <a id="ref-iso"></a>International Organization for Standardization, International Electrotechnical Commission, & Institute of Electrical and Electronics Engineers. (2018). *Systems and software engineering—Life cycle processes—Requirements engineering* (ISO/IEC/IEEE 29148:2018). https://doi.org/10.1109/IEEESTD.2018.8559686  
+2. Internet Engineering Task Force. (2012). *The OAuth 2.0 authorization framework* (RFC 6749). https://doi.org/10.17487/RFC6749  
+3. World Wide Web Consortium. (2018). *Web Content Accessibility Guidelines (WCAG) 2.1*. https://www.w3.org/TR/WCAG21/  
+4. Docker Inc. (2024). *Docker Desktop user manual* (Version 4.30). https://docs.docker.com/desktop/  
+5. Google. (2025). *Firebase Cloud Messaging documentation*. https://firebase.google.com/docs/cloud-messaging  
+6. Multimedia University. (2024). *University IT security & data-retention policy* (Version 2.3). https://intranet.mmu.edu.my/policies/it-security  
 
-1.  ISO/IEC/IEEE International Standard - Systems and software engineering -- Life cycle processes -- Requirements engineering. (2018). _ISO/IEC/IEEE 29148:2018(E)_, 1–104. doi:10.1109/IEEESTD.2018.8559686
 
 ---
 
