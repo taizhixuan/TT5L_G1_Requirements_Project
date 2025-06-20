@@ -1076,11 +1076,11 @@ The portability requirements for the system are as follows:
 
 | Conflict ID | Conflict Type | Conflict Description | Conflict Analysis | Stakeholders Involved | Session ID |
 |-------------|---------------|---------------------|-------------------|---------------------|------------|
-| C-01 | Data | FR-04 bundled all notification channels (e-mail, push, in-app) in a single requirement. | QA could not design channel-specific test cases; Dev team needed separate release toggles. | Zhi Xuan, Nelly, Hazim, Si Ting | S002 |
-| C-02 | Interest | FR-03 coupled RSVP submission with live attendance analytics. | Staged deployment impossible; analytics service on separate sprint. | Zhi Xuan, Nelly, Hazim, Si Ting | S002 |
-| C-03 | Value | AVAIL-01 limited uptime (08:00--18:00 Mon-Fri) vs. clubs' evening/weekend events. | Requirement excluded peak usage; ops SLA mis-aligned. | Zhi Xuan, Nelly, Hazim, Si Ting | S002 |
-| C-04 | Data | PR-01 vague "without noticeable degradation." | Cannot derive performance test scripts without concrete SLA. | Zhi Xuan, Nelly, Hazim, Si Ting | S002 |
-| C-05 | Data | SEC-01 lumped encryption & RBAC with no metrics. | Security auditors require cipher strength, SoD, log-retention metrics. | Zhi Xuan, Nelly, Hazim, Si Ting | S002 |
+| C-01 | Data | FR-04 bundled all notification channels (e-mail, push, in-app) in a single requirement. | QA could not design channel-specific test cases; Dev team needed separate release toggles. | Zhi Xuan, Si Ting, Nelly | S002 |
+| C-02 | Interest | FR-03 coupled RSVP submission with live attendance analytics. | Staged deployment impossible; analytics service on separate sprint. | Zhi Xuan, Si Ting, Nelly | S002 |
+| C-03 | Value | AVAIL-01 limited uptime (08:00--18:00 Mon-Fri) vs. clubs' evening/weekend events. | Requirement excluded peak usage; ops SLA mis-aligned. | Zhi Xuan, Si Ting, Nelly | S002 |
+| C-04 | Data | PR-01 vague "without noticeable degradation." | Cannot derive performance test scripts without concrete SLA. | Zhi Xuan, Si Ting, Nelly | S002 |
+| C-05 | Data | SEC-01 lumped encryption & RBAC with no metrics. | Security auditors require cipher strength, SoD, log-retention metrics. | Zhi Xuan, Si Ting, Nelly | S002 |
 | C-06 | | FR-04 lacks UC011 | Traceability broken -- functional requirement exists but no modeled use case | | |
 | C-07 | | FR-07 wording implies budget approval authority within the system. | Contradicts TeamVision: "merely integrates... no approval authority" | | S003 |
 | C-08 | | DRR-04 vague anonymization/archive | May violate compliance; retention unclear | | S004 |
@@ -1097,6 +1097,27 @@ The portability requirements for the system are as follows:
 | C-06 | | Add UC011 -- Receive Notifications to match FR-04 | | | |
 | C-07 | | Requirement refinement + Scope validation | Y | Added constraint: "Submit requests *without* approval capability" | Aligns with ContextObjects justification, as mentioned in the final scope "merely integrates... no approval authority" |
 | C-08 | | Redefine DRR-04 with method: SHA256 hashing, nulling, or timed retention | | | |
+
+### 3.8.4.1 Evidence of Conflict Resolution (Screenshots)
+
+The following annotated Microsoft Teams chat screenshots substantiate the techniques we used to resolve Conflicts C-01 → C-05 (§ 3.8.3).
+
+**Figure 3.15 — C-01 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
+<img src="Conflict_Resolution_Proofs/C-01.png" alt="Teams chat resolving C-01 — split notification channels" style="max-width:100%;">
+
+**Figure 3.16 — C-02 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
+<img src="Conflict_Resolution_Proofs/C-02.png" alt="Teams chat resolving C-02 — split RSVP & analytics" style="max-width:100%;">
+
+**Figure 3.17 — C-03 Creative-solution (Zhi Xuan, Si Ting, Nelly)**  
+<img src="Conflict_Resolution_Proofs/C-03.png" alt="Teams chat resolving C-03 — 24×7 availability compromise" style="max-width:100%;">
+
+**Figure 3.18 — C-04 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
+<img src="Conflict_Resolution_Proofs/C-04.png" alt="Teams chat resolving C-04 — concrete performance SLA" style="max-width:100%;">
+
+**Figure 3.19 — C-05 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
+<img src="Conflict_Resolution_Proofs/C-05.png" alt="Teams chat resolving C-05 — security requirement decomposition" style="max-width:100%;">
+
+---
 
 ## 3.8.5 Change Log
 
