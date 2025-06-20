@@ -47,3 +47,9 @@
 | Change ID | File / Area | Description of Change | Author | Reason |
 |-----------|-------------|-----------------------|--------|--------|
 | CH-10 | SRS.md (Tables 3.16, 3.18, 3.24, 3.31) | • **UR-01** now unambiguous: max 3 user interactions (click, tap, key-press) to complete top-3 tasks and ≥ 90 % users succeed on first attempt in moderated tests.<br>• **DBR-02** aligned with PR-01: 500 concurrent users **and** ≥ 50 tx/s mixed R/W at P95 latency ≤ 300 ms.<br>• **INT-13**: API URI `/api/v1/…`, `Content-Type: application/json`, responses include HAL `_links` for discoverability; backward compatibility guaranteed for minor updates.<br>• **PORT-01**: clarified target OS (Ubuntu 22.04 LTS, Windows Server 2022), Docker 20.10+, Kubernetes ≥ 1.29 deployment, Helm charts provided. | Zhi Xuan | Close S002 defects UR-01, DBR-02, INT-13, PORT-01 |
+
+## 20-06-2025 — Agreement-Mismatch Closure (CH-11)
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-11 | SRS.md (§ 3.8 C Agreement Defects & Conflict Analysis) | • Added “Resolved in CH-08” note to UR-02 row and “Resolved in CH-09” note to AVAIL-01 row.<br>• Removed severity for resolved items.<br>• Updated Conflict C-04 status to **Resolved (Y)** in § 3.8.4. | Zhi Xuan | Document closure of outstanding Agreement defects after implementing quantifiable localisation and 24 × 7 availability. |
