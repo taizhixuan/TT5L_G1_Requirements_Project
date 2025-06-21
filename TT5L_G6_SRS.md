@@ -296,6 +296,8 @@ A club officer role in the system is to manages club operations, those include:
 | Actors            | 1. Club Officer                                                                                                                              |
 | Pre-conditions    | 1. The users must be logged into the system.<br>2. The users must have access rights to edit their own profile.                              |
 | Post-conditions   | 1. The user's updated profile information is successfully saved in the system.<br>2. The changes are reflected in the user's profile view.   |
+| Main flow   | 1. The club officer clicks on “update profile”.<br>2.	The system fetches the current profile and loads it.<br>3.	The system displays the current profile to the user.<br>4. If changes were made to the profile, the system validates the new entered data.<br>5. If found valid, save into system and update the profile accordingly, show “profile updated” message.    |
+| Alternative flow   | •	If changes made were not valid, the system highlights the errors to the user.<br>•	If there were no changes were made; system returns to main page.<br>• If the system is not able to retrieve data from the database currently; it will display error message.   |
 
 <p align="center"><em>Table 3.2 Use Case Specification - Manage Profile</em></p>
 
@@ -325,6 +327,9 @@ A club officer role in the system is to manages club operations, those include:
 | Actors            | 1. Club Officer<br>2. Campus Space Reservation Database                                                                            |
 | Pre-conditions    | 1. The club officer is logged into the system.<br>2. The club officer has permissions to check venue availability and book venues. |
 | Post-conditions   | 1. Booking request is successfully recorded.<br>2. Confirmation or status is shown to the club officer.                            |
+| Main flow   | 1.	The club officer enters the event and venue preferences.<br>2.	The system will check for venue availability.<br>3.	if found available, the system asks the club officer to submit the booking request.<br>4. The system will return a booking ID and notify all relevant stake holders.|
+| Alternative flow   |•	If no venue was found available, the system will notify the user and prompt for a new slot/ venue.<br>•	If the system is not able to retrieve data from the database currently; it will display an error message.  |
+
 
 <p align="center"><em>Table 3.3 Use Case Specification - Book Venue</em></p>
 
@@ -354,6 +359,8 @@ A club officer role in the system is to manages club operations, those include:
 | Actors            | Club Officer                                                                            |
 | Pre-conditions    | 1. The Club Officer is logged into the system.<br>2. Event records exist in the system. |
 | Post-conditions   | 1. Attendance count is displayed for the selected event.                                |
+| Main flow   | 1.	The club officer picks an event they wish to monitor.<br>2.	The system fetches the RSVP list .<br>3.	The system fetches the check-in scans.<br>4.	The system computes the total counts.<br>5.	The system renders chart/summary about the event with the data.|
+| Alternative flow   |•	If the selected event does not exist in the system.<br>•	If the system is not able to retrieve data from the database currently; it will display an error message. |
 
 <p align="center"><em>Table 3.4 Use Case Specification - View Event Attendance Count</em></p>
 
@@ -383,6 +390,8 @@ A club officer role in the system is to manages club operations, those include:
 | Actors            | Club Officer                                                                                                        |
 | Pre-conditions    | 1. Officer is authenticated and authorised for membership management.<br>2. Target club is active.                  |
 | Post-conditions   | 1. Membership roster is updated to reflect any changes.<br>2. Audit log records the action.                         |
+| Main flow   |1.	The club officer selects “member management action”.<br>2.	The system loads three distinct options to choose from, add members, remove members and update member role.<br>3.	The club officer picks an option currently.<br>4.	The system loads the selected module.<br>5.	The system validates the input and performs the requested action.<br>6.	A confirmation message is displayed.|
+| Alternative flow   |Cancel Action<br>•	At any point before submitting the form, the officer may cancel the operation.<br>•	The system discards any entered data and returns to the member management menu.|
 
 <p align="center"><em>Table 3.5 Use Case Specification - Manage Club Members</em></p>
 
@@ -412,6 +421,8 @@ A club officer role in the system is to manages club operations, those include:
 | Actors            | Club Officer                                                                                                        |
 | Pre-conditions    | 1. Officer is authenticated.<br>2. Student is not already on the roster.<br>3. Club has capacity for new members.   |
 | Post-conditions   | 1. New member record is created in the system.<br>2. Welcome notification is sent to new member.                    |
+| Main flow   |1.	The club officer navigates to “Manage Club Members”.<br>2.	The club officer clicks on “Add members”.<br>3.	The system displays a form for the club officer to fill with the new member details, name, id, email and role.<br>4.	The system will record the input , validate the new member information and perform the requested action.<br>5.	A confirmation message is displayed.<br>6.	The system will then send a welcome notification to the new user email.|
+| Alternative flow   |Cancel Action<br>•	At any point before submitting the form, the officer may cancel the operation.<br>•	The system discards any entered data and returns to the member management menu.<br>Duplicate Entry<br>•	If the officer attempts to add a member who already exists in the club database:<br>a. The system alerts the officer about the duplicate.<br>b. The officer may choose to update the existing member's information or cancel the action.<br>Unable to write to the database<br>•	If the system is unable to connect to the database and write the new user to it.<br>•	The system will notify the user about the error and ask to try again later.|
 
 <p align="center"><em>Table 3.6 Use Case Specification - Add Members</em></p>
 
@@ -441,6 +452,8 @@ A club officer role in the system is to manages club operations, those include:
 | Actors            | Club Officer                                                                                                                                        |
 | Pre-conditions    | 1. Officer is authenticated.<br>2. Member to be removed exists on the roster.                                                                       |
 | Post-conditions   | 1. Member record is marked as inactive or removed (as per data retention policy DRR-04) in the system.<br>2. Removal action is logged for auditing. |
+| Main flow   |1.	The club officer navigates to “Manage Club Members”.<br>2.	The club officer clicks on “Remove Members”.<br>3.	The system prompts the club officer to search / select a member to remove.<br>4.	The system will record the input , validate the with the club member database and perform the requested action.<br>5.	A confirmation message is displayed.|
+| Alternative flow   |Cancel Action<br>•	At any point before submitting the form, the officer may cancel the operation.<br>•	The system discards any entered data and returns to the member management menu.<br>Non-existent Entry<br>•	If the officer tries to remove a member not found in the database:<br>a. The system notifies the officer.<br>b. The officer may re-enter the member information or return to the main menu.<br>Unable to write to the database<br>•	If the system is unable to connect to the database and write the new user to it.<br>•	The system will notify the user about the error and ask to try again later.|
 
 <p align="center"><em>Table 3.7 Use Case Specification - Remove Members</em></p>
 
@@ -470,6 +483,8 @@ A club officer role in the system is to manages club operations, those include:
 | Actors            | Club Officer                                                                                                        |
 | Pre-conditions    | 1. Officer is authenticated.<br>2. Target member exists on the roster.<br>3. Desired role is valid.                 |
 | Post-conditions   | 1. Member’s role is updated in the system.<br>2. Member is notified of the role change.                             |
+| Main flow   |1.	The club officer navigates to “Manage Club Members”.<br>2.	The club officer clicks on “Update  Member Role ”.<br>3.	The system prompts the club officer to search / select a member to update. <br>4.	The club officer selects the new assigned role from a drop-down menu.<br>5.	The system will record the input , validate the with the club member database and perform the requested action.<br>6.	A confirmation message is displayed.<br>7.	The member is notified of the change.|
+| Alternative flow   |Cancel Action<br>•	At any point before submitting the form, the officer may cancel the operation.<br>•	The system discards any entered data and returns to the member management menu.<br>Unable to write to the database<br>•	If the system is unable to connect to the database and write the new user to it.<br>•	The system will notify the user about the error and ask to try again later.|
 
 <p align="center"><em>Table 3.8 Use Case Specification - Update Member Role</em></p>
 
@@ -499,6 +514,9 @@ A club officer role in the system is to manages club operations, those include:
 | Actors            | Club Officer                                                                                                                 |
 | Pre-conditions    | 1. The Club Officer is logged into the system.<br>2. Event form inputs are available.                                        |
 | Post-conditions   | 1. New event is added and stored in the system.<br>2. Event is visible to Club Officer and club members.                     |
+| Main flow   |1.	The club officer selects “Create Event” option.<br>2.	The system displays a form, asking the club officer to enter relevant event information (name, date, time, description).<br>3.	The system will check for venue availability.<br>4.	The system will record the input , validate the with the venue and perform the requested action.<br>5.	The system will then submit the event creation request.<br>6.	The event gets stored in the system.<br>7.	The relevant stakeholders are notified about the event.|
+| Alternative flow   |Cancel Action<br>•	At any point before submitting the form, the officer may cancel the operation.<br>•	The system discards any entered data and returns to the member management menu.<br>Venue not available<br>•	If the selected venue is not available for booking<br>•	The system displays a message and prompts the user to select a new venue or another time to resolve the conflict.|
+
 
 <p align="center"><em>Table 3.9 Use Case Specification - Create Events</em></p>
 
@@ -528,6 +546,8 @@ A club officer role in the system is to manages club operations, those include:
 | Actors            | Club Officer                                                                                     |
 | Pre-conditions    | 1. The Club Officer is logged into the system.<br>2. Budget records are available in the system. |
 | Post-conditions   | 1. Budget overview is displayed.                                                                 |
+| Main flow   |1.	The club officer navigates to “View Budget”<br>2.	The system fetches the current budget details form the UFMS.<br>3.	The system displays the managed club budget information (allocated, spent, remaining)|
+| Alternative flow   |•	If the system does not find any budget records for the club:<br>a. The system displays a message indicating that no budget data is currently available.<br>b. The officer may choose to return to the main menu or retry later.<br>•	If the system is not able to retrieve data from the database currently; it will display an error message.|
 
 <p align="center"><em>Table 3.10 Use Case Specification - View Budget</em></p>
 
@@ -557,6 +577,8 @@ A club officer role in the system is to manages club operations, those include:
 | Actors            | Club Officer                                                                                                                                                       |
 | Pre-conditions    | 1. The club officer must be authenticated.                                                                                                                         |
 | Post-conditions   | 1. The budget allocation request is sent to the university's financial management system for approval.                                                             |
+| Main flow   |1.	The club officer navigates to “Submit Budget Allocation”<br>2.	The system displays a form for the club officer to fill.<br>3.	The club officer enters the purpose, and the amount requested<br>4.	If applicable the club officer can also attach supporting documents<br>5.	The system submits the request to the UFMS<br>6.	The system stores the submitted request.|
+| Alternative flow   |Cancel Action<br>•	At any point before submitting the form, the officer may cancel the operation.<br>•	The system discards any entered data and returns to the event creation menu.<br>System unavailability <br>•	If the system is not able to contact the UFMS; it will display an error message, prompting the user to try at a later time.|
 
 <p align="center"><em>Table 3.11 Use Case Specification - Submit Budget Allocation Request</em></p>
 
@@ -590,6 +612,8 @@ Participates in club activities, can RSVP to events, and view personal and club-
 | Actors            | 1. Club Member                                                                                                                              |
 | Pre-conditions    | 1. The users must be logged into the system.<br>2. The users must have access rights to edit their own profile.                             |
 | Post-conditions   | 1. The user's updated profile information is successfully saved in the system.<br>2. The changes are reflected in the user's profile view.  |
+| Main flow   |1.	The club member clicks on “update profile”.<br>2.	The system fetches the current profile and loads it.<br>3.	The system displays the current profile to the user.<br>4.	If changes were made to the profile, the system validates the new entered data.<br>5.	If found valid, save into system and update the profile accordingly, show “profile updated” message.  |
+| Alternative flow   |•	If changes made were not valid, the system highlights the errors to the user.<br>•	If there were no changes were made; system returns to main page.<br>•	If the system is not able to retrieve data from the database currently; it will display error message.|
 
 <p align="center"><em>Table 3.2 Use Case Specification - Manage Profile</em></p>
 
@@ -619,6 +643,8 @@ Participates in club activities, can RSVP to events, and view personal and club-
 | Actors            | Club Member                                                                                                                                                  |
 | Pre-conditions    | 1. The club member is logged into the system.<br>2. The event must be created and available for RSVP.                                                        |
 | Post-conditions   | 1. The RSVP request is saved in the system.<br>2. The event's attendance count is updated.<br>3. The club member receives a confirmation of successful RSVP. |
+| Main flow   |1.	The system list down the upcoming events <br>2.	The club member selects an event <br>3.	The system checks and compares with the current capacity<br>4.	The system inserts RSVP <br>5.	The system sends a confirmation to the club member via e-mail.|
+| Alternative flow   |Already RSVPed<br>•	If the club member already RSVPed to the selected event, the system offers a cancel option.<br>Over capacity limit.<br>•	If the selected event capacity reached limit, display a message stating that the event is full.|
 
 <p align="center"><em>Table 3.12 Use Case Specification - RSVP Events</em></p>
 
@@ -654,6 +680,8 @@ An external system that stores and manages data on available campus venues and t
 | Actors            | club officer                                                                                                                                                         |
 | Pre-conditions    | 1. The system is connected to the campus space reservation database.<br>2. Club officer initiates a venue availability check.                                        |
 | Post-conditions   | 1. Venue availability status is returned to the club officer.<br>2. Reservations are recorded in the database.<br>3. Availability status is updated in the database. |
+| Main flow   |1.	The system fetches the date/time and requirements<br>2.	The system validates the parameters <br>3.	If valid, the system queries the campus reservation DB and check for slots<br>4.	If a slot is found, display the available venues.|
+| Alternative flow   |Invalid Parameters<br>•	If the parameters are invalid, the system will show the validation errors and wait for a re-input.<br>No slots were found.<br>•	If there were no slots available after querying the campus reservation DB, the system displays the message “No venues available”.|
 
 <p align="center"><em>Table 3.13 Use Case Specification - Check Venue Availability</em></p>
 
@@ -689,6 +717,8 @@ An external financial system that handles budget allocation, fund approval, and 
 | Actors            | University Financial Management System                                                                                                                            |
 | Pre-conditions    | 1. A budget allocation request had been made.<br>2. The university financial management system has made a decision.                                               |
 | Post-conditions   | 1. Club Officers are notified of the decision.<br>2. If approved, the club ledger is updated.<br>3. If denied, a denial reason is logged.                         |
+| Main flow   |1.	The system receives budget allocation decision.<br>2.	The system verifies the message authenticity.<br>3.	If found valid, the system updates the club budget ledger<br>4.	Notifies the club officers of the decision.|
+| Alternative flow   |Invalid message <br>•	If the message was found invalid, the system logs the invalid message error and exits.<br>Budget request denied <br>•	If the budget request was denied, the system logs the denial reason and notify the club officers of the denial.|
 
 <p align="center"><em>Table 3.14 Use Case Specification - Receive Budget Allocation Request</em></p>
 
@@ -1135,7 +1165,9 @@ The following annotated WhatsApp chat screenshots substantiate the techniques we
 | CH-09 | § 3.7 Attribute Tables (Table 3.28 Availability, 3.29 Security, 3.30 Maintainability) | - Refined AVAIL-01 to 24 × 7 target with planned-maintenance clause.<br>- Decomposed SEC-01 into SEC-01a Encryption, SEC-01b RBAC, SEC-01c Audit & Compliance (metric-based).<br>- Re-wrote MAIN-01 with additional quantitative criteria (OpenAPI coverage, cyclomatic-complexity ceiling). | Zhi Xuan | 20-6-2025 | S002 |
 | CH-10 | § 3.3 Usability (Table 3.16), § 3.4 Interface (Table 3.18), § 3.5 Data (Table 3.24), § 3.7 Portability (Table 3.31) | - Quantified UR-01 (≤ 3 navigation actions, ≥ 90 % first-try success).<br>- Added throughput & latency metrics to DBR-02; removed duplicated concurrency from PR-01.<br>- Re-wrote INT-13 with API versioning (URI *v1*), application/json, HAL links.<br>- Enhanced PORT-01 with explicit OS/LTS versions, Docker 20.10+, Kubernetes 1.29 manifests. | Zhi Xuan | 20-6-2025 | S002 |
 | CH-11 | § 3.8 Supporting Information -- Agreement Table & Conflict Resolution | Marked UR-02 and AVAIL-01 mismatches as resolved (fixed in CH-08 & CH-09) | Zhi Xuan | 20-6-2025 | S002 |
-| CH-12 | Conflict-Resolution proofs & § 3.8 merge | Added C-01.png – C-05.png to `/Conflict_Resolution_Proofs`; inserted image refs and full Supporting-Information section into SRS.md | Zhi Xuan | 30-6-2025 | S002 |
+| CH-12 | Conflict-Resolution proofs & § 3.8 merge | Added C-01.png – C-05.png to `/Conflict_Resolution_Proofs`; inserted image refs and full Supporting-Information section into SRS.md | Zhi Xuan | 20-6-2025 | S002 |
+| CH-13 | § 3.1 Use case table definitions – Main and Alternative flows | Wrote main / alternative flow for each of the available use cases tables, following the activity diagram provided semantics.| Hazim | 21-6-2025 | S001 |
+
 
 ## 3.8.6 Requirements Traceability Matrix
 

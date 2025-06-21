@@ -1,5 +1,17 @@
 # Changelog
 
+## 19-06-2025 — functional requirements Table and use case diagram syntax Revised (CH-01)
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-01 | SRS.md (§ 3.0 Table 5, figure 2) |• Corrected the use case diagram syntax and content defect . <br> • A new column of use case ids is added to the functional requirement table that correctly label them to help with traceability| Hazim | The use case diagram was drawn in correctly according to the project scope.. “Receive Budget Allocation Request” is modelled as an «include» of “Submit Budget Allocation Request”—but it’s a separate actor activity, not a sub‑step. <br> Use Case IDs were added to align with [ISO/IEC/IEEE 15288:2015, 6.4.3.3 d) 2)] Maintain traceability of the system[/software] requirements.Use case ids help with tracing it across the document for easier identification / SEC-3.0 (S001) |
+
+## 19-06-2025 — functional requirements Table (CH-02)
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-02 | SRS.md (§ 3.0 Table 5 3.1) | • Reformatted the Functional Requirements table for clarity: split multi-part requirements () into “a”/“b” sub‑items reduce ambiguity  . <br> • A clearer description for club officer responsibilities. <br> •	Actor misassignment in UC012 was corrected to the right primary actor (Campus Space Reservation Database listed as primary actor instead of Club Officer). <br> • Fixed vague terms discovered across inspection sessions S001-003.| Hazim | 	Multiple functional requirements bundled multiple responsibilities and system use cases into a single requirement, which violated the atomicity principle of requirement writing as described in section 5.2.5 of ISO/IEC 2018, "Singular" principle.<br> Vague terminology was replaced to solidify sentences and remove subjectivity. <br> Actor misassignment correction ensures the integrity of the use case logic and system behavior mapping. / SEC-3.1 (S003) |
+
 ## 20-06-2025 — Non-functional Attribute Tables Revised (CH-03)
 
 | Change ID | File / Area | Description of Change | Author | Reason |
@@ -59,3 +71,10 @@
 | Change ID | File / Area | Description of Change | Author | Reason |
 |-----------|-------------|-----------------------|--------|--------|
 | CH-12 | `Conflict_Resolution_Proofs/` folder + SRS.md (§ 3.8) | • Added five PNG screenshots (**C-01.png … C-05.png**) that capture the Teams negotiations for each conflict.<br>• Embedded references to those images in the Conflict Analysis / Resolution tables and labelled them IMG-001 → IMG-005.<br>• Merged the standalone “Supporting Information” Word doc into **TT5L_G6_SRS.md** so all validation artefacts live in a single source. | Zhi Xuan | Provide instructor-requested proof of conflict-resolution technique and keep SRS self-contained. |
+
+## 20-06-2025 — Use case table defintions (CH-13)
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-12 | SRS.md (§ 3.1 use case Tables) | Wrote main / alternative flow for each of the available use cases tables, following the activity diagram provided semantics. | Hazim | Missing main and alternative flows caused content aswell as document defects, as the use case tables lacked clear execution logic, making it difficult to understand user-system interactions. It created validation gaps, and misaligned developer understanding. (Session S001)|
+
