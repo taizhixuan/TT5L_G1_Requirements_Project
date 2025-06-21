@@ -1079,7 +1079,7 @@ The portability requirements for the system are as follows:
 | **FR-04** | No corresponding use case defined for notification flow | Si Ting | Add UC011 – Receive Notifications to restore traceability | S004 | 4 |
 | Use Case Tables | All use cases lack Alternative/Exception Flows (e.g. UC002, UC006) | Si Ting | Add alt/exception flows to UC002, UC006, UC007, UC009 | S004 | 3 |
 | DRR-04 | Vague term “anonymized or archived” lacks technical clarity | Si Ting | Define method (e.g., SHA256 pseudonymisation, flag deletion, retention policy rules) | S004 | 3 |
-| UC006 | The use case does not include an alternative flow for handling unavailable or double-booked venues. This results in incomplete behavioral coverage. | Nelly | Add an alternative flow where the system notifies the user and suggests other available venues or time slots. | S005 | 3 |
+| UC002 | The use case does not include an alternative flow for handling unavailable or double-booked venues. This results in incomplete behavioral coverage. | Nelly | Add an alternative flow where the system notifies the user and suggests other available venues or time slots. | S005 | 3 |
 ### B. Documentation Defect
 
 | Page No or Section | Validation and Defect Description | Detected By | Comment / Suggested Fix | Session ID | Severity (1--5) |
