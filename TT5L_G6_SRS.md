@@ -1179,7 +1179,22 @@ The following annotated WhatsApp chat screenshots substantiate the techniques we
 
 | Req ID | Requirement Description | Linked Goal(s) | Feature(s) | Use Case(s) | Traceability Score (1-4) |
 |--------|------------------------|----------------|------------|-------------|-------------------------|
-| FR-01 | Enable members to view and update their personal profile | G-01 | UC001 | 4 |
+| FR-01 | Enable members to view and update their personal profile. | G-01 | Manage Profile | UC001 | 4 |
+| FR-02a | Integrate with the CSRD to check venue availability before booking. | G-12 | Book venue | UC012 | 4 |
+| FR-02b | Integrate with CSRD to submit  venue booking requests. | G-02 | Book venue | UC002 | 4 |
+| FR-03a | Allow club members to submit RSVPs for published events.  | G-11 | RSVP Events | UC011 | 4 |
+| FR-03b | Provide club officers with a live attendance count. | G-03 | View event attendance count | UC003 | 4 |
+| FR-04a | Send email notifications for approval/rejection/action. | G-14 | Receive system notifications | UC014 | 3 |
+| FR-04b | Send push notifications for approval/rejection/action. | G-14 | Receive system notifications | UC014 | 3 |
+| FR-04c | Send in app notifications for approval/rejection/action. | G-14 | Receive system notifications | UC014 | 3 |
+| FR-05a | Allow club officer to add new members. | G-05 | Manage club members | UC005 | 4 |
+| FR-05b | Allow club officer to remove new members. | G-06 | Manage club members | UC006 | 4 |
+| FR-05c | Allow club officer to update members roles. | G-07 | Manage club members | UC007 | 4 |
+| FR-06 | Allow club officer to create and plan events. | G-08 | Create events | UC008 | 4 |
+| FR-07a | Allow club officers to submit budget allocation requests. | G-10 | Submit budget allocation request | UC010 | 4 |
+| FR-07b | Allow UFMS to receive submitted budget allocation requests. | G-13 | Receive budget allocation request | UC010 | 4 |
+| FR-08 | Allow club officers to track budget and spending. | G-09 | View budget | UC009 | 4 |
+
 
 ## 3.8.7 Role in Requirements Validation, Negotiation & Management
 
