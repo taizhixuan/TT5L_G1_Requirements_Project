@@ -1206,6 +1206,7 @@ The following annotated WhatsApp chat screenshots substantiate the techniques we
 | Hazim | Reviewer (Inspection S001,S003) | 2 |
 | Zhi Xuan | Reviewer & Recorder (Inspection S002) | 1 |
 | Si Ting | Reviewer & Recorder (Inspection S004) | 1 |
+| Nelly | Reviewer & Recorder (Inspection S005) | 1 |
 
 **Note:** Students may participate in multiple roles across sessions.
 
