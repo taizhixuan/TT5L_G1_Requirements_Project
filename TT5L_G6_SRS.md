@@ -1168,8 +1168,8 @@ The following annotated WhatsApp chat screenshots substantiate the techniques we
 | CH-11 | § 3.8 Supporting Information -- Agreement Table & Conflict Resolution | Marked UR-02 and AVAIL-01 mismatches as resolved (fixed in CH-08 & CH-09) | Zhi Xuan | 20-6-2025 | S002 |
 | CH-12 | Conflict-Resolution proofs & § 3.8 merge | Added C-01.png – C-05.png to `/Conflict_Resolution_Proofs`; inserted image refs and full Supporting-Information section into SRS.md | Zhi Xuan | 20-6-2025 | S002 |
 | CH-13 | § 3.1 Use case table definitions – Main and Alternative flows | Wrote main / alternative flow for each of the available use cases tables, following the activity diagram provided semantics.| Hazim | 21-6-2025 | S001 |
-| CH-14 | § 3.1.1.2 Alternative Flow  | Added alterenative flow for unaavailable venue scenario | Nelly | 21-6-2025 | S005 |
-
+| CH-14 | § 3.1.1.2 Use case table definitions - Alternative Flow  | Added alterenative flow for unaavailable venue scenario | Nelly | 21-6-2025 | S005 |
+| CH-15 | § 1.1 Purpose - Product Goals  | Added missing goals | Nelly | 22-6-2025 | S005 |
 
 ## 3.8.6 Requirements Traceability Matrix
 
