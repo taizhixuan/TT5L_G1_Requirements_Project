@@ -1179,7 +1179,7 @@ The following annotated WhatsApp chat screenshots substantiate the techniques we
 
 | Req ID | Requirement Description | Linked Goal(s) | Feature(s) | Use Case(s) | Traceability Score (1-4) |
 |--------|------------------------|----------------|------------|-------------|-------------------------|
-| | | | | | |
+| FR-01 | Enable members to view and update their personal profile | G-01 | UC001 | 4 |
 
 ## 3.8.7 Role in Requirements Validation, Negotiation & Management
 
