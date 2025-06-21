@@ -1093,6 +1093,7 @@ The portability requirements for the system are as follows:
 | 1.4 Definitions -- Table 37 Acronyms/Abbrev. | Frequently-used acronyms missing: RBAC, OAuth 2.0, REST, TLS/HTTPS, WCAG, KPI, Docker appear in Sections 3 & 4 but are absent from glossary | Zhi Xuan | Add missing entries and regenerate alphabetical acronym list. | S002 | 2 |
 | Section 5.2 | Glossary missing critical acronyms: TLS, OAuth2, RBAC, KPI, Docker | Si Ting | Add definitions and reorder alphabetically | S004 | 2 |
 | Section 2 | No versioning metadata (Version No., Date, Author) | Si Ting | Add version history table to header or footer | S004 | 2 |
+| Page 109, 110, 111 | Several descriptions in the SRS contain vague or subjective language such as "may be involved", "adequate", and "ease of use", which reduce the clarity and make validation difficult. | Nelly | Replace the vague terms with specific measurable criteria or concrete roles. | S005 | 2 |
 
 ### C. Agreement Defect
 
@@ -1171,6 +1172,7 @@ The following annotated WhatsApp chat screenshots substantiate the techniques we
 | CH-13 | § 3.1 Use case table definitions – Main and Alternative flows | Wrote main / alternative flow for each of the available use cases tables, following the activity diagram provided semantics.| Hazim | 21-6-2025 | S001 |
 | CH-14 | § 3.1.1.2 Use case table definitions - Alternative Flow  | Added alterenative flow for unaavailable venue scenario | Nelly | 21-6-2025 | S005 |
 | CH-15 | § 1.1 Purpose - Product Goals  | Added missing goals | Nelly | 22-6-2025 | S005 |
+| CH-16 | § Page 109, 110, 111  | Clarified vague and subjective terms in multiple sections of the SRS by replacing phrases like "may be involved", and "adequate" with specific, measurable wording to improve document precision and validation readiness. | Nelly | 22-6-2025 | S005 |
 
 ## 3.8.6 Requirements Traceability Matrix
 
