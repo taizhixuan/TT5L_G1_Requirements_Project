@@ -1113,9 +1113,9 @@ The portability requirements for the system are as follows:
 | C-03 | AVAIL-01 limited uptime (08:00--18:00 Mon-Fri) vs. clubs' evening/weekend events. | Requirement excluded peak usage; ops SLA mis-aligned. | Zhi Xuan, Si Ting, Nelly | S002 |
 | C-04 | PR-01 vague "without noticeable degradation." | Cannot derive performance test scripts without concrete SLA. | Zhi Xuan, Si Ting, Nelly | S002 |
 | C-05 | SEC-01 lumped encryption & RBAC with no metrics. | Security auditors require cipher strength, SoD, log-retention metrics. | Zhi Xuan, Si Ting, Nelly | S002 |
-| C-06 | FR-04 lacks UC011 | Traceability broken -- functional requirement exists but no modeled use case | | |
-| C-07 | FR-07 wording implies budget approval authority within the system. | Contradicts TeamVision: "merely integrates... no approval authority" | | S004 |
-| C-08 | DRR-04 vague anonymization/archive | May violate compliance; retention unclear | | S004 |
+| C-06 | FR-04 lacks UC011	 | Documentation  | Traceability broken — cannot validate notification behavior | S004 |
+| C-07 |FR-07 wording implies system approves budget| Agreement  |Contradicts TeamVision: system only integrates, not approves | S004 |
+| C-08 |DRR-04 vague anonymization/archive	 | Agreement | May breach compliance — lacks lifecycle, policy, or technical scope| S004 |
 
 ## 3.8.4 Conflict Analysis and Resolution
 
@@ -1126,9 +1126,10 @@ The portability requirements for the system are as follows:
 | C-03 | Extended AVAIL-01 to ≥ 99.5 % uptime 24 × 7, ≤ 2 h planned maintenance/mo (CH-09) | Y | Ops SLA signed; DR fail-over drill passed 25-Jun | Aligns requirement with evening/weekend club activity patterns |
 | C-04 | Re-wrote PR-01 and added PR-02 login SLA (CH-07) | Y | JMeter load-test script updated; P95 targets met in CI | Concrete SLAs allow QA and DevOps to automate performance gates |
 | C-05 | Decomposed SEC-01 into SEC-01a Encryption, SEC-01b RBAC, SEC-01c Audit & Pen-test (CH-09) | Y | Security design review 27-Jun: 0 critical findings | Meets CISO policy; metrics trackable in quarterly security audit |
-| C-06 | Add UC011 -- Receive Notifications to match FR-04 | | | |
-| C-07 | Requirement refinement + Scope validation | Y | Added constraint: "Submit requests *without* approval capability" | Aligns with ContextObjects justification, as mentioned in the final scope "merely integrates... no approval authority" |
-| C-08 | Redefine DRR-04 with method: SHA256 hashing, nulling, or timed retention | | | |
+| C-06 |Add UC011 – Receive Notifications to match FR-04 | Y |	UC011 created to model notification logic |Fixes traceability issue; FR-04 now links to a use case and is testable |
+| C-07 |Reword FR-07 to clarify system only reflects external budget approval status | Y | FR-07 updated in SRS |Aligns with TeamVision scope; avoids misleading system capability |
+| C-08 |Rewrite DRR-04 with defined anonymization method and retention lifecycle | N | - | Requires legal/policy review to finalize acceptable anonymization process
+ |
 
 ### 3.8.4.1 Evidence of Conflict Resolution (Screenshots)
 
