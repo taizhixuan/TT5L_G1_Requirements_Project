@@ -1176,6 +1176,7 @@ The following annotated WhatsApp chat screenshots substantiate the techniques we
 | CH-14 | § 3.1.1.2 Use case table definitions - Alternative Flow  | Added alterenative flow for unaavailable venue scenario | Nelly | 21-6-2025 | S005 |
 | CH-15 | § 1.1 Purpose - Product Goals  | Added missing goals | Nelly | 22-6-2025 | S005 |
 | CH-16 | § Page 109, 110, 111  | Clarified vague and subjective terms in multiple sections of the SRS by replacing phrases like "may be involved", and "adequate" with specific, measurable wording to improve document precision and validation readiness. | Nelly | 22-6-2025 | S005 |
+| CH-17 | § 3.8.6 - Requirements Traceability Matrix | Added matrix mapping FR/NFR/UC to product goals to support validation and alignment  | Nelly | 22-6-2025 | S005 |
 
 ## 3.8.6 Requirements Traceability Matrix
 
