@@ -1113,7 +1113,7 @@ The portability requirements for the system are as follows:
 | C-04 | PR-01 vague "without noticeable degradation." | Cannot derive performance test scripts without concrete SLA. | Zhi Xuan, Si Ting, Nelly | S002 |
 | C-05 | SEC-01 lumped encryption & RBAC with no metrics. | Security auditors require cipher strength, SoD, log-retention metrics. | Zhi Xuan, Si Ting, Nelly | S002 |
 | C-06 | FR-04 lacks UC011 | Traceability broken -- functional requirement exists but no modeled use case | | |
-| C-07 | FR-07 wording implies budget approval authority within the system. | Contradicts TeamVision: "merely integrates... no approval authority" | | S003 |
+| C-07 | FR-07 wording implies budget approval authority within the system. | Contradicts TeamVision: "merely integrates... no approval authority" | | S004 |
 | C-08 | DRR-04 vague anonymization/archive | May violate compliance; retention unclear | | S004 |
 
 ## 3.8.4 Conflict Analysis and Resolution
