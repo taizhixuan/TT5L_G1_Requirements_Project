@@ -78,3 +78,34 @@
 |-----------|-------------|-----------------------|--------|--------|
 | CH-12 | SRS.md (§ 3.1 use case Tables) | Wrote main / alternative flow for each of the available use cases tables, following the activity diagram provided semantics. | Hazim | Missing main and alternative flows caused content aswell as document defects, as the use case tables lacked clear execution logic, making it difficult to understand user-system interactions. It created validation gaps, and misaligned developer understanding. (Session S001)|
 
+## 21-06-2025 — Use Case, Glossary & Policy Enhancements
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-13   | SRS.md (§ 3.1 Use Case Tables) |Added missing UC011 – Receive Notifications, aligned with FR-04a/b/c | Si Ting | FR-04 was unlinked to any use case, breaking traceability and test planning.|
+
+
+## 21-06-2025 — Use Case, Glossary & Policy Enhancements
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-14   |SRS.md (§ 3.1 UC002, UC006)   | Wrote alternative and exception flows for UC002 and UC006   | Si Ting | Use cases lacked behavioral error handling, causing content and validation gaps (Session S004).|
+
+## 21-06-2025 — Use Case, Glossary & Policy Enhancements
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-15   | SRS.md (§ 5.2 Glossary)    | Added missing acronyms: RBAC, TLS, OAuth2, REST, Docker, WCAG, KPI  | Si Ting | Glossary incomplete and violated ISO 29148 glossary inclusion criteria; key terms not explained. |
+
+## 21-06-2025 — Use Case, Glossary & Policy Enhancements
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-16   | SRS.md (§ 2 Version Info)     | Added version control metadata (Version number, Author, Last update)    | Si Ting |   Document lacked traceable version management metadata.|
+
+## 21-06-2025 — Use Case, Glossary & Policy Enhancements
+
+| Change ID | File / Area | Description of Change | Author | Reason |
+|-----------|-------------|-----------------------|--------|--------|
+| CH-17   | SRS.md (§ 3.5 DRR-04)    | Added missing acronyms: RBAC, TLS, OAuth2, REST, Docker, WCAG, KPI  | Si Ting | DRR-04 was vague and compliance-risky; lacked implementation or retention logic.   |
+
