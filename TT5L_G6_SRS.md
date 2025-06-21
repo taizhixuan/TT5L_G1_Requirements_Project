@@ -1081,6 +1081,8 @@ The portability requirements for the system are as follows:
 | DRR-04 | Vague term “anonymized or archived” lacks technical clarity | Si Ting | Define method (e.g., SHA256 pseudonymisation, flag deletion, retention policy rules) | S004 | 3 |
 | 3.1.1.2 Book Venue | The use case does not include an alternative flow for handling unavailable or double-booked venues. This results in incomplete behavioral coverage. | Nelly | Add an alternative flow where the system notifies the user and suggests other available venues or time slots. | S005 | 3 |
 | 1.1 Purpose | No product goals were originally included to support the system's rationale and traceability. | Nelly | Identify the product goals | S005 | 5 |
+| 3.8.6 Requirements Traceability Matrix | The initial SRS version lacked a traceability matrix to link requirements with use cases and product goals. | Nelly | Add matrix mapping FR/NFR?UC toproduct goals to support validation and alignment. | S005 | 5 |
+
 ### B. Documentation Defect
 
 | Page No or Section | Validation and Defect Description | Detected By | Comment / Suggested Fix | Session ID | Severity (1--5) |
