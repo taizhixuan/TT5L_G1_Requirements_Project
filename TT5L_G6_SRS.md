@@ -328,7 +328,7 @@ A club officer role in the system is to manages club operations, those include:
 | Pre-conditions    | 1. The club officer is logged into the system.<br>2. The club officer has permissions to check venue availability and book venues. |
 | Post-conditions   | 1. Booking request is successfully recorded.<br>2. Confirmation or status is shown to the club officer.                            |
 | Main flow   | 1.	The club officer enters the event and venue preferences.<br>2.	The system will check for venue availability.<br>3.	if found available, the system asks the club officer to submit the booking request.<br>4. The system will return a booking ID and notify all relevant stake holders.|
-| Alternative flow   |•	If no venue was found available, the system will notify the user and prompt for a new slot/ venue.<br>•	If the system is not able to retrieve data from the database currently; it will display an error message.  |
+| Alternative flow   |• If the selected venue is already booked, the system notifies the user and shows alternative time slots or venues.<br>•	If no venue was found available, the system will notify the user and prompt for a new slot/ venue.<br>•	If the system is not able to retrieve data from the database currently; it will display an error message.  |
 
 
 <p align="center"><em>Table 3.3 Use Case Specification - Book Venue</em></p>
