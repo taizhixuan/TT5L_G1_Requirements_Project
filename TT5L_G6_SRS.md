@@ -1041,11 +1041,11 @@ The portability requirements for the system are as follows:
 
 | Session ID | Date and Time | Technique | Section Reviewed | Participant & Role | No. of Defect |
 |------------|---------------|-----------|------------------|-------------------|---------------|
-| S001 | 13 Jun 2025<br>10:00 PM | Inspection | Section 3.1 | Hazim<br>(Reviewer, Recoder) | 12 |
-| S002 | 15 Jun 2025<br>2:00 PM - 5:00 PM | Inspection | Section 1.4, Section 2, Section 3.2 → 3.7<br>(Non-functional & Interfaces),<br>Figures & Tables | Zhi Xuan<br>(Reviewer, Recorder) | 17 |
-| S003 | 18 Jun 2025<br>11:30 PM | Inspection | Section 3.1<br>(second Review of the use-case tables) | Hazim<br>(Reviewer, Recorder) | 3 |
-| S004 | 20 Jun 2025<br>8:00am | Inspection | Section 1.4 (Glossary), 2 (References),<br>3.5.5--3.5.7 (Retention & Recovery) | Si Ting<br>(Reviewer, Recorder) | 6 |
-| S005 | 21 Jun 2025<br>121:00 PM | Inspection | ... | Nelly<br>(Reviewer, Recorder) | 4 |
+| S001 | 13 Jun 2025<br>10:00 PM | Inspection | Section 3.1 | HAZIM ELAMIN MOHAMED ALI MUSA<br>(Reviewer, Recoder) | 12 |
+| S002 | 15 Jun 2025<br>2:00 PM - 5:00 PM | Inspection | Section 1.4, Section 2, Section 3.2 → 3.7<br>(Non-functional & Interfaces),<br>Figures & Tables | TAI ZHI XUAN<br>(Reviewer, Recorder) | 17 |
+| S003 | 18 Jun 2025<br>11:30 PM | Inspection | Section 3.1<br>(second Review of the use-case tables) | HAZIM ELAMIN MOHAMED ALI MUSA<br>(Reviewer, Recorder) | 3 |
+| S004 | 20 Jun 2025<br>8:00am | Inspection | Section 1.4 (Glossary), 2 (References),<br>3.5.5--3.5.7 (Retention & Recovery) | SAY SI TING<br>(Reviewer, Recorder) | 6 |
+| S005 | 21 Jun 2025<br>121:00 PM | Inspection | ... | IZZA NELLY BINTI MOHD NASIR<br>(Reviewer, Recorder) | 4 |
 
 **Note:** Compulsory to conduct Inspection technique. Students may conduct additional technique(s).
 
@@ -1055,70 +1055,70 @@ The portability requirements for the system are as follows:
 
 | Req ID or Section | Validation and Defect Description | Detected By | Comment / Suggested Fix | Session ID | Severity (1--5) |
 |-------------------|----------------------------------|-------------|------------------------|------------|-----------------|
-| FR‑04 | Bundles three distinct notification scenarios ("approved", "rejected", "requires action") in a single requirement---makes testing & scoping hard. | Hazim | Split into FR‑04a, FR‑04b, FR‑04c (e.g. "Notify on approval", "Notify on rejection", "Notify on action‑required"), and optionally retain FR04 as the umbrella requirement. | S001 | 3 |
-| FR-05 | Bundles add/remove/update member actions under one requirement, reducing quality and traceability. | Hazim | Split into FR‑05a (Add Member), FR‑05b (Remove Member), FR‑05c (Update Member Role), and optionally retain FR‑05 as the umbrella requirement. | S001 | 3 |
-| 3.0; Use Case Diagram | "Receive Budget Allocation Request" is modelled as an «include» of "Submit Budget Allocation Request"---but it's a separate actor activity, not a sub‑step. | Hazim | Separate into two distinct use cases (one for Club Officer submit, one for Finance System receive). | S001 | 1 |
-| FR‑01:08 | No use‑case IDs (UCxxx) assigned in the FR table---traceability to specific use cases is missing. | Hazim | Add a "Use Case ID" column to the FR table and assign each FR to one or more UC identifiers (e.g. UC001...UC008). | S001 | 3 |
-| Section 3.1 | Use case definitions for UCxxx, lack any alternative or exception flows---no behaviour is specified when an alternative scenario takes place (e.g. invalid input, authentication failure, DB errors). | Hazim | Add an "Alternative flow" row for each use case table definition. | S001 | 3 |
-| 3.1.2 | The Club Member subsection only lists "RSVP Events", missing the manage profile UC. | Hazim | Under 3.1.2, insert table for the remaining use case definition. | S001 | 3 |
-| UC012 | «Check Venue Availability» use-case assigns the actor role to the Campus Space Reservation Database instead of Club Officer. Misrepresents who initiates the submitting action. | Hazim | Make Club Officer the primary actor. Rephrase description and flow to reflect that the system interacts with the external DB, not that the DB initiates the use case. | S001 | 4 |
-| **FR-02** | Combines venue availability check and booking submission in one requirement → hampers atomic tests & traceability | Zhi Xuan | Split into FR-02a "Check availability" & FR-02b "Submit booking request". | S002 | 4 |
-| **FR-03** | Combines RSVP action with live attendance analytics; acceptance tests become ambiguous | Zhi Xuan | Separate into FR-03a "Submit RSVP" & FR-03b "View attendance count". | S002 | 3 |
-| **FR-04** | Aggregates all notification channels (e-mail, push, in-app) for three workflows into one statement | Zhi Xuan | Decompose into FR-04a/b/c by channel or workflow. | S002 | 3 |
-| UR-02 | Localisation required but no measurable acceptance criteria (coverage %, toggle, test) | Zhi Xuan | Add criteria: ≥ 95 % string coverage & user language toggle in settings. | S002 | 2 |
-| PR-01 (Performance) | Uses the subjective phrase "without noticeable degradation"; no concrete SLA for search, booking, RSVP, dashboard views | Zhi Xuan | Replace with measurable limits (e.g., ≤ 2 s page-level P95 for venue search & booking; ≤ 1 s RSVP POST) | S002 | 3 |
-| PR-02 (Performance) | Covers only login; omits response-time and throughput goals for all other critical tasks | Zhi Xuan | Add separate requirements per user journey (submit budget, load dashboard, download report, etc.). | S002 | 3 |
-| AVAIL-01 (Availability) | Guarantees 99.9 % uptime "Mon-Fri 8 am -- 6 pm"; clubs hold events evenings & weekends → requirement mis-aligned with real use | Zhi Xuan | Extend window to 24 × 7 or justify scheduled downtime & create off-hours fail-over plan. | S002 | 3 |
-| SEC-01 (Security) | Bundles encryption & RBAC yet omits cipher strength (TLS 1.3, AES-256), audit-logging or OWASP compliance metrics | Zhi Xuan | Split into SEC-01a/b/c; specify crypto standards, log-retention, quarterly penetration-test pass criteria. | S002 | 3 |
-| MAIN-01 (Maintainability) | Abstract "modular" statement---no verifiable metric (e.g., max coupling, test-coverage) | Zhi Xuan | Add measurable attributes: unit-test coverage ≥ 80 %, component coupling score < 6, API surface documented in OpenAPI v3. | S002 | 2 |
-| UR-01 (Usability) | "3 navigation steps" is ambiguous---does a modal confirmation count? | Zhi Xuan | Redefine step model & add success-rate metric (≥ 90 % users complete task first-try). | S002 | 2 |
-| DBR-02 vs. PR-01 | Concurrency figure (500 users) duplicated; DBR-02 lacks read/write TPS or locking contention limits | Zhi Xuan | Align numbers in a single source and add throughput target (≥ 50 txn/s at P95 latency ≤ 300 ms). | S002 | 2 |
-| INT-13 (APIs) | States "RESTful" but omits versioning or HATEOAS; cannot ensure backward compatibility | Zhi Xuan | Add URI-versioning rule (*v1*), JSON media type, and HAL links for navigability. | S002 | 2 |
-| PORT-01 | Only lists Linux/Windows; no minimum OS versions or container runtime spec; ignores orchestration needs | Zhi Xuan | Specify tested OS/LTS versions and Kubernetes/Docker-Compose descriptors. | S002 | 1 |
-| **UC012** | Actor misassignment: Campus Space Reservation Database listed as primary actor instead of Club Officer | Hazim | Replace with the club officer as a primary actor and have the venue reservation system as a secondary actor | S003 | 4 |
-| **FR-07** | Vague term "seamlessly submit"; its subjective and lack verifiability | Hazim | Specify: "Submit via authenticated API connection to university finance system" | S003 | 3 |
-| **FR-04** | No corresponding use case defined for notification flow | Si Ting | Add UC011 – Receive Notifications to restore traceability | S004 | 4 |
-| Use Case Tables | All use cases lack Alternative/Exception Flows (e.g. UC002, UC006) | Si Ting | Add alt/exception flows to UC002, UC006, UC007, UC009 | S004 | 3 |
-| DRR-04 | Vague term “anonymized or archived” lacks technical clarity | Si Ting | Define method (e.g., SHA256 pseudonymisation, flag deletion, retention policy rules) | S004 | 3 |
-| 3.1.1.2 Book Venue _ Alternative Flow | The use case does not include an alternative flow for handling unavailable or double-booked venues. This results in incomplete behavioral coverage. | Nelly | Add an alternative flow where the system notifies the user and suggests other available venues or time slots. | S005 | 3 |
-| 1.1 Purpose - Product Goals | No product goals were originally included to support the system's rationale and traceability. | Nelly | Identify the product goals | S005 | 5 |
-| 3.8.6 Requirements Traceability Matrix | The initial SRS version lacked a traceability matrix to link requirements with use cases and product goals. | Nelly | Add matrix mapping FR/NFR?UC toproduct goals to support validation and alignment. | S005 | 5 |
+| FR‑04 | Bundles three distinct notification scenarios ("approved", "rejected", "requires action") in a single requirement---makes testing & scoping hard. | HAZIM ELAMIN MOHAMED ALI MUSA | Split into FR‑04a, FR‑04b, FR‑04c (e.g. "Notify on approval", "Notify on rejection", "Notify on action‑required"), and optionally retain FR04 as the umbrella requirement. | S001 | 3 |
+| FR-05 | Bundles add/remove/update member actions under one requirement, reducing quality and traceability. | HAZIM ELAMIN MOHAMED ALI MUSA | Split into FR‑05a (Add Member), FR‑05b (Remove Member), FR‑05c (Update Member Role), and optionally retain FR‑05 as the umbrella requirement. | S001 | 3 |
+| 3.0; Use Case Diagram | "Receive Budget Allocation Request" is modelled as an «include» of "Submit Budget Allocation Request"---but it's a separate actor activity, not a sub‑step. | HAZIM ELAMIN MOHAMED ALI MUSA | Separate into two distinct use cases (one for Club Officer submit, one for Finance System receive). | S001 | 1 |
+| FR‑01:08 | No use‑case IDs (UCxxx) assigned in the FR table---traceability to specific use cases is missing. | HAZIM ELAMIN MOHAMED ALI MUSA | Add a "Use Case ID" column to the FR table and assign each FR to one or more UC identifiers (e.g. UC001...UC008). | S001 | 3 |
+| Section 3.1 | Use case definitions for UCxxx, lack any alternative or exception flows---no behaviour is specified when an alternative scenario takes place (e.g. invalid input, authentication failure, DB errors). | HAZIM ELAMIN MOHAMED ALI MUSA | Add an "Alternative flow" row for each use case table definition. | S001 | 3 |
+| 3.1.2 | The Club Member subsection only lists "RSVP Events", missing the manage profile UC. | HAZIM ELAMIN MOHAMED ALI MUSA | Under 3.1.2, insert table for the remaining use case definition. | S001 | 3 |
+| UC012 | «Check Venue Availability» use-case assigns the actor role to the Campus Space Reservation Database instead of Club Officer. Misrepresents who initiates the submitting action. | HAZIM ELAMIN MOHAMED ALI MUSA | Make Club Officer the primary actor. Rephrase description and flow to reflect that the system interacts with the external DB, not that the DB initiates the use case. | S001 | 4 |
+| **FR-02** | Combines venue availability check and booking submission in one requirement → hampers atomic tests & traceability | TAI ZHI XUAN | Split into FR-02a "Check availability" & FR-02b "Submit booking request". | S002 | 4 |
+| **FR-03** | Combines RSVP action with live attendance analytics; acceptance tests become ambiguous | TAI ZHI XUAN | Separate into FR-03a "Submit RSVP" & FR-03b "View attendance count". | S002 | 3 |
+| **FR-04** | Aggregates all notification channels (e-mail, push, in-app) for three workflows into one statement | TAI ZHI XUAN | Decompose into FR-04a/b/c by channel or workflow. | S002 | 3 |
+| UR-02 | Localisation required but no measurable acceptance criteria (coverage %, toggle, test) | TAI ZHI XUAN | Add criteria: ≥ 95 % string coverage & user language toggle in settings. | S002 | 2 |
+| PR-01 (Performance) | Uses the subjective phrase "without noticeable degradation"; no concrete SLA for search, booking, RSVP, dashboard views | TAI ZHI XUAN | Replace with measurable limits (e.g., ≤ 2 s page-level P95 for venue search & booking; ≤ 1 s RSVP POST) | S002 | 3 |
+| PR-02 (Performance) | Covers only login; omits response-time and throughput goals for all other critical tasks | TAI ZHI XUAN | Add separate requirements per user journey (submit budget, load dashboard, download report, etc.). | S002 | 3 |
+| AVAIL-01 (Availability) | Guarantees 99.9 % uptime "Mon-Fri 8 am -- 6 pm"; clubs hold events evenings & weekends → requirement mis-aligned with real use | TAI ZHI XUAN | Extend window to 24 × 7 or justify scheduled downtime & create off-hours fail-over plan. | S002 | 3 |
+| SEC-01 (Security) | Bundles encryption & RBAC yet omits cipher strength (TLS 1.3, AES-256), audit-logging or OWASP compliance metrics | TAI ZHI XUAN | Split into SEC-01a/b/c; specify crypto standards, log-retention, quarterly penetration-test pass criteria. | S002 | 3 |
+| MAIN-01 (Maintainability) | Abstract "modular" statement---no verifiable metric (e.g., max coupling, test-coverage) | TAI ZHI XUAN | Add measurable attributes: unit-test coverage ≥ 80 %, component coupling score < 6, API surface documented in OpenAPI v3. | S002 | 2 |
+| UR-01 (Usability) | "3 navigation steps" is ambiguous---does a modal confirmation count? | TAI ZHI XUAN | Redefine step model & add success-rate metric (≥ 90 % users complete task first-try). | S002 | 2 |
+| DBR-02 vs. PR-01 | Concurrency figure (500 users) duplicated; DBR-02 lacks read/write TPS or locking contention limits | TAI ZHI XUAN | Align numbers in a single source and add throughput target (≥ 50 txn/s at P95 latency ≤ 300 ms). | S002 | 2 |
+| INT-13 (APIs) | States "RESTful" but omits versioning or HATEOAS; cannot ensure backward compatibility | TAI ZHI XUAN | Add URI-versioning rule (*v1*), JSON media type, and HAL links for navigability. | S002 | 2 |
+| PORT-01 | Only lists Linux/Windows; no minimum OS versions or container runtime spec; ignores orchestration needs | TAI ZHI XUAN | Specify tested OS/LTS versions and Kubernetes/Docker-Compose descriptors. | S002 | 1 |
+| **UC012** | Actor misassignment: Campus Space Reservation Database listed as primary actor instead of Club Officer | HAZIM ELAMIN MOHAMED ALI MUSA | Replace with the club officer as a primary actor and have the venue reservation system as a secondary actor | S003 | 4 |
+| **FR-07** | Vague term "seamlessly submit"; its subjective and lack verifiability | HAZIM ELAMIN MOHAMED ALI MUSA | Specify: "Submit via authenticated API connection to university finance system" | S003 | 3 |
+| **FR-04** | No corresponding use case defined for notification flow | SAY SI TING | Add UC011 – Receive Notifications to restore traceability | S004 | 4 |
+| Use Case Tables | All use cases lack Alternative/Exception Flows (e.g. UC002, UC006) | SAY SI TING | Add alt/exception flows to UC002, UC006, UC007, UC009 | S004 | 3 |
+| DRR-04 | Vague term “anonymized or archived” lacks technical clarity | SAY SI TING | Define method (e.g., SHA256 pseudonymisation, flag deletion, retention policy rules) | S004 | 3 |
+| 3.1.1.2 Book Venue _ Alternative Flow | The use case does not include an alternative flow for handling unavailable or double-booked venues. This results in incomplete behavioral coverage. | IZZA NELLY BINTI MOHD NASIR | Add an alternative flow where the system notifies the user and suggests other available venues or time slots. | S005 | 3 |
+| 1.1 Purpose - Product Goals | No product goals were originally included to support the system's rationale and traceability. | IZZA NELLY BINTI MOHD NASIR | Identify the product goals | S005 | 5 |
+| 3.8.6 Requirements Traceability Matrix | The initial SRS version lacked a traceability matrix to link requirements with use cases and product goals. | IZZA NELLY BINTI MOHD NASIR | Add matrix mapping FR/NFR?UC toproduct goals to support validation and alignment. | S005 | 5 |
 
 ### B. Documentation Defect
 
 | Page No or Section | Validation and Defect Description | Detected By | Comment / Suggested Fix | Session ID | Severity (1--5) |
 |-------------------|----------------------------------|-------------|------------------------|------------|-----------------|
-| **Page 5** | Improper use of «extends» in "Manage Club Members" diagram---sub flows (Add/Remove/Update) are mandatory, not optional extensions. | Hazim | Change dashed arrows to «include» and redraw so "Manage Club Members" → «include» each case | S001 | 2 |
-| **Page 6** | "Club Officer" role description is a fragment of what the role can do and omits several operations (e.g. venue booking, attendance count viewing). | Hazim | Rewrite as a full sentence or paragraph, including all FRs/UCs that the Club Officer performs (events, budget, members, bookings, RSVPs). | S001 | 3 |
-| **3.1.x** | Use‑case IDs appear in the UC tables but are not referenced in the FR table or in the diagram---traceability is unclear. | Hazim | Add a "Use Case ID" column to Table 5 (Functional Requirements) and annotate each FR with its UCxxx. Update diagrams' labels to match those IDs. | S001 | 2 |
-| 3.7 Attribute Tables -- all NFR tables 31 → 35 | No Rationale/Source column (ISO 29148 §9.4.4) | Zhi Xuan | Add short rationale or policy reference for each NFR. | S002 | 2 |
-| 2 References | Entry is not fully APA 7: no corporate authors, title not italicised/sentence-case, DOI in wrong format<br><br>Reference list contains only ISO 29148; the SRS cites OAuth 2.0 (RFC 6749), WCAG 2.1, Docker docs, Firebase CM, University IT policies, yet none are listed | Zhi Xuan | Replace with full APA-7 reference.<br><br>Expand bibliography; follow APA 7, alphabetical order; include persistent URLs/DOIs. | S002 | 1<br><br>2 |
-| 1.4 Definitions -- Table 37 Acronyms/Abbrev. | Frequently-used acronyms missing: RBAC, OAuth 2.0, REST, TLS/HTTPS, WCAG, KPI, Docker appear in Sections 3 & 4 but are absent from glossary | Zhi Xuan | Add missing entries and regenerate alphabetical acronym list. | S002 | 2 |
-| Section 5.2 | Glossary missing critical acronyms: TLS, OAuth2, RBAC, KPI, Docker | Si Ting | Add definitions and reorder alphabetically | S004 | 2 |
-| Section 2 | No versioning metadata (Version No., Date, Author) | Si Ting | Add version history table to header or footer | S004 | 2 |
-| Page 109, 110, 111 | Several descriptions in the SRS contain vague or subjective language such as "may be involved", "adequate", and "ease of use", which reduce the clarity and make validation difficult. | Nelly | Replace the vague terms with specific measurable criteria or concrete roles. | S005 | 2 |
+| **Page 5** | Improper use of «extends» in "Manage Club Members" diagram---sub flows (Add/Remove/Update) are mandatory, not optional extensions. | HAZIM ELAMIN MOHAMED ALI MUSA | Change dashed arrows to «include» and redraw so "Manage Club Members" → «include» each case | S001 | 2 |
+| **Page 6** | "Club Officer" role description is a fragment of what the role can do and omits several operations (e.g. venue booking, attendance count viewing). | HAZIM ELAMIN MOHAMED ALI MUSA | Rewrite as a full sentence or paragraph, including all FRs/UCs that the Club Officer performs (events, budget, members, bookings, RSVPs). | S001 | 3 |
+| **3.1.x** | Use‑case IDs appear in the UC tables but are not referenced in the FR table or in the diagram---traceability is unclear. | HAZIM ELAMIN MOHAMED ALI MUSA | Add a "Use Case ID" column to Table 5 (Functional Requirements) and annotate each FR with its UCxxx. Update diagrams' labels to match those IDs. | S001 | 2 |
+| 3.7 Attribute Tables -- all NFR tables 31 → 35 | No Rationale/Source column (ISO 29148 §9.4.4) | TAI ZHI XUAN | Add short rationale or policy reference for each NFR. | S002 | 2 |
+| 2 References | Entry is not fully APA 7: no corporate authors, title not italicised/sentence-case, DOI in wrong format<br><br>Reference list contains only ISO 29148; the SRS cites OAuth 2.0 (RFC 6749), WCAG 2.1, Docker docs, Firebase CM, University IT policies, yet none are listed | TAI ZHI XUAN | Replace with full APA-7 reference.<br><br>Expand bibliography; follow APA 7, alphabetical order; include persistent URLs/DOIs. | S002 | 1<br><br>2 |
+| 1.4 Definitions -- Table 37 Acronyms/Abbrev. | Frequently-used acronyms missing: RBAC, OAuth 2.0, REST, TLS/HTTPS, WCAG, KPI, Docker appear in Sections 3 & 4 but are absent from glossary | TAI ZHI XUAN | Add missing entries and regenerate alphabetical acronym list. | S002 | 2 |
+| Section 5.2 | Glossary missing critical acronyms: TLS, OAuth2, RBAC, KPI, Docker | SAY SI TING | Add definitions and reorder alphabetically | S004 | 2 |
+| Section 2 | No versioning metadata (Version No., Date, Author) | SAY SI TING | Add version history table to header or footer | S004 | 2 |
+| Page 109, 110, 111 | Several descriptions in the SRS contain vague or subjective language such as "may be involved", "adequate", and "ease of use", which reduce the clarity and make validation difficult. | IZZA NELLY BINTI MOHD NASIR | Replace the vague terms with specific measurable criteria or concrete roles. | S005 | 2 |
 
 ### C. Agreement Defect
 
 | Req ID | Validation Description / Mismatch | Stakeholder Concern | Detected By | Session ID | Severity (1--5) |
 |--------|----------------------------------|-------------------|-------------|------------|-----------------|
-| **FR01** | "Manage Profile" use case appears only under Club Officer, but stakeholders expect *all* members (including non-officers) to update profiles. | Role coverage error: Club Member vs. Club Officer | Hazim | S001 | 3 |
-| UR-02 | ICT Services mandate BM & EN localisation; UR-02 lacks measurable coverage/toggle criteria | Incomplete NFR | Zhi Xuan | S002 | 2 |
-| AVAIL-01 | Clubs host events evenings & weekends, but availability target guarantees 99.9 % uptime only Mon-Fri 08:00--18:00 | Availability window misaligned with real usage | Zhi Xuan | S002 | 2 |
-| DRR-04 | Vague archival vs anonymization policy may not align with privacy law | University policy vs SRS wording | Si Ting | S004 | 3 |
+| **FR01** | "Manage Profile" use case appears only under Club Officer, but stakeholders expect *all* members (including non-officers) to update profiles. | Role coverage error: Club Member vs. Club Officer | HAZIM ELAMIN MOHAMED ALI MUSA | S001 | 3 |
+| UR-02 | ICT Services mandate BM & EN localisation; UR-02 lacks measurable coverage/toggle criteria | Incomplete NFR | TAI ZHI XUAN | S002 | 2 |
+| AVAIL-01 | Clubs host events evenings & weekends, but availability target guarantees 99.9 % uptime only Mon-Fri 08:00--18:00 | Availability window misaligned with real usage | TAI ZHI XUAN | S002 | 2 |
+| DRR-04 | Vague archival vs anonymization policy may not align with privacy law | University policy vs SRS wording | SAY SI TING | S004 | 3 |
 
 ## 3.8.3 Conflict Analysis
 
 | Conflict ID | Conflict Description | Conflict Analysis | Stakeholders Involved | Session ID |
 |-------------|---------------------|-------------------|---------------------|------------|
-| C-01 | FR-04 bundled all notification channels (e-mail, push, in-app) in a single requirement. | QA could not design channel-specific test cases; Dev team needed separate release toggles. | Zhi Xuan, Si Ting, Nelly | S002 |
-| C-02 | FR-03 coupled RSVP submission with live attendance analytics. | Staged deployment impossible; analytics service on separate sprint. | Zhi Xuan, Si Ting, Nelly | S002 |
-| C-03 | AVAIL-01 limited uptime (08:00--18:00 Mon-Fri) vs. clubs' evening/weekend events. | Requirement excluded peak usage; ops SLA mis-aligned. | Zhi Xuan, Si Ting, Nelly | S002 |
-| C-04 | PR-01 vague "without noticeable degradation." | Cannot derive performance test scripts without concrete SLA. | Zhi Xuan, Si Ting, Nelly | S002 |
-| C-05 | SEC-01 lumped encryption & RBAC with no metrics. | Security auditors require cipher strength, SoD, log-retention metrics. | Zhi Xuan, Si Ting, Nelly | S002 |
-| C-06 | FR-04 lacks UC011	 |  Traceability broken — cannot validate notification behavior | Si Ting | S004 |
-| C-07 |FR-07 wording implies system approves budget|  Contradicts TeamVision: system only integrates, not approves | Si Ting | S004 |
-| C-08 |DRR-04 vague anonymization/archive	 | May breach compliance — lacks lifecycle, policy, or technical scope | Si Ting | S004 |
+| C-01 | FR-04 bundled all notification channels (e-mail, push, in-app) in a single requirement. | QA could not design channel-specific test cases; Dev team needed separate release toggles. | TAI ZHI XUAN, SAY SI TING, IZZA NELLY BINTI MOHD NASIR | S002 |
+| C-02 | FR-03 coupled RSVP submission with live attendance analytics. | Staged deployment impossible; analytics service on separate sprint. | TAI ZHI XUAN, SAY SI TING, IZZA NELLY BINTI MOHD NASIR | S002 |
+| C-03 | AVAIL-01 limited uptime (08:00--18:00 Mon-Fri) vs. clubs' evening/weekend events. | Requirement excluded peak usage; ops SLA mis-aligned. | TAI ZHI XUAN, SAY SI TING, IZZA NELLY BINTI MOHD NASIR | S002 |
+| C-04 | PR-01 vague "without noticeable degradation." | Cannot derive performance test scripts without concrete SLA. | TAI ZHI XUAN, SAY SI TING, IZZA NELLY BINTI MOHD NASIR | S002 |
+| C-05 | SEC-01 lumped encryption & RBAC with no metrics. | Security auditors require cipher strength, SoD, log-retention metrics. | TAI ZHI XUAN, SAY SI TING, IZZA NELLY BINTI MOHD NASIR | S002 |
+| C-06 | FR-04 lacks UC011	 |  Traceability broken — cannot validate notification behavior | SAY SI TING | S004 |
+| C-07 |FR-07 wording implies system approves budget|  Contradicts TeamVision: system only integrates, not approves | SAY SI TING | S004 |
+| C-08 |DRR-04 vague anonymization/archive	 | May breach compliance — lacks lifecycle, policy, or technical scope | SAY SI TING | S004 |
 
 ## 3.8.4 Conflict Analysis and Resolution
 
@@ -1138,19 +1138,19 @@ The portability requirements for the system are as follows:
 
 The following annotated WhatsApp chat screenshots substantiate the techniques we used to resolve Conflicts C-01 → C-05 (§ 3.8.3).
 
-**Figure 3.15 — C-01 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
+**Figure 3.15 — C-01 Negotiation (TAI ZHI XUAN, SAY SI TING, IZZA NELLY BINTI MOHD NASIR)**  
 <img src="Conflict_Resolution_Proofs/C-01.png" alt="WhatsApp chat resolving C-01 — split notification channels" style="max-width:100%;">
 
-**Figure 3.16 — C-02 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
+**Figure 3.16 — C-02 Negotiation (TAI ZHI XUAN, SAY SI TING, IZZA NELLY BINTI MOHD NASIR)**  
 <img src="Conflict_Resolution_Proofs/C-02.png" alt="WhatsApp chat resolving C-02 — split RSVP & analytics" style="max-width:100%;">
 
-**Figure 3.17 — C-03 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
+**Figure 3.17 — C-03 Negotiation (TAI ZHI XUAN, SAY SI TING, IZZA NELLY BINTI MOHD NASIR)**  
 <img src="Conflict_Resolution_Proofs/C-03.png" alt="WhatsApp chat resolving C-03 — 24×7 availability compromise" style="max-width:100%;">
 
-**Figure 3.18 — C-04 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
+**Figure 3.18 — C-04 Negotiation (TAI ZHI XUAN, SAY SI TING, IZZA NELLY BINTI MOHD NASIR)**  
 <img src="Conflict_Resolution_Proofs/C-04.png" alt="WhatsApp chat resolving C-04 — concrete performance SLA" style="max-width:100%;">
 
-**Figure 3.19 — C-05 Negotiation (Zhi Xuan, Si Ting, Nelly)**  
+**Figure 3.19 — C-05 Negotiation (TAI ZHI XUAN, SAY SI TING, IZZA NELLY BINTI MOHD NASIR)**  
 <img src="Conflict_Resolution_Proofs/C-05.png" alt="WhatsApp chat resolving C-05 — security requirement decomposition" style="max-width:100%;">
 
 ---
@@ -1161,28 +1161,28 @@ The following annotated WhatsApp chat screenshots substantiate the techniques we
 
 | Change ID | Req ID | Summary of Change | Proposed By | Date | Session ID |
 |-----------|--------|------------------|-------------|------|------------|
-| CH-01 | Use Case Diagram/ Functional requirements table | Fixed the use case diagram defects; The table reflects the changes accordingly. | Hazim | 19-6-2025 | S003 |
-| CH-02 | Functional requirements table | - Reformatted the Functional Requirements table for clarity: split multi-part requirements into "a"/"b" sub‑items reduce ambiguity<br>- A clearer description for club officer responsibilities<br>- Added Use Case IDs to help with traceability.<br>- Actor misassignment in UC012 is fixed now<br>- Fixed vague terms discovered in S001-003 | Hazim | 19-6-2025 | S003 |
-| CH-03 | § 3.7 Tables 3.27 -- 3.31 (NFR attributes) | Added Metric / Unit & Rationale / Source columns; populated all rows with measurable values & policy refs | Zhi Xuan | 20-6-2025 | S002 |
-| CH-04 | § 2 References | Re-formatted ISO 29148 citation to APA 7; added OAuth 2.0, WCAG 2.1, Docker, FCM, and University IT-policy references | Zhi Xuan | 20-6-2025 | S002 |
-| CH-05 | § 1.4 Definitions (Table 1.4) | Added missing acronyms (RBAC, OAuth 2.0, REST, TLS, WCAG, KPI, Docker, etc.); rebuilt table in alphabetical order and merged key terms + acronyms | Zhi Xuan | 20-6-2025 | S002 |
-| CH-06 | Table 3.1 Functional requirements | - Swapped FR-02a/b so a = Check availability, b = Submit booking request; fixed UC mappings.<br>- Swapped FR-03a/b so a = Submit RSVP, b = View attendance count; fixed UC mappings.<br>- Re-decomposed FR-04 by notification channels (Email, Push, In-app) instead of scenario status; added precise wording. | Zhi Xuan | 20-6-2025 | S002 |
-| CH-07 | § 3.2 Performance Requirements (Table 3.15) | - Re-wrote PR-01 and PR-02 with objective SLAs:<br>**PR-01** --- supports 500 concurrent users with P95 page-level response ≤ 2 s for key tasks (venue search, booking, RSVP, dashboards).<br>- **PR-02** --- login round-trip P95 ≤ 1 s, worst-case ≤ 1.5 s under <100 user load.<br>Removed vague phrase "without noticeable degradation". | Zhi Xuan | 20-6-2025 | S002 |
-| CH-08 | § 3.3 Usability Requirements (Table 3.16) | Re-wrote UR-02 with measurable acceptance criteria: ≥ 95 % translated UI strings, user-selectable language toggle, ≤ 5 % fallback strings per release. | Zhi Xuan | 20-6-2025 | S002 |
-| CH-09 | § 3.7 Attribute Tables (Table 3.28 Availability, 3.29 Security, 3.30 Maintainability) | - Refined AVAIL-01 to 24 × 7 target with planned-maintenance clause.<br>- Decomposed SEC-01 into SEC-01a Encryption, SEC-01b RBAC, SEC-01c Audit & Compliance (metric-based).<br>- Re-wrote MAIN-01 with additional quantitative criteria (OpenAPI coverage, cyclomatic-complexity ceiling). | Zhi Xuan | 20-6-2025 | S002 |
-| CH-10 | § 3.3 Usability (Table 3.16), § 3.4 Interface (Table 3.18), § 3.5 Data (Table 3.24), § 3.7 Portability (Table 3.31) | - Quantified UR-01 (≤ 3 navigation actions, ≥ 90 % first-try success).<br>- Added throughput & latency metrics to DBR-02; removed duplicated concurrency from PR-01.<br>- Re-wrote INT-13 with API versioning (URI *v1*), application/json, HAL links.<br>- Enhanced PORT-01 with explicit OS/LTS versions, Docker 20.10+, Kubernetes 1.29 manifests. | Zhi Xuan | 20-6-2025 | S002 |
-| CH-11 | § 3.8 Supporting Information -- Agreement Table & Conflict Resolution | Marked UR-02 and AVAIL-01 mismatches as resolved (fixed in CH-08 & CH-09) | Zhi Xuan | 20-6-2025 | S002 |
-| CH-12 | Conflict-Resolution proofs & § 3.8 merge | Added C-01.png – C-05.png to `/Conflict_Resolution_Proofs`; inserted image refs and full Supporting-Information section into SRS.md | Zhi Xuan | 20-6-2025 | S002 |
-| CH-13 | § 3.1 Use case table definitions – Main and Alternative flows | Wrote main / alternative flow for each of the available use cases tables, following the activity diagram provided semantics.| Hazim | 21-6-2025 | S001 |
-| CH-14 | § 3.1.1.2 Use case table definitions - Alternative Flow  | Added alterenative flow for unaavailable venue scenario | Nelly | 21-6-2025 | S005 |
-| CH-15 | § 1.1 Purpose - Product Goals  | Added missing goals | Nelly | 22-6-2025 | S005 |
-| CH-16 | § Page 109, 110, 111  | Clarified vague and subjective terms in multiple sections of the SRS by replacing phrases like "may be involved", and "adequate" with specific, measurable wording to improve document precision and validation readiness. | Nelly | 22-6-2025 | S005 |
-| CH-17 | § 3.8.6 - Requirements Traceability Matrix | Added matrix mapping FR/NFR/UC to product goals to support validation and alignment  | Nelly | 22-6-2025 | S005 |
-| CH-18 | SRS.md (§ 3.1 Use Case Tables) | Added missing UC011 – Receive Notifications to restore traceability for FR-04 | Si Ting | 21-6-2025 | S004 |
-| CH-19 | SRS.md (§ 3.1 UC002, UC006) | Completed alternative and exception flows for UC002 and UC006 | Si Ting | 21-6-2025 | S004 |
-| CH-20 | SRS.md (§ 5.2 Glossary) | Expanded Glossary with missing acronyms: RBAC, TLS, OAuth2, REST, Docker, WCAG, KPI | Si Ting | 21-6-2025 | S004 |
-| CH-21 | SRS.md (§ 2 Version Info) | Introduced version control metadata (version number, author, last updated date) | Si Ting | 21-6-2025 | S004 |
-| CH-22 | SRS.md (§ 3.5 DRR-04) | Clarified DRR-04 with specific anonymization method and retention policy to resolve compliance risk | Si Ting | 21-6-2025 | S004 |
+| CH-01 | Use Case Diagram/ Functional requirements table | Fixed the use case diagram defects; The table reflects the changes accordingly. | HAZIM ELAMIN MOHAMED ALI MUSA | 19-6-2025 | S003 |
+| CH-02 | Functional requirements table | - Reformatted the Functional Requirements table for clarity: split multi-part requirements into "a"/"b" sub‑items reduce ambiguity<br>- A clearer description for club officer responsibilities<br>- Added Use Case IDs to help with traceability.<br>- Actor misassignment in UC012 is fixed now<br>- Fixed vague terms discovered in S001-003 | HAZIM ELAMIN MOHAMED ALI MUSA | 19-6-2025 | S003 |
+| CH-03 | § 3.7 Tables 3.27 -- 3.31 (NFR attributes) | Added Metric / Unit & Rationale / Source columns; populated all rows with measurable values & policy refs | TAI ZHI XUAN | 20-6-2025 | S002 |
+| CH-04 | § 2 References | Re-formatted ISO 29148 citation to APA 7; added OAuth 2.0, WCAG 2.1, Docker, FCM, and University IT-policy references | TAI ZHI XUAN | 20-6-2025 | S002 |
+| CH-05 | § 1.4 Definitions (Table 1.4) | Added missing acronyms (RBAC, OAuth 2.0, REST, TLS, WCAG, KPI, Docker, etc.); rebuilt table in alphabetical order and merged key terms + acronyms | TAI ZHI XUAN | 20-6-2025 | S002 |
+| CH-06 | Table 3.1 Functional requirements | - Swapped FR-02a/b so a = Check availability, b = Submit booking request; fixed UC mappings.<br>- Swapped FR-03a/b so a = Submit RSVP, b = View attendance count; fixed UC mappings.<br>- Re-decomposed FR-04 by notification channels (Email, Push, In-app) instead of scenario status; added precise wording. | TAI ZHI XUAN | 20-6-2025 | S002 |
+| CH-07 | § 3.2 Performance Requirements (Table 3.15) | - Re-wrote PR-01 and PR-02 with objective SLAs:<br>**PR-01** --- supports 500 concurrent users with P95 page-level response ≤ 2 s for key tasks (venue search, booking, RSVP, dashboards).<br>- **PR-02** --- login round-trip P95 ≤ 1 s, worst-case ≤ 1.5 s under <100 user load.<br>Removed vague phrase "without noticeable degradation". | TAI ZHI XUAN | 20-6-2025 | S002 |
+| CH-08 | § 3.3 Usability Requirements (Table 3.16) | Re-wrote UR-02 with measurable acceptance criteria: ≥ 95 % translated UI strings, user-selectable language toggle, ≤ 5 % fallback strings per release. | TAI ZHI XUAN | 20-6-2025 | S002 |
+| CH-09 | § 3.7 Attribute Tables (Table 3.28 Availability, 3.29 Security, 3.30 Maintainability) | - Refined AVAIL-01 to 24 × 7 target with planned-maintenance clause.<br>- Decomposed SEC-01 into SEC-01a Encryption, SEC-01b RBAC, SEC-01c Audit & Compliance (metric-based).<br>- Re-wrote MAIN-01 with additional quantitative criteria (OpenAPI coverage, cyclomatic-complexity ceiling). | TAI ZHI XUAN | 20-6-2025 | S002 |
+| CH-10 | § 3.3 Usability (Table 3.16), § 3.4 Interface (Table 3.18), § 3.5 Data (Table 3.24), § 3.7 Portability (Table 3.31) | - Quantified UR-01 (≤ 3 navigation actions, ≥ 90 % first-try success).<br>- Added throughput & latency metrics to DBR-02; removed duplicated concurrency from PR-01.<br>- Re-wrote INT-13 with API versioning (URI *v1*), application/json, HAL links.<br>- Enhanced PORT-01 with explicit OS/LTS versions, Docker 20.10+, Kubernetes 1.29 manifests. | TAI ZHI XUAN | 20-6-2025 | S002 |
+| CH-11 | § 3.8 Supporting Information -- Agreement Table & Conflict Resolution | Marked UR-02 and AVAIL-01 mismatches as resolved (fixed in CH-08 & CH-09) | TAI ZHI XUAN | 20-6-2025 | S002 |
+| CH-12 | Conflict-Resolution proofs & § 3.8 merge | Added C-01.png – C-05.png to `/Conflict_Resolution_Proofs`; inserted image refs and full Supporting-Information section into SRS.md | TAI ZHI XUAN | 20-6-2025 | S002 |
+| CH-13 | § 3.1 Use case table definitions – Main and Alternative flows | Wrote main / alternative flow for each of the available use cases tables, following the activity diagram provided semantics.| HAZIM ELAMIN MOHAMED ALI MUSA | 21-6-2025 | S001 |
+| CH-14 | § 3.1.1.2 Use case table definitions - Alternative Flow  | Added alterenative flow for unaavailable venue scenario | IZZA NELLY BINTI MOHD NASIR | 21-6-2025 | S005 |
+| CH-15 | § 1.1 Purpose - Product Goals  | Added missing goals | IZZA NELLY BINTI MOHD NASIR | 22-6-2025 | S005 |
+| CH-16 | § Page 109, 110, 111  | Clarified vague and subjective terms in multiple sections of the SRS by replacing phrases like "may be involved", and "adequate" with specific, measurable wording to improve document precision and validation readiness. | IZZA NELLY BINTI MOHD NASIR | 22-6-2025 | S005 |
+| CH-17 | § 3.8.6 - Requirements Traceability Matrix | Added matrix mapping FR/NFR/UC to product goals to support validation and alignment  | IZZA NELLY BINTI MOHD NASIR | 22-6-2025 | S005 |
+| CH-18 | SRS.md (§ 3.1 Use Case Tables) | Added missing UC011 – Receive Notifications to restore traceability for FR-04 | SAY SI TING | 21-6-2025 | S004 |
+| CH-19 | SRS.md (§ 3.1 UC002, UC006) | Completed alternative and exception flows for UC002 and UC006 | SAY SI TING | 21-6-2025 | S004 |
+| CH-20 | SRS.md (§ 5.2 Glossary) | Expanded Glossary with missing acronyms: RBAC, TLS, OAuth2, REST, Docker, WCAG, KPI | SAY SI TING | 21-6-2025 | S004 |
+| CH-21 | SRS.md (§ 2 Version Info) | Introduced version control metadata (version number, author, last updated date) | SAY SI TING | 21-6-2025 | S004 |
+| CH-22 | SRS.md (§ 3.5 DRR-04) | Clarified DRR-04 with specific anonymization method and retention policy to resolve compliance risk | SAY SI TING | 21-6-2025 | S004 |
 
 ## 3.8.6 Requirements Traceability Matrix
 
@@ -1209,22 +1209,72 @@ The following annotated WhatsApp chat screenshots substantiate the techniques we
 
 | Student Name | Primary Responsibility | No. of Session Participated |
 |--------------|----------------------|---------------------------|
-| Hazim | Reviewer (Inspection S001,S003) | 2 |
-| Zhi Xuan | Reviewer & Recorder (Inspection S002) | 1 |
-| Si Ting | Reviewer & Recorder (Inspection S004) | 1 |
-| Nelly | Reviewer & Recorder (Inspection S005) | 1 |
+| HAZIM ELAMIN MOHAMED ALI MUSA | Reviewer (Inspection S001,S003) | 2 |
+| TAI ZHI XUAN | Reviewer & Recorder (Inspection S002) | 1 |
+| SAY SI TING | Reviewer & Recorder (Inspection S004) | 1 |
+| IZZA NELLY BINTI MOHD NASIR | Reviewer & Recorder (Inspection S005) | 1 |
 
 **Note:** Students may participate in multiple roles across sessions.
 
 ## 3.8.8 Version Control & Configuration Summary
 
-**Note:** Provide the summary here.
+**Commits Made by Team Members**
 
-**Commits Made by StudentX:**
+**TAI ZHI XUAN**
 
-**Pull Requests Merged by StudentX:**
+**Recent Major Updates (June 2025):**
+* e662134 - 2025-06-23 - Update Conflicts Table and Change Log Table
+* 67fd2aa - 2025-06-20 - Add Conflicts Resolution Proofs
+* be0001f - 2025-06-20 - add 3.8 Supporting Information
+* 62e6a26 - 2025-06-20 - CH-11: mark UR-02 & AVAIL-01 agreement mismatches as resolved
 
-**Change Log Entries Made by StudentX:**
+**Defect Resolution (June 2025):**
+* bf081d2 - 2025-06-20 - CH-10: fix UR-01, DBR-02, INT-13, PORT-01 per S002 defects
+* a82a3c3 - 2025-06-20 - CH-09: refine availability, security & maintainability requirements
+* b62456a - 2025-06-20 - CH-08: quantify localisation requirement UR-02
+* 0088b84 - 2025-06-20 - CH-07: refine PR-01 and PR-02 with measurable SLAs
+* 46b951a - 2025-06-20 - CH-06: refactor FR-02, FR-03, FR-04 per S002 content defects
+* 8383cdf - 2025-06-20 - CH-05: add missing acronyms to §1.4 Definitions
+
+**Documentation Enhancement:**
+* 68527c6 - 2025-06-20 - Reference List Overhaul
+* 24bd1a9 - 2025-06-20 - add change log
+* a8045ff - 2025-06-20 - Added Metric & Rationale columns for all NFRs
+
+**HAZIM ELAMIN MOHAMED ALI MUSA**
+* 65c8755 - 2025-06-21 - updated change log CH-13, added main/alternative flows to the use case tables
+* 4646b64 - 2025-06-20 - CH-03, pushed some content defect fixes, section 3.1
+* 89e6d8d - 2025-06-19 - small fix
+* 6707d4a - 2025-06-19 - fixed the use case diagram, also added use case ids to help with traceability
+
+**IZZA NELLY BINTI MOHD NASIR**
+* 7badfca - 2025-06-22 - Update TT5L_G6_SRS.md
+* f91799d - 2025-06-22 - Update changelog.md
+* Multiple iterative updates to TT5L_G6_SRS.md throughout June 21-22, 2025
+
+**SAY SI TING**
+* f45ff06 - 2025-06-22 - Save local changes before rebase
+* 016cc06 - 2025-06-22 - Your update before pulling
+* a3520c9 - 2025-06-22 - update the TT5L_G6_SRS.md with link to contributing guide
+* 9b885a9 - 2025-06-20 - Update TT5L_G6_SRS.md
+
+**Change Log Entries Made by Team Members**
+
+The change log documents **22 major change entries (CH-01 to CH-22)** addressing:
+
+**Content Defects (CH-01 to CH-12):**
+* **CH-01 to CH-02**: Use case diagram corrections and functional requirements reformatting by HAZIM ELAMIN MOHAMED ALI MUSA
+* **CH-03 to CH-05**: NFR attribute tables, references, and definitions updates by TAI ZHI XUAN
+* **CH-06 to CH-10**: Functional requirements decomposition and performance criteria refinement by TAI ZHI XUAN
+* **CH-11**: Agreement mismatch resolution by TAI ZHI XUAN
+
+**Documentation Defects (CH-13 to CH-17):**
+* **CH-13**: Use case flow completion by HAZIM ELAMIN MOHAMED ALI MUSA
+* **CH-14**: Alternative flow addition by IZZA NELLY BINTI MOHD NASIR
+* **CH-15 to CH-17**: Product goals and traceability matrix additions by IZZA NELLY BINTI MOHD NASIR
+
+**Validation Findings (CH-18 to CH-22):**
+* **CH-18 to CH-22**: Missing use cases, glossary expansion, and compliance requirements by SAY SI TING
 
 ---
 
