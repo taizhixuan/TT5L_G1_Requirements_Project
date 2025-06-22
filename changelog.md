@@ -78,25 +78,25 @@
 |-----------|-------------|-----------------------|--------|--------|
 | CH-13 | SRS.md (§ 3.1 use case Tables) | Wrote main / alternative flow for each of the available use cases tables, following the activity diagram provided semantics. | Hazim | Missing main and alternative flows caused content aswell as document defects, as the use case tables lacked clear execution logic, making it difficult to understand user-system interactions. It created validation gaps, and misaligned developer understanding. (Session S001)|
 
-## 21-06-2025 — ...
+## 21-06-2025 — BookVenue Alt Flow Added (CH-14)
 
 | Change ID | File / Area | Description of Change | Author | Reason |
 |-----------|-------------|-----------------------|--------|--------|
 | CH-14 | SRS.md (§ 3.1.1.2 Book Venue - Alternative Flow) |Added alternative flow for unavailable venue scenario. | Nelly | The use case does not include an alternative flow to handle scenarios where the selected venue is already booked or unavailable. This results in incomplete behavioural logic. |
 
-## 21-06-2025 — ...
+## 21-06-2025 — Product Goals Inserted (CH-15)
 
 | Change ID | File / Area | Description of Change | Author | Reason |
 |-----------|-------------|-----------------------|--------|--------|
 | CH-15 | SRS.md (§ 1.1 Purpose - Product Goals) | Added missing goals | Nelly | No product goals were originally included to support the system’s rationale and traceability. |
 
-## 21-06-2025 — ...
+## 21-06-2025 — Vague Language Corrections (CH-16)
 
 | Change ID | File / Area | Description of Change | Author | Reason |
 |-----------|-------------|-----------------------|--------|--------|
 | CH-16 | SRS.md (§ Page 109, 110, 111) | Clarified vague and subjective terms in multiple sections of the SRS by replacing phrases like  "may be involved", and "adequate” with specific, measurable wording to improve document precision and validation readiness. | Nelly | Several descriptions in the SRS contain vague or subjective language such as  "may be involved", “adequate”, and “ease of use”, which reduce the clarity and make validation difficult. |
 
-## 21-06-2025 — ...
+## 21-06-2025 — Requirements Tracebility Matrix Added (CH-17)
 
 | Change ID | File / Area | Description of Change | Author | Reason |
 |-----------|-------------|-----------------------|--------|--------|
