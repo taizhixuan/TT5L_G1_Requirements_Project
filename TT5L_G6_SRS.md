@@ -1116,9 +1116,9 @@ The portability requirements for the system are as follows:
 | C-03 | AVAIL-01 limited uptime (08:00--18:00 Mon-Fri) vs. clubs' evening/weekend events. | Requirement excluded peak usage; ops SLA mis-aligned. | Zhi Xuan, Si Ting, Nelly | S002 |
 | C-04 | PR-01 vague "without noticeable degradation." | Cannot derive performance test scripts without concrete SLA. | Zhi Xuan, Si Ting, Nelly | S002 |
 | C-05 | SEC-01 lumped encryption & RBAC with no metrics. | Security auditors require cipher strength, SoD, log-retention metrics. | Zhi Xuan, Si Ting, Nelly | S002 |
-| C-06 | FR-04 lacks UC011	 | Documentation  | Traceability broken — cannot validate notification behavior | S004 |
-| C-07 |FR-07 wording implies system approves budget| Agreement  |Contradicts TeamVision: system only integrates, not approves | S004 |
-| C-08 |DRR-04 vague anonymization/archive	 | Agreement | May breach compliance — lacks lifecycle, policy, or technical scope| S004 |
+| C-06 | FR-04 lacks UC011	 |  Traceability broken — cannot validate notification behavior | Si Ting | S004 |
+| C-07 |FR-07 wording implies system approves budget|  Contradicts TeamVision: system only integrates, not approves | Si Ting | S004 |
+| C-08 |DRR-04 vague anonymization/archive	 | May breach compliance — lacks lifecycle, policy, or technical scope | Si Ting | S004 |
 
 ## 3.8.4 Conflict Analysis and Resolution
 
@@ -1178,6 +1178,11 @@ The following annotated WhatsApp chat screenshots substantiate the techniques we
 | CH-15 | § 1.1 Purpose - Product Goals  | Added missing goals | Nelly | 22-6-2025 | S005 |
 | CH-16 | § Page 109, 110, 111  | Clarified vague and subjective terms in multiple sections of the SRS by replacing phrases like "may be involved", and "adequate" with specific, measurable wording to improve document precision and validation readiness. | Nelly | 22-6-2025 | S005 |
 | CH-17 | § 3.8.6 - Requirements Traceability Matrix | Added matrix mapping FR/NFR/UC to product goals to support validation and alignment  | Nelly | 22-6-2025 | S005 |
+| CH-18 | SRS.md (§ 3.1 Use Case Tables) | Added missing UC011 – Receive Notifications to restore traceability for FR-04 | Si Ting | 21-6-2025 | S004 |
+| CH-19 | SRS.md (§ 3.1 UC002, UC006) | Completed alternative and exception flows for UC002 and UC006 | Si Ting | 21-6-2025 | S004 |
+| CH-20 | SRS.md (§ 5.2 Glossary) | Expanded Glossary with missing acronyms: RBAC, TLS, OAuth2, REST, Docker, WCAG, KPI | Si Ting | 21-6-2025 | S004 |
+| CH-21 | SRS.md (§ 2 Version Info) | Introduced version control metadata (version number, author, last updated date) | Si Ting | 21-6-2025 | S004 |
+| CH-22 | SRS.md (§ 3.5 DRR-04) | Clarified DRR-04 with specific anonymization method and retention policy to resolve compliance risk | Si Ting | 21-6-2025 | S004 |
 
 ## 3.8.6 Requirements Traceability Matrix
 
