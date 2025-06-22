@@ -2,9 +2,9 @@
 
 **Project:** Student Club Management System with Budget and Venue Integration
 
-**Version:** 1.0
+**Version:** 2.0
 
-**Date:** 2025-05-25
+**Date:** 2025-06-23
 
 ---
 
