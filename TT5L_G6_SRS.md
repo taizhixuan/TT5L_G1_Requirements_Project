@@ -649,7 +649,7 @@ Participates in club activities, can RSVP to events, and view personal and club-
 <p align="center"><em>Table 3.12 Use Case Specification - RSVP Events</em></p>
 
 <figure>
-  <img src="assets/SRE - Assignment Class Diagram -  RSVP Events.png"
+  <img src="assets/SRE - Assignment Class Diagram - RSVP Events.png"
        alt="Figure 2.11 – Activity Diagram - RSVP Events"
        style="max-width:100%;">
   <div><figcaption align="center"><strong>Figure 3.11</strong> Activity Diagram - RSVP Events.</figcaption></div>
@@ -686,7 +686,7 @@ An external system that stores and manages data on available campus venues and t
 <p align="center"><em>Table 3.13 Use Case Specification - Check Venue Availability</em></p>
 
 <figure>
-  <img src="assets/SRE - Assignment Class Diagram -  Check Venue Availability.png"
+  <img src="assets/SRE - Assignment Class Diagram - Check Venue Availability.png"
        alt="Figure 2.12 – Activity Diagram - Check Venue Availability"
        style="max-width:100%;">
   <div><figcaption align="center"><strong>Figure 3.12</strong> Activity Diagram - Check Venue Availability.</figcaption></div>
@@ -723,7 +723,7 @@ An external financial system that handles budget allocation, fund approval, and 
 <p align="center"><em>Table 3.14 Use Case Specification - Receive Budget Allocation Request</em></p>
 
 <figure>
-  <img src="assets/SRE - Assignment Class Diagram -  Receive Budget Allocation Request.png"
+  <img src="assets/SRE - Assignment Class Diagram - Receive Budget Allocation Request.png"
        alt="Figure 2.13 – Activity Diagram - Receive Budget Allocation Request"
        style="max-width:100%;">
   <div><figcaption align="center"><strong>Figure 3.13</strong> Activity Diagram - Receive Budget Allocation Request.</figcaption></div>
