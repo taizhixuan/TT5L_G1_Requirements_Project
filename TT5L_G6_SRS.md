@@ -1045,7 +1045,7 @@ The portability requirements for the system are as follows:
 | S002 | 15 Jun 2025<br>2:00 PM - 5:00 PM | Inspection | Section 1.4, Section 2, Section 3.2 → 3.7<br>(Non-functional & Interfaces),<br>Figures & Tables | TAI ZHI XUAN<br>(Reviewer, Recorder) | 17 |
 | S003 | 18 Jun 2025<br>11:30 PM | Inspection | Section 3.1<br>(second Review of the use-case tables) | HAZIM ELAMIN MOHAMED ALI MUSA<br>(Reviewer, Recorder) | 3 |
 | S004 | 20 Jun 2025<br>8:00am | Inspection | Section 1.4 (Glossary), 2 (References),<br>3.5.5--3.5.7 (Retention & Recovery) | SAY SI TING<br>(Reviewer, Recorder) | 6 |
-| S005 | 21 Jun 2025<br>121:00 PM | Inspection | ... | IZZA NELLY BINTI MOHD NASIR<br>(Reviewer, Recorder) | 4 |
+| S005 | 21 Jun 2025<br>121:00 PM | Inspection | Section 3.1.1.2, Section 1.1, Section 3.8.6, Page 109-111 | IZZA NELLY BINTI MOHD NASIR<br>(Reviewer, Recorder) | 4 |
 
 **Note:** Compulsory to conduct Inspection technique. Students may conduct additional technique(s).
 
