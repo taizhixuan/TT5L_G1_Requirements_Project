@@ -1045,7 +1045,7 @@ The portability requirements for the system are as follows:
 | S002 | 15 Jun 2025<br>2:00 PM - 5:00 PM | Inspection | Section 1.4, Section 2, Section 3.2 → 3.7<br>(Non-functional & Interfaces),<br>Figures & Tables | TAI ZHI XUAN<br>(Reviewer, Recorder) | 17 |
 | S003 | 18 Jun 2025<br>11:30 PM | Inspection | Section 3.1<br>(second Review of the use-case tables) | HAZIM ELAMIN MOHAMED ALI MUSA<br>(Reviewer, Recorder) | 3 |
 | S004 | 20 Jun 2025<br>8:00am | Inspection | Section 1.4 (Glossary), 2 (References),<br>3.5.5--3.5.7 (Retention & Recovery) | SAY SI TING<br>(Reviewer, Recorder) | 6 |
-| S005 | 21 Jun 2025<br>121:00 PM | Inspection | Section 3.1.1.2, Section 1.1, Section 3.8.6, Page 109-111 | IZZA NELLY BINTI MOHD NASIR<br>(Reviewer, Recorder) | 4 |
+| S005 | 21 Jun 2025<br>12:00 PM | Inspection | Section 3.1.1.2, Section 1.1, Section 3.8.6, Page 109-111 | IZZA NELLY BINTI MOHD NASIR<br>(Reviewer, Recorder) | 4 |
 
 **Note:** Compulsory to conduct Inspection technique. Students may conduct additional technique(s).
 
@@ -1082,7 +1082,7 @@ The portability requirements for the system are as follows:
 | DRR-04 | Vague term “anonymized or archived” lacks technical clarity | SAY SI TING | Define method (e.g., SHA256 pseudonymisation, flag deletion, retention policy rules) | S004 | 3 |
 | 3.1.1.2 Book Venue _ Alternative Flow | The use case does not include an alternative flow for handling unavailable or double-booked venues. This results in incomplete behavioral coverage. | IZZA NELLY BINTI MOHD NASIR | Add an alternative flow where the system notifies the user and suggests other available venues or time slots. | S005 | 3 |
 | 1.1 Purpose - Product Goals | No product goals were originally included to support the system's rationale and traceability. | IZZA NELLY BINTI MOHD NASIR | Identify the product goals | S005 | 5 |
-| 3.8.6 Requirements Traceability Matrix | The initial SRS version lacked a traceability matrix to link requirements with use cases and product goals. | IZZA NELLY BINTI MOHD NASIR | Add matrix mapping FR/NFR?UC toproduct goals to support validation and alignment. | S005 | 5 |
+| 3.8.6 Requirements Traceability Matrix | The initial SRS version lacked a traceability matrix to link requirements with use cases and product goals. | IZZA NELLY BINTI MOHD NASIR | Add matrix mapping FR/NFR/UC toproduct goals to support validation and alignment. | S005 | 5 |
 
 ### B. Documentation Defect
 
